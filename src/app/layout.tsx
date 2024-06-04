@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
-import '@/assets/styles/index.scss';
 import { ReactNode } from 'react';
+import { Footer } from '@/layouts/Footer/Footer';
+import { Header } from '@/layouts/Header/Header';
+import '@/assets/styles/index.scss';
 
-const popins = Poppins({ subsets: ['latin'], weight: ['400', '500', '600', '700'] });
+const popins = Poppins({ subsets: ['latin'], weight: ['400', '600', '700'] });
 
 export const metadata: Metadata = {
   title: 'Lumia',
@@ -17,7 +19,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={popins.className}>{children}</body>
+      <body className={popins.className}>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

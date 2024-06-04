@@ -1,0 +1,37 @@
+.footer {
+  background: var(--background-main);
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 108px 269px 74px;
+
+    .logoBlock {
+      .img {
+        margin-bottom: 35px;
+      }
+
+      .copyright {
+        color: var(--white);
+        @include Regular_20;
+      }
+    }
+
+    .socialsBlock {
+      display: flex;
+      align-items: center;
+      gap: 138px;
+
+      .list {
+        .item {
+          @include Regular_20;
+          color: var(--white);
+
+          &:not(:last-child) {
+            margin-bottom: 24px;
+          }
+        }
+      }
+    }
+  }
+}
