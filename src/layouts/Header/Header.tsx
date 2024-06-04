@@ -14,19 +14,19 @@ export const Header = () => {
         <nav className={styles.navbar}>
           <ul className={styles.list}>
             <li className={styles.item}>
-              <Link href='#about'>ABOUT</Link>
+              <Link href='#about' className={styles.link}>ABOUT</Link>
             </li>
             <li className={styles.item}>
-              <Link href='#features'>FEATURES</Link>
+              <Link href='#features' className={styles.link}>FEATURES</Link>
             </li>
             <li className={styles.item}>
-              <Link href='#roadmap'>ROADMAP</Link>
+              <Link href='#roadmap' className={styles.link}>ROADMAP</Link>
             </li>
             <li className={styles.item}>
-              <Link href='#partners'>PARTNERS</Link>
+              <Link href='#partners' className={styles.link}>PARTNERS</Link>
             </li>
             <li className={styles.item}>
-              <Link href='#blog'>BLOG</Link>
+              <Link href='#blog' className={styles.link}>BLOG</Link>
             </li>
             <li className={styles.item}>
               <ButtonColor href='#airdrop'>AIRDROP</ButtonColor>
