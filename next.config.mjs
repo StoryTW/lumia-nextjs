@@ -9,11 +9,11 @@ const nextConfig = {
 
     return config;
   },
-  // sassOptions: {
-  //   additionalData: `
-  //   @import "src/assets/styles/mixins.scss";
-  // `,
-  // },
+  sassOptions: {
+    additionalData: `
+    @import "src/assets/styles/mixins.scss";
+  `,
+  },
 };
 
 export default nextConfig;
