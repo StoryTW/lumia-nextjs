@@ -12,12 +12,24 @@ export const Header = () => {
         </Link>
         <nav className={styles.navbar}>
           <ul className={styles.list}>
-            <li className={styles.item}>ABOUT</li>
-            <li className={styles.item}>FEATURES</li>
-            <li className={styles.item}>AIRDROP</li>
-            <li className={styles.item}>ROADMAP</li>
-            <li className={styles.item}>PARTNERS</li>
-            <li className={styles.item}>BLOG</li>
+            <li className={styles.item}>
+              <Link href='/'>ABOUT</Link>
+            </li>
+            <li className={styles.item}>
+              <Link href='/'>FEATURES</Link>
+            </li>
+            <li className={styles.item}>
+              <Link href='/'>AIRDROP</Link>
+            </li>
+            <li className={styles.item}>
+              <Link href='/'>ROADMAP</Link>
+            </li>
+            <li className={styles.item}>
+              <Link href='/'>PARTNERS</Link>
+            </li>
+            <li className={styles.item}>
+              <Link href='/'>BLOG</Link>
+            </li>
             <li className={styles.item}>
               <button
                 style={{
