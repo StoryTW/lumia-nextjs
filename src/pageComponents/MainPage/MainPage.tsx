@@ -3,16 +3,15 @@ import { MainSection } from '@/components/sections/MainSection/MainSection';
 import styles from './MainPage.module.scss';
 // import { Swiper, SwiperSlide } from 'swiper/react';
 // import { Navigation, Pagination } from 'swiper/modules';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useGSAP } from '@gsap/react';
-import { useLayoutEffect } from 'react';
-import gsap from 'gsap';
+// import { ScrollTrigger } from 'gsap/ScrollTrigger';
+// import { useGSAP } from '@gsap/react';
+// import { useLayoutEffect } from 'react';
+// import gsap from 'gsap';
 
 export function MainPage() {
-  useLayoutEffect(() => {
-    gsap.registerPlugin(useGSAP, ScrollTrigger);
-  }, [])
-  
+  // useLayoutEffect(() => {
+  //   gsap.registerPlugin(useGSAP, ScrollTrigger);
+  // }, [])
 
   return (
     <main id='mainPage' className={styles.mainPage}>
