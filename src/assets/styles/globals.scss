@@ -84,11 +84,11 @@ body {
   background: var(--background-main);
   color: var(--white);
   // position: relative;
-  // min-height: 100vh;
+  min-height: 100vh;
   // line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
   // scrollbar-gutter: stable;
-  overflow: hidden;
+  // overflow: hidden;
   height: 100%;
 }
 

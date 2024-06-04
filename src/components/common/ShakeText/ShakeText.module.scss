@@ -1,7 +1,11 @@
 .text {
   color: var(--white);
-  box-shadow: 0px 1px 9.6px 0px #2c41ff;
-  box-shadow: 0px 0px 6.1px 0px #0500ffba;
+  text-shadow: 0px 1px 9.6px #2c41ff;
+  // text-shadow: 0px 6.1px 0px #0500ffba;
+
+  //ORIGINAL
+  // box-shadow: 0px 1px 9.6px 0px #2c41ff;
+  // box-shadow: 0px 0px 6.1px 0px #0500ffba;
 
   @include Regular_24;
 
