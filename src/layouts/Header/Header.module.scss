@@ -23,6 +23,7 @@
 
         .item {
           padding: 13px 0px;
+          @include Semibold_14;
         }
       }
     }

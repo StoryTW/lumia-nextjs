@@ -1,6 +1,15 @@
 :root {
   //COLORS
   --background-main: #161616;
-  --white: #FFFFFF;
-  --d9: #D9D9D9;
+  --white: #ffffff;
+  --d9: #d9d9d9;
+  --background-btn-color: linear-gradient(
+    240.62deg,
+    rgba(46, 60, 86, 0.33) 6.19%,
+    rgba(22, 9, 33, 0.48) 94.72%
+  );
+
+  --btn-border: #e8eafd;
+  --btn-shadow-one: 0px 0px 7.7px 1px #8a94f257;
+  --btn-shadow-second: 0px 0px 8px 0px #7588e9cc inset;
 }

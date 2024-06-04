@@ -83,12 +83,13 @@ body {
   margin: 0;
   background: var(--background-main);
   color: var(--white);
-  position: relative;
-  min-height: 100vh;
-  line-height: 1.15; /* 1 */
+  // position: relative;
+  // min-height: 100vh;
+  // line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
-
-  scrollbar-gutter: stable;
+  // scrollbar-gutter: stable;
+  overflow: hidden;
+  height: 100%;
 }
 
 dl,
@@ -113,18 +114,6 @@ button {
   font-family: inherit;
 }
 /* purgecss end ignore */
-
-// @media (prefers-color-scheme: dark) {
-//   html {
-//     color-scheme: dark;
-//   }
-// }
-
-// @media (prefers-color-scheme: light) {
-//   html {
-//     color-scheme: light;
-//   }
-// }
 
 /* Sections
    ========================================================================== */

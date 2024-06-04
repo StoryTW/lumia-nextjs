@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './Header.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
+import { ButtonColor } from '@/components/ui/Buttons/ButtonColor/ButtonColor';
 
 export const Header = () => {
   return (
@@ -13,31 +14,22 @@ export const Header = () => {
         <nav className={styles.navbar}>
           <ul className={styles.list}>
             <li className={styles.item}>
-              <Link href='/'>ABOUT</Link>
+              <Link href='#about'>ABOUT</Link>
             </li>
             <li className={styles.item}>
-              <Link href='/'>FEATURES</Link>
+              <Link href='#features'>FEATURES</Link>
             </li>
             <li className={styles.item}>
-              <Link href='/'>AIRDROP</Link>
+              <Link href='#roadmap'>ROADMAP</Link>
             </li>
             <li className={styles.item}>
-              <Link href='/'>ROADMAP</Link>
+              <Link href='#partners'>PARTNERS</Link>
             </li>
             <li className={styles.item}>
-              <Link href='/'>PARTNERS</Link>
+              <Link href='#blog'>BLOG</Link>
             </li>
             <li className={styles.item}>
-              <Link href='/'>BLOG</Link>
-            </li>
-            <li className={styles.item}>
-              <button
-                style={{
-                  color: '#fff',
-                }}
-              >
-                AIRDROP
-              </button>
+              <ButtonColor href='#airdrop'>AIRDROP</ButtonColor>
             </li>
           </ul>
         </nav>

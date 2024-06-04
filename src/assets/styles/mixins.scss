@@ -1,5 +1,4 @@
 // Media Queries Mixins
-
 @mixin respond($breakpoint) {
   @if $breakpoint==laptopXL {
     @media only screen and (max-width: 2560px) {
@@ -101,4 +100,25 @@
   font-style: normal;
   font-weight: 400;
   line-height: 24.2px;
+}
+
+@mixin Semibold_14 {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 21px;
+}
+
+@mixin Semibold_16 {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+@mixin Regular_24 {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 36px;
 }

@@ -1,8 +1,11 @@
+import { MainPage } from '@/pageComponents/MainPage/MainPage';
+import type { Metadata } from 'next';
 
-export default function Home() {
-  return (
-    <main>
-      <div>main</div>
-    </main>
-  );
+export const metadata: Metadata = {
+  title: 'Lumia',
+  description: 'Lumia',
+};
+
+export default function Main() {
+  return <MainPage />;
 }

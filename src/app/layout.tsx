@@ -5,7 +5,7 @@ import { Footer } from '@/layouts/Footer/Footer';
 import { Header } from '@/layouts/Header/Header';
 import '@/assets/styles/index.scss';
 
-const popins = Poppins({ subsets: ['latin'], weight: ['400', '600', '700'] });
+const popins = Poppins({ subsets: ['latin'], weight: ['400', '500', '600', '700'] });
 
 export const metadata: Metadata = {
   title: 'Lumia',

@@ -1,0 +1,8 @@
+.btnLink {
+  background: var(--background-btn-color);
+  padding: 15.5px 35px;
+  border-radius: 6px;
+  border: 1px solid var(--btn-border);
+  box-shadow: var(--btn-shadow-one), var(--btn-shadow-second);
+  @include Semibold_16;
+}
