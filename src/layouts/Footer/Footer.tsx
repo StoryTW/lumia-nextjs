@@ -7,7 +7,15 @@ export const Footer = () => {
     <footer className={styles.footer}>
       <div className={styles.wrapper}>
         <div className={styles.logoBlock}>
-          <Image src='/logo.svg' alt='logo' width={150} height={40} className={styles.img} />
+          <Image
+            src='/logo.svg'
+            alt='logo'
+            width={150}
+            height={40}
+            className={styles.img}
+            quality={100}
+            priority
+          />
           <div className={styles.copyright}>2024 Lumia, All Rights Reserved.</div>
         </div>
         <div className={styles.socialsBlock}>
