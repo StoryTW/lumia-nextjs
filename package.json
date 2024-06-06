@@ -10,14 +10,12 @@
   },
   "dependencies": {
     "framer-motion": "^11.2.10",
-    "gsap": "^3.12.5",
     "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18",
     "swiper": "^11.1.4"
   },
   "devDependencies": {
-    "@gsap/react": "^2.1.1",
     "@svgr/webpack": "^8.1.0",
     "@types/node": "^20",
     "@types/react": "^18",

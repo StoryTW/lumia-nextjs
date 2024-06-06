@@ -1,9 +1,6 @@
 'use client';
 import { MainSection } from '@/components/sections/MainSection/MainSection';
 import styles from './MainPage.module.scss';
-// import { useEffect, useRef } from 'react';
-import { Header } from '@/layouts/Header/Header';
-// import gsap from 'gsap';
 
 export function MainPage() {
   return (
