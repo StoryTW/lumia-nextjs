@@ -69,7 +69,7 @@ export const Video = () => {
         muted
         playsInline
       >
-        <source src={`/product-1.mp4#t=${timeStep}`} type='video/mp4' />
+        <source src={`/lumia.mp4#t=${timeStep}`} type='video/mp4' />
       </video>
     </div>
   );

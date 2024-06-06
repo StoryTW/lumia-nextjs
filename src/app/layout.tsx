@@ -32,7 +32,7 @@ export default function RootLayout({
       <body className={popins.className}>
         <Header />
         {children}
-        <Footer />
+
       </body>
     </html>
   );

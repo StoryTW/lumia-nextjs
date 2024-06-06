@@ -7,7 +7,6 @@ export const MainSection = () => {
   return (
     <section id='#main' className={styles.mainSection}>
       <Video />
-
       <div className={styles.info}>
         <p>
           The first ever <ShakeText />
