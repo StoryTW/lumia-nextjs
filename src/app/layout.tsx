@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Poppins } from 'next/font/google';
 import { ReactNode } from 'react';
-import { Footer } from '@/layouts/Footer/Footer';
+// import { Footer } from '@/layouts/Footer/Footer';
 import { Header } from '@/layouts/Header/Header';
 import 'swiper/css';
 import 'swiper/css/pagination';

@@ -1,0 +1,50 @@
+.pagination {
+  position: fixed;
+  z-index: 3;
+  right: 64px;
+  top: 40%;
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    .bullet {
+      cursor: pointer;
+      height: 8px;
+      width: 8px;
+      max-width: 8px;
+      min-width: 8px;
+      min-height: 8px;
+      min-height: 8px;
+      background: transparent;
+      border-radius: 50%;
+      @include transition;
+      padding: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &.active {
+        border: 1px solid var(--white);
+
+        .dot {
+          background: var(--white);
+        }
+      }
+
+      .dot {
+        height: 5px;
+        width: 5px;
+        max-width: 5px;
+        min-width: 5px;
+        min-height: 5px;
+        min-height: 5px;
+        border-radius: 50%;
+        background: var(--white_24);
+        box-shadow: var(--bullet_shadow);
+        @include transition;
+      }
+    }
+  }
+}

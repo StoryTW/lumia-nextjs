@@ -1,12 +1,13 @@
 import React, { useRef, useState, useEffect } from 'react';
 import styles from './Video.module.scss';
+import { useVideoStore } from '@/store/useVideoStore';
 
 export const Video = () => {
   const videoRef = useRef<HTMLVideoElement | any>(null);
 
-  const [timeStep, setTimeStep] = useState(0);
+  const setTimeCode = useVideoStore((state) => state.setTimeCode);
+  const timeCode = useVideoStore((state) => state.timeCode);
 
-  const [isReversing, setIsReversing] = useState(false);
   const [activeReverse, setActiveReverse] = useState(false);
 
   const [reverseInterval, setReverseInterval] = useState<any>(null);
@@ -19,13 +20,12 @@ export const Video = () => {
           setReverseInterval(null);
         }
         videoRef?.current?.play();
-        setIsReversing(false);
 
         setTimeout(() => {
           videoRef.current.pause();
-          setTimeStep(Math.round(videoRef.current?.currentTime));
+          setTimeCode(videoRef.current?.currentTime);
           setActiveReverse(true);
-        }, 4000);
+        }, 4500);
       } else {
         if (activeReverse) {
           videoRef.current.pause();
@@ -38,9 +38,10 @@ export const Video = () => {
               clearInterval(interval);
             }
           }, 33);
+
           setReverseInterval(interval);
-          setIsReversing(true);
           setActiveReverse(false);
+          setTimeCode(videoRef.current?.currentTime)
         }
       }
     }
@@ -56,7 +57,14 @@ export const Video = () => {
         clearInterval(reverseInterval);
       }
     };
-  }, [isReversing, reverseInterval, activeReverse]);
+  }, [reverseInterval, activeReverse]);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.currentTime = timeCode;
+      videoRef.current.pause();
+    }
+  }, [timeCode]);
 
   return (
     <div className={styles.videoWrapper}>
@@ -69,7 +77,7 @@ export const Video = () => {
         muted
         playsInline
       >
-        <source src={`/lumia.mp4#t=${timeStep}`} type='video/mp4' />
+        <source src={`/lumia.mp4#t=${timeCode}`} type='video/mp4' />
       </video>
     </div>
   );
