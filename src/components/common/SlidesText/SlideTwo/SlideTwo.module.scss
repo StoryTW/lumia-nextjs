@@ -1,0 +1,11 @@
+.title {
+  @include Semibold_60;
+  text-align: left;
+  margin-bottom: 34px;
+}
+
+.description {
+  @include Regular_20;
+  color: var(--white);
+}
+

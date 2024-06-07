@@ -9,7 +9,7 @@ interface IVideoStore {
   setTimeCode: (time: number) => void;
 }
 
-const initialTimeCodes = [0, 4, 9, 14, 19, 24, 29, 34, 38, 43, 48];
+const initialTimeCodes = [0, 4, 8, 14, 18, 23, 28, 33, 38, 43, 48, 53];
 
 export const useVideoStore = create<IVideoStore>()(
   immer((set) => ({

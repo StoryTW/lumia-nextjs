@@ -1,0 +1,20 @@
+.info {
+  .title {
+    margin-bottom: 24px;
+    @include Semibold_100;
+    text-align: left;
+    text-shadow: var(--text_shadow);
+    width: 100%;
+    max-width: 775px;
+  }
+  
+  .description {
+    @include Regular_24;
+    color: var(--white);
+    text-shadow: var(--text_shadow);
+  
+    &.margin {
+      margin-bottom: 40px;
+    }
+  }
+}

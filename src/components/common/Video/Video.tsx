@@ -7,42 +7,54 @@ export const Video = () => {
 
   const setTimeCode = useVideoStore((state) => state.setTimeCode);
   const timeCode = useVideoStore((state) => state.timeCode);
+  const timeCodesData = useVideoStore((state) => state.timeCodesData);
+
 
   const [activeReverse, setActiveReverse] = useState(false);
 
   const [reverseInterval, setReverseInterval] = useState<any>(null);
 
+  const handlePlayForward = () => {
+    if (reverseInterval) {
+      clearInterval(reverseInterval);
+      setReverseInterval(null);
+    }
+    videoRef?.current?.play();
+
+    setTimeout(() => {
+      videoRef.current.pause();
+      setTimeCode(videoRef.current?.currentTime);
+      setActiveReverse(true);
+    }, timeCodesData[1]);
+    return;
+  };
+
+  const handlePlayBack = () => {
+    if (activeReverse) {
+      videoRef.current.pause();
+      videoRef.current.playbackRate = 1;
+
+      const interval = setInterval(() => {
+        if (videoRef.current?.currentTime > 0) {
+          videoRef.current.currentTime -= 0.033;
+        } else {
+          clearInterval(interval);
+        }
+      }, 33);
+
+      setReverseInterval(interval);
+      setActiveReverse(false);
+      setTimeCode(videoRef.current?.currentTime);
+    }
+    return;
+  };
+
   const handleWheel = (event: WheelEvent) => {
     if (videoRef.current) {
       if (event.deltaY > 0) {
-        if (reverseInterval) {
-          clearInterval(reverseInterval);
-          setReverseInterval(null);
-        }
-        videoRef?.current?.play();
-
-        setTimeout(() => {
-          videoRef.current.pause();
-          setTimeCode(videoRef.current?.currentTime);
-          setActiveReverse(true);
-        }, 4500);
+        handlePlayForward();
       } else {
-        if (activeReverse) {
-          videoRef.current.pause();
-          videoRef.current.playbackRate = 1;
-
-          const interval = setInterval(() => {
-            if (videoRef.current?.currentTime > 0) {
-              videoRef.current.currentTime -= 0.033;
-            } else {
-              clearInterval(interval);
-            }
-          }, 33);
-
-          setReverseInterval(interval);
-          setActiveReverse(false);
-          setTimeCode(videoRef.current?.currentTime)
-        }
+        handlePlayBack();
       }
     }
   };

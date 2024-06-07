@@ -1,0 +1,35 @@
+.info {
+  width: 100%;
+  max-width: 354px;
+
+  .topic {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 28px;
+
+    .dash {
+      width: 24px;
+      height: 1px;
+      background: var(--white);
+      opacity: 0.5;
+    }
+
+    .topicText {
+      @include Semibold_12;
+      color: var(--white);
+      opacity: 0.5;
+    }
+  }
+
+  .title {
+    @include Bold_32;
+    margin-bottom: 32px;
+    color: var(--white);
+  }
+
+  .description {
+    @include Regular_20;
+    color: var(--white);
+  }
+}
