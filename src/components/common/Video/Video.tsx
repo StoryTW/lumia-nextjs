@@ -7,35 +7,55 @@ export const Video = () => {
 
   const setTimeCode = useVideoStore((state) => state.setTimeCode);
   const timeCode = useVideoStore((state) => state.timeCode);
-  const timeCodesData = useVideoStore((state) => state.timeCodesData);
 
+  const timeCodesData = useVideoStore((state) => state.timeCodesData);
+  const setShowText = useVideoStore((state) => state.setShowText);
+
+  const setIsEnded = useVideoStore((state) => state.setIsEnded);
+  const isEnded = useVideoStore((state) => state.isEnded);
+
+  // const setCurrentTimeoutIndex = useVideoStore((state) => state.setCurrentTimeoutIndex);
+  // const currentTimeoutIndex = useVideoStore((state) => state.currentTimeoutIndex);
 
   const [activeReverse, setActiveReverse] = useState(false);
+  const [currentTimeoutIndex, setCurrentTimeoutIndex] = useState(0);
 
   const [reverseInterval, setReverseInterval] = useState<any>(null);
 
   const handlePlayForward = () => {
-    if (reverseInterval) {
-      clearInterval(reverseInterval);
-      setReverseInterval(null);
-    }
-    videoRef?.current?.play();
+    if (!isEnded) {
+      if (reverseInterval) {
+        clearInterval(reverseInterval);
+        setReverseInterval(null);
+      }
 
-    setTimeout(() => {
-      videoRef.current.pause();
-      setTimeCode(videoRef.current?.currentTime);
-      setActiveReverse(true);
-    }, timeCodesData[1]);
-    return;
+      setShowText(false);
+      videoRef.current?.play();
+      if (currentTimeoutIndex < timeCodesData.length - 1) {
+        const timeoutDuration =
+          (timeCodesData[currentTimeoutIndex + 1] - (timeCodesData[currentTimeoutIndex] || 0)) *
+          1000;
+
+        setTimeout(() => {
+          videoRef?.current?.pause();
+          setTimeCode(videoRef?.current?.currentTime as number);
+          setActiveReverse(true);
+          setCurrentTimeoutIndex((prev: number) => prev + 1);
+          // setCurrentTimeoutIndex()
+          setShowText(true);
+        }, timeoutDuration);
+      }
+      return;
+    }
   };
 
   const handlePlayBack = () => {
-    if (activeReverse) {
-      videoRef.current.pause();
-      videoRef.current.playbackRate = 1;
+    if (activeReverse && videoRef && videoRef.current) {
+      videoRef?.current?.pause();
+      // videoRef?.current?.playbackRate = 1;
 
       const interval = setInterval(() => {
-        if (videoRef.current?.currentTime > 0) {
+        if (videoRef && videoRef.current) {
           videoRef.current.currentTime -= 0.033;
         } else {
           clearInterval(interval);
@@ -44,7 +64,7 @@ export const Video = () => {
 
       setReverseInterval(interval);
       setActiveReverse(false);
-      setTimeCode(videoRef.current?.currentTime);
+      setTimeCode(videoRef.current?.currentTime as number);
     }
     return;
   };
@@ -57,6 +77,10 @@ export const Video = () => {
         handlePlayBack();
       }
     }
+  };
+
+  const onVideoEnd = () => {
+    setIsEnded(true);
   };
 
   useEffect(() => {
@@ -73,8 +97,8 @@ export const Video = () => {
 
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.currentTime = timeCode;
       videoRef.current.pause();
+      videoRef.current.currentTime = timeCode;
     }
   }, [timeCode]);
 
@@ -86,6 +110,7 @@ export const Video = () => {
         preload='metadata'
         width={'100%'}
         height={'100%'}
+        onEnded={onVideoEnd}
         muted
         playsInline
       >

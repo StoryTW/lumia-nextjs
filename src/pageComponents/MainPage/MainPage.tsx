@@ -4,9 +4,11 @@ import styles from './MainPage.module.scss';
 import ReactFullpage from '@fullpage/react-fullpage';
 import { Footer } from '@/layouts/Footer/Footer';
 import { useVideoStore } from '@/store/useVideoStore';
+import { ParnersSection } from '@/components/sections/ParnersSection/ParnersSection';
 
 export function MainPage() {
-  const timeCode = useVideoStore((state) => state.timeCode);
+  const isEnded = useVideoStore((state) => state.isEnded);
+  // const setIsEnded = useVideoStore((state) => state.setIsEnded);
 
   return (
     <main id='mainPage' className={styles.mainPage}>
@@ -15,10 +17,9 @@ export function MainPage() {
         credits={{ enabled: false }}
         scrollingSpeed={1000}
         onLeave={(origin) => {
-          if (origin.index === 0 && timeCode !== 53) {
+          if (origin.index === 0 && !isEnded) {
             return false;
           }
-
           return true;
         }}
         render={({ state, fullpageApi }) => {
@@ -29,10 +30,10 @@ export function MainPage() {
               </div>
 
               <div className='section'>
-                <section>
-                  First
-                </section>
-                <Footer />
+                <ParnersSection />
+              </div>
+              <div className='section'>
+                 <Footer />
               </div>
             </ReactFullpage.Wrapper>
           );
