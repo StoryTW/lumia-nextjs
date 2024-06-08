@@ -1,9 +1,17 @@
-import React, { useRef, useState, useEffect } from 'react';
+'use client'
+import React, { useRef, useState, useEffect, FC, Dispatch, SetStateAction } from 'react';
 import styles from './Video.module.scss';
 import { useVideoStore } from '@/store/useVideoStore';
 
-export const Video = () => {
+interface IVideo {
+  currentTimeoutIndex: number;
+  setCurrentTimeoutIndex: Dispatch<SetStateAction<number>>;
+}
+
+export const Video: FC<IVideo> = ({ currentTimeoutIndex, setCurrentTimeoutIndex }) => {
   const videoRef = useRef<HTMLVideoElement | any>(null);
+
+  const [startPlay, setStartPlay] = useState(false);
 
   const setTimeCode = useVideoStore((state) => state.setTimeCode);
   const timeCode = useVideoStore((state) => state.timeCode);
@@ -14,16 +22,12 @@ export const Video = () => {
   const setIsEnded = useVideoStore((state) => state.setIsEnded);
   const isEnded = useVideoStore((state) => state.isEnded);
 
-  // const setCurrentTimeoutIndex = useVideoStore((state) => state.setCurrentTimeoutIndex);
-  // const currentTimeoutIndex = useVideoStore((state) => state.currentTimeoutIndex);
-
   const [activeReverse, setActiveReverse] = useState(false);
-  const [currentTimeoutIndex, setCurrentTimeoutIndex] = useState(0);
 
   const [reverseInterval, setReverseInterval] = useState<any>(null);
 
   const handlePlayForward = () => {
-    if (!isEnded) {
+    if (!isEnded && !startPlay) {
       if (reverseInterval) {
         clearInterval(reverseInterval);
         setReverseInterval(null);
@@ -31,21 +35,6 @@ export const Video = () => {
 
       setShowText(false);
       videoRef.current?.play();
-      if (currentTimeoutIndex < timeCodesData.length - 1) {
-        const timeoutDuration =
-          (timeCodesData[currentTimeoutIndex + 1] - (timeCodesData[currentTimeoutIndex] || 0)) *
-          1000;
-
-        setTimeout(() => {
-          videoRef?.current?.pause();
-          setTimeCode(videoRef?.current?.currentTime as number);
-          setActiveReverse(true);
-          setCurrentTimeoutIndex((prev: number) => prev + 1);
-          // setCurrentTimeoutIndex()
-          setShowText(true);
-        }, timeoutDuration);
-      }
-      return;
     }
   };
 
@@ -101,6 +90,26 @@ export const Video = () => {
       videoRef.current.currentTime = timeCode;
     }
   }, [timeCode]);
+
+  useEffect(() => {
+    if (videoRef.current && !startPlay) {
+      const timeoutDuration =
+        (timeCodesData[currentTimeoutIndex + 1] - (timeCodesData[currentTimeoutIndex] || 0)) * 1000;
+
+      const timer = setTimeout(() => {
+        videoRef.current.pause();
+        setStartPlay(false);
+        setTimeCode(videoRef?.current?.currentTime);
+        setActiveReverse(true);
+        if (currentTimeoutIndex < 13) {
+          setCurrentTimeoutIndex((prev: number) => prev + 1);
+        }
+        setShowText(true);
+      }, timeoutDuration);
+
+      return () => clearTimeout(timer);
+    }
+  }, [startPlay, currentTimeoutIndex, timeCodesData]);
 
   return (
     <div className={styles.videoWrapper}>

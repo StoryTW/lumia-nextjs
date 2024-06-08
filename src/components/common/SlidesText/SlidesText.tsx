@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import React, { ReactNode } from 'react';
+import React, { Dispatch, FC, ReactNode, SetStateAction } from 'react';
 import styles from './SlidesText.module.scss';
 import { opacityVariants } from '@/utils/animations';
 import { SlideOne } from './SlideOne/SlideOne';
@@ -23,11 +23,13 @@ const currentText: { [index: number]: ReactNode } = {
   ),
 };
 
-export const SlidesText = () => {
-  const timeCodesData = useVideoStore((state) => state.timeCodesData);
-  const showText = useVideoStore((state) => state.showText);
+interface ISlidesText {
+  currentTimeoutIndex: number;
+}
 
-  const currentTimeoutIndex = useVideoStore((state) => state.currentTimeoutIndex);
+export const SlidesText: FC<ISlidesText> = ({ currentTimeoutIndex }) => {
+  // const timeCodesData = useVideoStore((state) => state.timeCodesData);
+  const showText = useVideoStore((state) => state.showText);
 
   return (
     <AnimatePresence mode='wait'>
@@ -37,7 +39,7 @@ export const SlidesText = () => {
           initial='hide'
           animate='show'
           exit='hide'
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.7 }}
         >
           <div className={styles.wrp}>{currentText[currentTimeoutIndex]}</div>
         </motion.div>
