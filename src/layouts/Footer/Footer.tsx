@@ -22,25 +22,31 @@ export const Footer = () => {
         <div className={styles.socialsBlock}>
           <ul className={styles.list}>
             <li className={styles.item}>
-              <Link href={'#'}>Solutions</Link>
+              Solutions
             </li>
             <li className={styles.item}>
-              <Link href={'#'}>Lumia</Link>
+              <Link href=' https://lumia.org/' target='_blank'>
+                Lumia
+              </Link>
             </li>
             <li className={styles.item}>
-              <Link href={'#'}>Lumia Stream</Link>
+              <Link href='https://lumia.stream/' target='_blank'>
+                Lumia Stream
+              </Link>
             </li>
           </ul>
 
           <ul className={styles.list}>
             <li className={styles.item}>
-              <Link href={'#'}>Developers</Link>
+              Developers
             </li>
             <li className={styles.item}>
-              <Link href={'#'}>Docs</Link>
+              <Link href='https://docs.lumia.org/' target='_blank'>
+                Docs
+              </Link>
             </li>
             <li className={styles.item}>
-              <Link href={'#'}>GitHub</Link>
+              <Link href='https://github.com/orionprotocol' target='_blank'>GitHub</Link>
             </li>
           </ul>
         </div>

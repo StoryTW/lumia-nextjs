@@ -18,6 +18,7 @@ export const Video: FC<IVideo> = ({ currentBlock, setCurrentBlock }) => {
 
   const [playing, setPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const reverseIntervalRef = useRef<number | null>(null);
 
   const handleWheel = (event: WheelEvent) => {
     if (playing) return;
@@ -28,58 +29,81 @@ export const Video: FC<IVideo> = ({ currentBlock, setCurrentBlock }) => {
       setCurrentBlock((prevBlock) => prevBlock + 1);
     }
 
-    waitBlock(currentBlock);
+    waitBlock(currentBlock, event.deltaY < 0);
   };
 
-  const waitBlock = (block: any) => {
+  const waitBlock = (block: any, reverse: boolean) => {
     switch (block) {
       case 0:
-        playVideo(3500);
+        playVideo(3500, reverse);
         break;
       case 1:
-        playVideo(3400);
+        playVideo(3400, reverse);
         break;
       case 2:
-        playVideo(3400);
+        playVideo(3400, reverse);
         break;
       case 3:
-        playVideo(3400);
+        playVideo(3400, reverse);
         break;
       case 4:
-        playVideo(3300);
+        playVideo(3300, reverse);
         break;
       case 5:
-        playVideo(3300);
+        playVideo(3300, reverse);
         break;
       case 6:
-        playVideo(3300);
+        playVideo(3300, reverse);
         break;
       case 7:
-        playVideo(3300);
+        playVideo(3300, reverse);
         break;
       case 8:
-        playVideo(3300);
+        playVideo(3300, reverse);
         break;
       case 9:
-        playVideo(10000);
+        playVideo(10000, reverse);
         break;
       default:
         break;
     }
   };
 
-  const playVideo = (duration: number) => {
+  const playVideo = (duration: number, reverse: boolean) => {
     if (videoRef.current) {
-      videoRef.current.play();
-      setPlaying(true);
-      setShowText(false);
-      setTimeout(() => {
-        videoRef?.current?.pause();
+      videoRef.current.playbackRate = 1;
+      if (reverse) {
+        reversePlay(duration);
+      } else {
+        videoRef.current.play();
+        setPlaying(true);
+        setShowText(false);
+        setTimeout(() => {
+          videoRef?.current?.pause();
+          setPlaying(false);
+          setShowText(true);
+          setTimeCode(videoRef?.current?.currentTime as number);
+        }, duration);
+      }
+    }
+  };
+
+  const reversePlay = (duration: number) => {
+    const video = videoRef.current as HTMLVideoElement;
+
+    video.currentTime -= 0.033;
+
+    if (!video) return;
+
+    reverseIntervalRef.current = window.setInterval(() => {
+      if (video.currentTime <= 0) {
         setPlaying(false);
         setShowText(true);
-        setTimeCode(videoRef?.current?.currentTime as number);
-      }, duration);
-    }
+        setTimeCode(video.currentTime);
+      }
+
+      return () => clearInterval(reverseIntervalRef.current as number);
+    }, duration);
   };
 
   const onVideoEnd = () => {
@@ -92,8 +116,18 @@ export const Video: FC<IVideo> = ({ currentBlock, setCurrentBlock }) => {
 
     return () => {
       window.removeEventListener('wheel', handleScroll);
+
+      if (reverseIntervalRef.current) {
+        clearInterval(reverseIntervalRef.current);
+      }
     };
   }, [playing, currentBlock]);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.currentTime = timeCode;
+    }
+  }, [timeCode]);
 
   return (
     <div className={styles.videoWrapper}>

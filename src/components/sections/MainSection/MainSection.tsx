@@ -1,13 +1,16 @@
 'use client';
-import React, { useState } from 'react';
+import React, { Dispatch, FC, SetStateAction, useState } from 'react';
 import styles from './MainSection.module.scss';
 import { Video } from '@/components/common/Video/Video';
 import { Pagination } from '@/components/common/Pagination/Pagination';
 import { SlidesText } from '@/components/common/SlidesText/SlidesText';
 
-export const MainSection = () => {
-  const [currentBlock, setCurrentBlock] = useState(0);
+interface IMainSection {
+  currentBlock: number;
+  setCurrentBlock: Dispatch<SetStateAction<number>>
+}
 
+export const MainSection: FC<IMainSection> = ({ currentBlock, setCurrentBlock }) => {
   return (
     <section id='#main' className={styles.mainSection}>
       <Video currentBlock={currentBlock} setCurrentBlock={setCurrentBlock} />

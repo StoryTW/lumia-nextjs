@@ -7,6 +7,7 @@
   @include Semibold_16;
   color: var(--d9);
   @include transition_500;
+  cursor: pointer;
 
   &:hover {
     border: 1px solid var(--btn-border);

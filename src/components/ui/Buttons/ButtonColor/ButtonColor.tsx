@@ -1,14 +1,14 @@
-import type { LinkProps } from 'next/link';
-import Link from 'next/link';
-import React, { AnchorHTMLAttributes, PropsWithChildren } from 'react';
+import React, { HTMLAttributes, PropsWithChildren } from 'react';
 import styles from './ButtonColor.module.scss';
 
-type TButtonColor = AnchorHTMLAttributes<HTMLAnchorElement> & LinkProps & PropsWithChildren;
+// type TButtonColor = AnchorHTMLAttributes<HTMLAnchorElement> & LinkProps & PropsWithChildren;
 
-export const ButtonColor = ({ href, children, ...props }: TButtonColor) => {
+type TButtonColor = HTMLAttributes<HTMLButtonElement> & PropsWithChildren;
+
+export const ButtonColor = ({ children, ...props }: TButtonColor) => {
   return (
-    <Link href={href} className={styles.btnLink} {...props}>
+    <button className={styles.btnLink} {...props}>
       {children}
-    </Link>
+    </button>
   );
 };

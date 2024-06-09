@@ -6,13 +6,26 @@
     justify-content: space-between;
     padding: 108px 64px 74px;
 
+    @include respond(tabletL) {
+      flex-direction: column;
+    }
+
+    @include respond(mobileL) {
+      padding: 108px 24px 74px;
+    }
+
     .logoBlock {
+      @include respond(tabletL) {
+        margin-bottom: 60px;
+      }
+
       .img {
         margin-bottom: 35px;
       }
 
       .copyright {
         color: var(--white);
+        opacity: 0.5;
         @include Regular_20;
       }
     }
@@ -21,6 +34,10 @@
       display: flex;
       align-items: center;
       gap: 138px;
+
+      @include respond(mobileL) {
+        gap: 40px;
+      }
 
       .list {
         .item {

@@ -1,13 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Poppins } from 'next/font/google';
 import { ReactNode } from 'react';
-// import { Footer } from '@/layouts/Footer/Footer';
-import { Header } from '@/layouts/Header/Header';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
 import '@/assets/styles/index.scss';
-import Script from 'next/script';
 
 const popins = Poppins({ subsets: ['latin'], weight: ['400', '500'] });
 
@@ -31,7 +25,6 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={popins.className}>
-        <Header />
         {children}
       </body>
     </html>

@@ -5,39 +5,45 @@ import ReactFullpage from '@fullpage/react-fullpage';
 import { Footer } from '@/layouts/Footer/Footer';
 import { useVideoStore } from '@/store/useVideoStore';
 import { ParnersSection } from '@/components/sections/ParnersSection/ParnersSection';
+import { Header } from '@/layouts/Header/Header';
+import { useState } from 'react';
 
 export function MainPage() {
   const isEnded = useVideoStore((state) => state.isEnded);
+  const [currentBlock, setCurrentBlock] = useState(0);
 
   return (
-    <main id='mainPage' className={styles.mainPage}>
-      <ReactFullpage
-        // licenseKey={'YOUR_KEY_HERE'}
-        credits={{ enabled: false }}
-        scrollingSpeed={1000}
-        onLeave={(origin) => {
-          if (origin.index === 0 && !isEnded) {
-            return false;
-          }
-          return true;
-        }}
-        render={({ state, fullpageApi }) => {
-          return (
-            <ReactFullpage.Wrapper>
-              <div className='section'>
-                <MainSection />
-              </div>
+    <>
+      <main id='mainPage' className={styles.mainPage}>
+        <ReactFullpage
+          // licenseKey={'YOUR_KEY_HERE'}
+          credits={{ enabled: false }}
+          scrollingSpeed={1000}
+          onLeave={(origin) => {
+            if (origin.index === 0 && !isEnded) {
+              return false;
+            }
+            return true;
+          }}
+          render={({ state, fullpageApi }) => {
+            return (
+              <ReactFullpage.Wrapper>
+                <div className='section main'>
+                  <Header setCurrentBlock={setCurrentBlock} />
+                  <MainSection currentBlock={currentBlock} setCurrentBlock={setCurrentBlock} />
+                </div>
 
-              <div className='section'>
-                <ParnersSection />
-              </div>
-              <div className='section'>
-                 <Footer />
-              </div>
-            </ReactFullpage.Wrapper>
-          );
-        }}
-      />
-    </main>
+                <div className='section partners' id='#partners'>
+                  <ParnersSection />
+                </div>
+                <div className='section footer'>
+                  <Footer />
+                </div>
+              </ReactFullpage.Wrapper>
+            );
+          }}
+        />
+      </main>
+    </>
   );
 }
