@@ -3,8 +3,6 @@ import { immer } from 'zustand/middleware/immer';
 
 interface IVideoStore {
   timeCodesData: number[];
-  videoData: IVideoData;
-  setVideoData: (data: IVideoData) => void;
   timeCode: number;
   setTimeCode: (time: number) => void;
   isEnded: boolean;
@@ -15,16 +13,11 @@ interface IVideoStore {
   setCurrentTimeoutIndex: () => void;
 }
 
-const initialTimeCodes = [0, 4, 8, 14, 18, 23, 28, 33, 38, 43, 48, 53];
+const initialTimeCodes = [0, 3.5, 6.9, 10.3, 13.7, 17, 20.3, 23.6, 26.9, 30.4];
 
 export const useVideoStore = create<IVideoStore>()(
   immer((set) => ({
     timeCodesData: initialTimeCodes,
-    videoData: {} as IVideoData,
-    setVideoData: (data) =>
-      set((state) => {
-        state.videoData = { ...data };
-      }),
     timeCode: 0,
     setTimeCode: (time) =>
       set((state) => {

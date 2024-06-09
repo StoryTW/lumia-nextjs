@@ -7,6 +7,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import '@/assets/styles/index.scss';
+import Script from 'next/script';
 
 const popins = Poppins({ subsets: ['latin'], weight: ['400', '500'] });
 
@@ -32,7 +33,6 @@ export default function RootLayout({
       <body className={popins.className}>
         <Header />
         {children}
-
       </body>
     </html>
   );

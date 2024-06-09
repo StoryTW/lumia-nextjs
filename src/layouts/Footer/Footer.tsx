@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Footer.module.scss';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export const Footer = () => {
   return (
@@ -20,15 +21,27 @@ export const Footer = () => {
         </div>
         <div className={styles.socialsBlock}>
           <ul className={styles.list}>
-            <li className={styles.item}>Solutions</li>
-            <li className={styles.item}>Lumia</li>
-            <li className={styles.item}>Lumia Stream</li>
+            <li className={styles.item}>
+              <Link href={'#'}>Solutions</Link>
+            </li>
+            <li className={styles.item}>
+              <Link href={'#'}>Lumia</Link>
+            </li>
+            <li className={styles.item}>
+              <Link href={'#'}>Lumia Stream</Link>
+            </li>
           </ul>
 
           <ul className={styles.list}>
-            <li className={styles.item}>Developers</li>
-            <li className={styles.item}>Docs</li>
-            <li className={styles.item}>GitHub</li>
+            <li className={styles.item}>
+              <Link href={'#'}>Developers</Link>
+            </li>
+            <li className={styles.item}>
+              <Link href={'#'}>Docs</Link>
+            </li>
+            <li className={styles.item}>
+              <Link href={'#'}>GitHub</Link>
+            </li>
           </ul>
         </div>
       </div>

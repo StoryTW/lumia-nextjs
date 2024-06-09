@@ -1,0 +1,18 @@
+.text {
+  @include Regular_24;
+  text-shadow: var(--text_shadow_2);
+  color: var(--white);
+  font-weight: 600;
+  border-right: 1px solid var(--white);
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--white);
+  }
+}

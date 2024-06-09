@@ -4,7 +4,7 @@
   .wrapper {
     display: flex;
     justify-content: space-between;
-    padding: 108px 269px 74px;
+    padding: 108px 64px 74px;
 
     .logoBlock {
       .img {
@@ -29,6 +29,14 @@
 
           &:not(:last-child) {
             margin-bottom: 24px;
+          }
+
+          a {
+            @include transition;
+          }
+
+          a:hover {
+            color: var(--blue);
           }
         }
       }

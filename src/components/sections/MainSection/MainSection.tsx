@@ -6,15 +6,18 @@ import { Pagination } from '@/components/common/Pagination/Pagination';
 import { SlidesText } from '@/components/common/SlidesText/SlidesText';
 
 export const MainSection = () => {
-  const [currentTimeoutIndex, setCurrentTimeoutIndex] = useState(0);
+  const [currentBlock, setCurrentBlock] = useState(0);
 
   return (
     <section id='#main' className={styles.mainSection}>
       <Video
-        currentTimeoutIndex={currentTimeoutIndex}
-        setCurrentTimeoutIndex={setCurrentTimeoutIndex}
+        currentBlock={currentBlock}
+        setCurrentBlock={setCurrentBlock}
       />
-      <SlidesText currentTimeoutIndex={currentTimeoutIndex} />
+      <SlidesText
+        currentBlock={currentBlock}
+        setCurrentBlock={setCurrentBlock}
+      />
       <Pagination />
     </section>
   );
