@@ -1,5 +1,5 @@
 'use client';
-import React, { Dispatch, FC, SetStateAction, useState } from 'react';
+import React, { Dispatch, FC, SetStateAction } from 'react';
 import styles from './MainSection.module.scss';
 import { Video } from '@/components/common/Video/Video';
 import { Pagination } from '@/components/common/Pagination/Pagination';

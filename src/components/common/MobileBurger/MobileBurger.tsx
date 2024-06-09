@@ -39,7 +39,7 @@ export const MobileBurger: React.FC<IMobileNav> = ({ openMenu, setOpenMenu, hand
     },
     {
       id: 3,
-      onClick: () => handleCloseMenu(8),
+      onClick: () => handleCloseMenu(9),
       name: 'AIRDROP',
     },
   ];

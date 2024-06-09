@@ -62,7 +62,10 @@ export const Video: FC<IVideo> = ({ currentBlock, setCurrentBlock }) => {
         playVideo(3300, reverse);
         break;
       case 9:
-        playVideo(10000, reverse);
+        playVideo(3400, reverse);
+        break;
+      case 10:
+        playVideo(6600, reverse);
         break;
       default:
         break;

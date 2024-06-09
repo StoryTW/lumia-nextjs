@@ -58,7 +58,7 @@ export const Header: FC<IHeader> = ({ setCurrentBlock }) => {
                 </Link>
               </li>
               <li className={styles.item}>
-                <ButtonColor onClick={() => handleNavigate(8)}>AIRDROP</ButtonColor>
+                <ButtonColor onClick={() => handleNavigate(9)}>AIRDROP</ButtonColor>
               </li>
             </ul>
           </nav>
