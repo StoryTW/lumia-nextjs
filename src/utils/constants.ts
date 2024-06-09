@@ -34,4 +34,14 @@ export const slideData = {
     description:
       'Utilizing zkSNARKs, Lumia ensures that trading decisions made by AI bots align with neural network model predictions without revealing the models details, providing transparency and trust in RWA yield management.',
   },
+  slideEighth: {
+    title: 'Airdrop',
+    description:
+      'Lumia Ecosystem Airdrop: Season 1 - Drop #1 (Coming Soon)',
+  },
+  slideNinth: {
+    title: 'Roadmap',
+    description:
+      'Aggregated native yield restaking for RWAs',
+  }
 };

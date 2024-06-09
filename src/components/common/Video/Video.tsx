@@ -9,7 +9,7 @@ interface IVideo {
 }
 
 export const Video: FC<IVideo> = ({ currentBlock, setCurrentBlock }) => {
-  // const setTimeCode = useVideoStore((state) => state.setTimeCode);
+  const setTimeCode = useVideoStore((state) => state.setTimeCode);
   const timeCode = useVideoStore((state) => state.timeCode);
 
   const setShowText = useVideoStore((state) => state.setShowText);
@@ -61,10 +61,7 @@ export const Video: FC<IVideo> = ({ currentBlock, setCurrentBlock }) => {
         playVideo(3300);
         break;
       case 9:
-        playVideo(3500);
-        break;
-      case 10:
-        playVideo(6500);
+        playVideo(10000);
         break;
       default:
         break;
@@ -80,6 +77,7 @@ export const Video: FC<IVideo> = ({ currentBlock, setCurrentBlock }) => {
         videoRef?.current?.pause();
         setPlaying(false);
         setShowText(true);
+        setTimeCode(videoRef?.current?.currentTime as number);
       }, duration);
     }
   };
@@ -102,14 +100,14 @@ export const Video: FC<IVideo> = ({ currentBlock, setCurrentBlock }) => {
       <video
         ref={videoRef}
         className={styles.video}
+        onEnded={onVideoEnd}
         preload='metadata'
         width={'100%'}
         height={'100%'}
         muted
         playsInline
-        onEnded={onVideoEnd}
       >
-        <source src={`/lumia-2.mp4#t=${timeCode}`} type='video/mp4' />
+        <source src={`/lumia.mp4#t=${timeCode}`} type='video/mp4' />
       </video>
     </div>
   );

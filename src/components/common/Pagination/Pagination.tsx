@@ -13,8 +13,9 @@ export const Pagination: FC<IPagination> = ({ currentBlock, setCurrentBlock }) =
   const setTimeCode = useVideoStore((state) => state.setTimeCode);
   const timeCode = useVideoStore((state) => state.timeCode);
 
-  const handleChangeTimeCode = (time: number) => {
-    setTimeCode(time);
+  const handleChangeTimeCode = (index: number) => {
+    setTimeCode(timeCodesData[index]);
+    setCurrentBlock(index);
   };
 
   return (
@@ -33,11 +34,7 @@ export const Pagination: FC<IPagination> = ({ currentBlock, setCurrentBlock }) =
               className={clsx(styles.bullet, {
                 [styles.active]: isActive,
               })}
-              onClick={() => {
-                handleChangeTimeCode(time);
-                setCurrentBlock(index);
-                return;
-              }}
+              onClick={() => handleChangeTimeCode(index)}
             >
               <div className={styles.dot} />
             </button>

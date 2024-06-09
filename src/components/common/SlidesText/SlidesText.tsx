@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import React, { Dispatch, FC, ReactNode, SetStateAction, useEffect, useState } from 'react';
+import React, { FC, ReactNode } from 'react';
 import styles from './SlidesText.module.scss';
 import { opacityVariants } from '@/utils/animations';
 import { SlideOne } from './SlideOne/SlideOne';
@@ -7,6 +7,10 @@ import { SlideTwo } from './SlideTwo/SlideTwo';
 import { SlideReuse } from './SlideReuse/SlideReuse';
 import { slideData } from '@/utils/constants';
 import { useVideoStore } from '@/store/useVideoStore';
+
+interface ISlidesText {
+  currentBlock: number;
+}
 
 const currentText: { [index: number]: ReactNode } = {
   0: <SlideOne />,
@@ -21,19 +25,14 @@ const currentText: { [index: number]: ReactNode } = {
   7: (
     <SlideReuse title={slideData.slideSeven.title} description={slideData.slideSeven.description} />
   ),
+  8: <SlideReuse title={slideData.slideSix.title} description={slideData.slideSix.description} />,
+  9: (
+    <SlideReuse title={slideData.slideSeven.title} description={slideData.slideSeven.description} />
+  ),
 };
 
-interface ISlidesText {
-  currentBlock: number;
-  setCurrentBlock: Dispatch<SetStateAction<number>>;
-}
-
-export const SlidesText: FC<ISlidesText> = ({ currentBlock, setCurrentBlock }) => {
-  const timeCodesData = useVideoStore((state) => state.timeCodesData);
+export const SlidesText: FC<ISlidesText> = ({ currentBlock }) => {
   const showText = useVideoStore((state) => state.showText);
-  // const setShowText = useVideoStore((state) => state.setShowText);
-
-  console.log(currentBlock ,'currentBlock');
 
   return (
     <AnimatePresence mode='wait'>

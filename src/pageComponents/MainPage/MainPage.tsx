@@ -8,7 +8,6 @@ import { ParnersSection } from '@/components/sections/ParnersSection/ParnersSect
 
 export function MainPage() {
   const isEnded = useVideoStore((state) => state.isEnded);
-  // const setIsEnded = useVideoStore((state) => state.setIsEnded);
 
   return (
     <main id='mainPage' className={styles.mainPage}>
