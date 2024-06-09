@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { Dispatch, FC, SetStateAction } from 'react';
 import styles from './Pagination.module.scss';
 import { useVideoStore } from '@/store/useVideoStore';
 import clsx from 'clsx';
 
-export const Pagination = () => {
+interface IPagination {
+  currentBlock: number;
+  setCurrentBlock: Dispatch<SetStateAction<number>>;
+}
+
+export const Pagination: FC<IPagination> = ({ currentBlock, setCurrentBlock }) => {
   const timeCodesData = useVideoStore((state) => state.timeCodesData);
   const setTimeCode = useVideoStore((state) => state.setTimeCode);
   const timeCode = useVideoStore((state) => state.timeCode);
@@ -28,7 +33,11 @@ export const Pagination = () => {
               className={clsx(styles.bullet, {
                 [styles.active]: isActive,
               })}
-              onClick={() => handleChangeTimeCode(time)}
+              onClick={() => {
+                handleChangeTimeCode(time);
+                setCurrentBlock(index);
+                return;
+              }}
             >
               <div className={styles.dot} />
             </button>

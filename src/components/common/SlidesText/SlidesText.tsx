@@ -33,6 +33,8 @@ export const SlidesText: FC<ISlidesText> = ({ currentBlock, setCurrentBlock }) =
   const showText = useVideoStore((state) => state.showText);
   // const setShowText = useVideoStore((state) => state.setShowText);
 
+  console.log(currentBlock ,'currentBlock');
+
   return (
     <AnimatePresence mode='wait'>
       {showText && (

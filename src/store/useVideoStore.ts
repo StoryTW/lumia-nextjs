@@ -28,7 +28,7 @@ export const useVideoStore = create<IVideoStore>()(
       set((state) => {
         state.isEnded = isEnded;
       }),
-    showText: false,
+    showText: true,
     setShowText: (showText) =>
       set((state) => {
         state.showText = showText;

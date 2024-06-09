@@ -12,11 +12,9 @@ export const Video: FC<IVideo> = ({ currentBlock, setCurrentBlock }) => {
   // const setTimeCode = useVideoStore((state) => state.setTimeCode);
   const timeCode = useVideoStore((state) => state.timeCode);
 
-  // const timeCodesData = useVideoStore((state) => state.timeCodesData);
   const setShowText = useVideoStore((state) => state.setShowText);
 
   const setIsEnded = useVideoStore((state) => state.setIsEnded);
-  // const isEnded = useVideoStore((state) => state.isEnded);
 
   const [playing, setPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -35,8 +33,11 @@ export const Video: FC<IVideo> = ({ currentBlock, setCurrentBlock }) => {
 
   const waitBlock = (block: any) => {
     switch (block) {
-      case 1:
+      case 0:
         playVideo(3500);
+        break;
+      case 1:
+        playVideo(3400);
         break;
       case 2:
         playVideo(3400);
@@ -45,7 +46,7 @@ export const Video: FC<IVideo> = ({ currentBlock, setCurrentBlock }) => {
         playVideo(3400);
         break;
       case 4:
-        playVideo(3400);
+        playVideo(3300);
         break;
       case 5:
         playVideo(3300);
@@ -60,12 +61,9 @@ export const Video: FC<IVideo> = ({ currentBlock, setCurrentBlock }) => {
         playVideo(3300);
         break;
       case 9:
-        playVideo(3300);
-        break;
-      case 10:
         playVideo(3500);
         break;
-      case 11:
+      case 10:
         playVideo(6500);
         break;
       default:

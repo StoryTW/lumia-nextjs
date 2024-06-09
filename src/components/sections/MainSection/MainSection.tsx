@@ -10,15 +10,9 @@ export const MainSection = () => {
 
   return (
     <section id='#main' className={styles.mainSection}>
-      <Video
-        currentBlock={currentBlock}
-        setCurrentBlock={setCurrentBlock}
-      />
-      <SlidesText
-        currentBlock={currentBlock}
-        setCurrentBlock={setCurrentBlock}
-      />
-      <Pagination />
+      <Video currentBlock={currentBlock} setCurrentBlock={setCurrentBlock} />
+      <SlidesText currentBlock={currentBlock} setCurrentBlock={setCurrentBlock} />
+      <Pagination currentBlock={currentBlock} setCurrentBlock={setCurrentBlock} />
     </section>
   );
 };

@@ -1,11 +1,14 @@
-.title {
-  @include Semibold_60;
-  text-align: left;
-  margin-bottom: 34px;
-}
+.info {
+  width: 100%;
+  max-width: 775px;
+  .title {
+    @include Semibold_60;
+    text-align: left;
+    margin-bottom: 34px;
+  }
 
-.description {
-  @include Regular_20;
-  color: var(--white);
+  .description {
+    @include Regular_20;
+    color: var(--white);
+  }
 }
-
