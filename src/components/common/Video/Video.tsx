@@ -23,6 +23,8 @@ export const Video: FC<IVideo> = ({ currentBlock, setCurrentBlock }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const reverseIntervalRef = useRef<number | null>(null);
 
+  let lastTouchY = 0;
+
   const handleWheel = (event: WheelEvent) => {
     if (playing) return;
 
@@ -35,7 +37,23 @@ export const Video: FC<IVideo> = ({ currentBlock, setCurrentBlock }) => {
     waitBlock(currentBlock, event.deltaY < 0);
   };
 
-  const waitBlock = (block: any, reverse: boolean) => {
+  const handleTouchMove = (event: TouchEvent) => {
+    if (playing) return;
+  
+    const touch = event.touches[0];
+    const deltaY = touch.clientY - lastTouchY;
+  
+    if (deltaY < 0 && currentBlock > 0) {
+      setCurrentBlock((prevBlock) => prevBlock - 1);
+    } else if (deltaY > 0) {
+      setCurrentBlock((prevBlock) => prevBlock + 1);
+    }
+  
+    waitBlock(currentBlock, deltaY < 0);
+    lastTouchY = touch.clientY;
+  };
+
+  const waitBlock = (block: any, reverse?: boolean) => {
     switch (block) {
       case 0:
         playVideo(3500, reverse);
@@ -75,11 +93,12 @@ export const Video: FC<IVideo> = ({ currentBlock, setCurrentBlock }) => {
     }
   };
 
-  const playVideo = (duration: number, reverse: boolean) => {
+  const playVideo = (duration: number, reverse?: boolean) => {
     if (videoRef.current) {
       videoRef.current.playbackRate = 1;
       if (reverse) {
-        reversePlay(duration);
+        // reversePlay(duration);
+        return;
       } else {
         videoRef.current.play();
         setPlaying(true);
@@ -94,46 +113,57 @@ export const Video: FC<IVideo> = ({ currentBlock, setCurrentBlock }) => {
     }
   };
 
-  const reversePlay = (duration: number) => {
-    const video = videoRef.current as HTMLVideoElement;
+  // const reversePlay = (duration: number) => {
+  //   const video = videoRef.current as HTMLVideoElement;
 
-    video.currentTime -= 0.033;
+  //   video.currentTime -= 0.033;
 
-    if (!video) return;
+  //   if (!video) return;
 
-    reverseIntervalRef.current = window.setInterval(() => {
-      if (video.currentTime <= 0) {
-        setPlaying(false);
-        setShowText(true);
-        setTimeCode(video.currentTime);
-      }
+  //   reverseIntervalRef.current = window.setInterval(() => {
+  //     if (video.currentTime <= 0) {
+  //       setPlaying(false);
+  //       setShowText(true);
+  //       setTimeCode(video.currentTime);
+  //     }
 
-      return () => clearInterval(reverseIntervalRef.current as number);
-    }, duration);
-  };
+  //     return () => clearInterval(reverseIntervalRef.current as number);
+  //   }, duration);
+  // };
 
   const onVideoEnd = () => {
     setIsEnded(true);
   };
 
   useEffect(() => {
-    const handleScroll = (event: WheelEvent) => handleWheel(event);
-    window.addEventListener('wheel', handleScroll);
+    if (videoRef.current) {
+      videoRef.current.currentTime = timeCode;
+    }
+  }, [timeCode]);
 
+  useEffect(() => {
+    const handleScroll = (event: WheelEvent) => handleWheel(event);
+    const handleTouchStart = (event: TouchEvent) => {
+      if (event.touches.length === 1) {
+        lastTouchY = event.touches[0].clientY;
+      }
+    };
+    const handleTouchMoveEvent = (event: TouchEvent) => handleTouchMove(event);
+  
+    window.addEventListener('wheel', handleScroll);
+    window.addEventListener('touchstart', handleTouchStart);
+    window.addEventListener('touchmove', handleTouchMoveEvent);
+  
     return () => {
       window.removeEventListener('wheel', handleScroll);
-
+      window.removeEventListener('touchstart', handleTouchStart);
+      window.removeEventListener('touchmove', handleTouchMoveEvent);
+  
       if (reverseIntervalRef.current) {
         clearInterval(reverseIntervalRef.current);
       }
     };
   }, [playing, currentBlock]);
-
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.currentTime = timeCode;
-    }
-  }, [timeCode]);
 
   return (
     <div className={styles.videoWrapper}>
