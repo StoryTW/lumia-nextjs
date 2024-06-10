@@ -13,9 +13,12 @@ export const Pagination: FC<IPagination> = ({ currentBlock, setCurrentBlock }) =
   const setTimeCode = useVideoStore((state) => state.setTimeCode);
   const timeCode = useVideoStore((state) => state.timeCode);
 
+  const setStartPlay = useVideoStore((state) => state.setStartPlay);
+
   const handleChangeTimeCode = (index: number) => {
     setTimeCode(timeCodesData[index]);
     setCurrentBlock(index);
+    setStartPlay(true);
   };
 
   return (

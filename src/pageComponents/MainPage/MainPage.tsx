@@ -36,9 +36,6 @@ export function MainPage() {
                 <div className='section partners' id='#partners'>
                   <ParnersSection />
                 </div>
-                <div className='section footer'>
-                  <Footer />
-                </div>
               </ReactFullpage.Wrapper>
             );
           }}

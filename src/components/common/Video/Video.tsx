@@ -14,6 +14,7 @@ export const Video: FC<IVideo> = ({ currentBlock, setCurrentBlock }) => {
   const timeCode = useVideoStore((state) => state.timeCode);
 
   const setShowText = useVideoStore((state) => state.setShowText);
+  const startPlay = useVideoStore((state) => state.startPlay);
 
   const setIsEnded = useVideoStore((state) => state.setIsEnded);
 
@@ -39,16 +40,16 @@ export const Video: FC<IVideo> = ({ currentBlock, setCurrentBlock }) => {
 
   const handleTouchMove = (event: TouchEvent) => {
     if (playing) return;
-  
+
     const touch = event.touches[0];
     const deltaY = touch.clientY - lastTouchY;
-  
+
     if (deltaY < 0 && currentBlock > 0) {
       setCurrentBlock((prevBlock) => prevBlock - 1);
     } else if (deltaY > 0) {
       setCurrentBlock((prevBlock) => prevBlock + 1);
     }
-  
+
     waitBlock(currentBlock, deltaY < 0);
     lastTouchY = touch.clientY;
   };
@@ -136,8 +137,9 @@ export const Video: FC<IVideo> = ({ currentBlock, setCurrentBlock }) => {
   };
 
   useEffect(() => {
-    if (videoRef.current) {
+    if (videoRef.current && startPlay) {
       videoRef.current.currentTime = timeCode;
+      videoRef.current.play();
     }
   }, [timeCode]);
 
@@ -149,16 +151,16 @@ export const Video: FC<IVideo> = ({ currentBlock, setCurrentBlock }) => {
       }
     };
     const handleTouchMoveEvent = (event: TouchEvent) => handleTouchMove(event);
-  
+
     window.addEventListener('wheel', handleScroll);
     window.addEventListener('touchstart', handleTouchStart);
     window.addEventListener('touchmove', handleTouchMoveEvent);
-  
+
     return () => {
       window.removeEventListener('wheel', handleScroll);
       window.removeEventListener('touchstart', handleTouchStart);
       window.removeEventListener('touchmove', handleTouchMoveEvent);
-  
+
       if (reverseIntervalRef.current) {
         clearInterval(reverseIntervalRef.current);
       }

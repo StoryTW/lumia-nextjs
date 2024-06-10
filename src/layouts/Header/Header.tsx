@@ -17,6 +17,9 @@ export const Header: FC<IHeader> = ({ setCurrentBlock }) => {
   const timeCodesData = useVideoStore((state) => state.timeCodesData);
   const setTimeCode = useVideoStore((state) => state.setTimeCode);
 
+  const setStartPlay = useVideoStore((state) => state.setStartPlay);
+
+
   const tabletL = useMediaQuery('tabletL');
 
   const [openMenu, setOpenMenu] = useState(false);
@@ -24,6 +27,7 @@ export const Header: FC<IHeader> = ({ setCurrentBlock }) => {
   const handleNavigate = (index: number) => {
     setTimeCode(timeCodesData[index]);
     setCurrentBlock(index);
+    setStartPlay(true);
   };
 
   const toggleOpenMenu = () => setOpenMenu((prevState) => !prevState);

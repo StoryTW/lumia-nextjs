@@ -11,6 +11,8 @@ interface IVideoStore {
   setShowText: (showText: boolean) => void;
   currentTimeoutIndex: number;
   setCurrentTimeoutIndex: () => void;
+  startPlay: boolean;
+  setStartPlay: (showText: boolean) => void;
 }
 
 const initialTimeCodes = [0, 3.5, 6.9, 10.3, 13.7, 17, 20.3, 23.6, 26.9, 30.4];
@@ -38,5 +40,10 @@ export const useVideoStore = create<IVideoStore>()(
       set((state) => ({
         currentTimeoutIndex: state.currentTimeoutIndex + 1,
       })),
+    startPlay: false,
+    setStartPlay: (play) =>
+      set((state) => {
+        state.startPlay = play;
+      }),
   })),
 );
