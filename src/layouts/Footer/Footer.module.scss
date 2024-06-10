@@ -4,7 +4,7 @@
   .wrapper {
     display: flex;
     justify-content: space-between;
-    padding: 108px 64px 74px;
+    padding: 64px;
 
     @include respond(tabletL) {
       flex-direction: column;
@@ -46,6 +46,10 @@
 
           &:not(:last-child) {
             margin-bottom: 24px;
+          }
+
+          &.head {
+            opacity: 0.5;
           }
 
           a {

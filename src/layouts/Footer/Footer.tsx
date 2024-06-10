@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './Footer.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
+import clsx from 'clsx';
 
 export const Footer = () => {
   return (
@@ -21,7 +22,7 @@ export const Footer = () => {
         </div>
         <div className={styles.socialsBlock}>
           <ul className={styles.list}>
-            <li className={styles.item}>
+            <li className={clsx(styles.item, styles.head)}>
               Solutions
             </li>
             <li className={styles.item}>
@@ -37,7 +38,7 @@ export const Footer = () => {
           </ul>
 
           <ul className={styles.list}>
-            <li className={styles.item}>
+            <li className={clsx(styles.item, styles.head)}>
               Developers
             </li>
             <li className={styles.item}>

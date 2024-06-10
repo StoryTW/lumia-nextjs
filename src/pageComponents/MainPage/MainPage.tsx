@@ -7,10 +7,13 @@ import { useVideoStore } from '@/store/useVideoStore';
 import { ParnersSection } from '@/components/sections/ParnersSection/ParnersSection';
 import { Header } from '@/layouts/Header/Header';
 import { useState } from 'react';
+import { useMediaQuery } from '@/hooks/useMediaQuery';
 
 export function MainPage() {
   const isEnded = useVideoStore((state) => state.isEnded);
   const [currentBlock, setCurrentBlock] = useState(0);
+
+  const mobileL = useMediaQuery('mobileL');
 
   return (
     <>
@@ -23,6 +26,7 @@ export function MainPage() {
             if (origin.index === 0 && !isEnded) {
               return false;
             }
+
             return true;
           }}
           render={({ state, fullpageApi }) => {
@@ -36,6 +40,12 @@ export function MainPage() {
                 <div className='section partners' id='#partners'>
                   <ParnersSection />
                 </div>
+
+                {mobileL && (
+                  <div className='section footer'>
+                    <Footer />
+                  </div>
+                )}
               </ReactFullpage.Wrapper>
             );
           }}

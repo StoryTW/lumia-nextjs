@@ -9,15 +9,17 @@ interface ISlideReuse {
 
 export const SlideReuse: FC<ISlideReuse> = ({ title, description, showTopic = true }) => {
   return (
-    <div className={styles.info}>
-      {showTopic && (
-        <div className={styles.topic}>
-          <span className={styles.dash} />
-          <span className={styles.topicText}>FEATURES</span>
-        </div>
-      )}
-      <h2 className={styles.title}>{title}</h2>
-      <p className={styles.description}>{description}</p>
+    <div className={styles.wrp}>
+      <div className={styles.info}>
+        {showTopic && (
+          <div className={styles.topic}>
+            <span className={styles.dash} />
+            <span className={styles.topicText}>FEATURES</span>
+          </div>
+        )}
+        <h2 className={styles.title}>{title}</h2>
+        <p className={styles.description}>{description}</p>
+      </div>
     </div>
   );
 };

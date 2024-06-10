@@ -1,27 +1,38 @@
-.info {
-  width: 100%;
-  max-width: 775px;
+.wrp {
+  position: absolute;
+  bottom: 74px;
+  z-index: 3;
+  left: 64px;
 
-  .title {
-    @include Semibold_60;
-    text-align: left;
-    margin-bottom: 34px;
-
-    @include respond(tablet) {
-      @include Semibold_32;
-    }
-
-    @include respond(mobileL) {
-      margin-bottom: 24px;
-    }
+  @include respond(tablet) {
+    left: 24px;
   }
-
-  .description {
-    @include Regular_20;
-    color: var(--white);
-
-    @include respond(mobileL) {
-      @include Regular_16;
+  
+  .info {
+    width: 100%;
+    max-width: 775px;
+  
+    .title {
+      @include Semibold_60;
+      text-align: left;
+      margin-bottom: 34px;
+  
+      @include respond(tablet) {
+        @include Semibold_32;
+      }
+  
+      @include respond(mobileL) {
+        margin-bottom: 24px;
+      }
+    }
+  
+    .description {
+      @include Regular_20;
+      color: var(--white);
+  
+      @include respond(mobileL) {
+        @include Regular_16;
+      }
     }
   }
 }

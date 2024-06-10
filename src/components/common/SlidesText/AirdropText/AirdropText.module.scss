@@ -1,0 +1,17 @@
+.wrp {
+  position: absolute;
+  top: 200px;
+  left: 64px;
+
+  .title {
+    @include Semibold_60;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+
+  .description {
+    @include Regular_20;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+}
