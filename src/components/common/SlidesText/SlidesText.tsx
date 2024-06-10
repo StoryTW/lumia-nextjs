@@ -7,6 +7,7 @@ import { SlideTwo } from './SlideTwo/SlideTwo';
 import { SlideReuse } from './SlideReuse/SlideReuse';
 import { slideData } from '@/utils/constants';
 import { useVideoStore } from '@/store/useVideoStore';
+import { RoadmapText } from './RoadmapText/RoadmapText';
 
 interface ISlidesText {
   currentBlock: number;
@@ -27,9 +28,12 @@ const currentText: { [index: number]: ReactNode } = {
     <SlideReuse title={slideData.slideSeven.title} description={slideData.slideSeven.description} />
   ),
   8: <SlideReuse title={slideData.slideSix.title} description={slideData.slideSix.description} />,
-  9: <SlideReuse title={slideData.slideSeven.title} description={slideData.slideSeven.description} />,
+  9: (
+    <SlideReuse title={slideData.slideSeven.title} description={slideData.slideSeven.description} />
+  ),
   10: (
     <SlideReuse title={slideData.slideEighth.title} description={slideData.slideEighth.description} showTopic={false} />
+    // <RoadmapText />
   ),
 };
 
