@@ -32,7 +32,7 @@ export const Header: FC<IHeader> = ({ setCurrentBlock }) => {
     <header className={styles.header}>
       <div className={styles.wrapper}>
         <Link className={styles.logo} href='/'>
-          <Image src='/logo.svg' alt='logo' width={95} height={25} quality={100} priority />
+          <Image src='/logo.svg' alt='logo' width={150} height={40} quality={100} priority />
         </Link>
         {!tabletL ? (
           <nav className={styles.navbar}>

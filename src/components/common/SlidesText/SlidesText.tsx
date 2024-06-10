@@ -10,6 +10,7 @@ import { useVideoStore } from '@/store/useVideoStore';
 
 interface ISlidesText {
   currentBlock: number;
+  className?: string;
 }
 
 const currentText: { [index: number]: ReactNode } = {
@@ -28,11 +29,11 @@ const currentText: { [index: number]: ReactNode } = {
   8: <SlideReuse title={slideData.slideSix.title} description={slideData.slideSix.description} />,
   9: <SlideReuse title={slideData.slideSeven.title} description={slideData.slideSeven.description} />,
   10: (
-    <SlideReuse title={slideData.slideEighth.title} description={slideData.slideEighth.description} />
+    <SlideReuse title={slideData.slideEighth.title} description={slideData.slideEighth.description} showTopic={false} />
   ),
 };
 
-export const SlidesText: FC<ISlidesText> = ({ currentBlock }) => {
+export const SlidesText: FC<ISlidesText> = ({ currentBlock, className }) => {
   const showText = useVideoStore((state) => state.showText);
 
   return (

@@ -2,6 +2,7 @@
 import React, { useRef, useState, useEffect, FC, Dispatch, SetStateAction } from 'react';
 import styles from './Video.module.scss';
 import { useVideoStore } from '@/store/useVideoStore';
+import { useMediaQuery } from '@/hooks/useMediaQuery';
 
 interface IVideo {
   currentBlock: number;
@@ -15,6 +16,8 @@ export const Video: FC<IVideo> = ({ currentBlock, setCurrentBlock }) => {
   const setShowText = useVideoStore((state) => state.setShowText);
 
   const setIsEnded = useVideoStore((state) => state.setIsEnded);
+
+  const mobileL = useMediaQuery('mobileL');
 
   const [playing, setPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -144,7 +147,10 @@ export const Video: FC<IVideo> = ({ currentBlock, setCurrentBlock }) => {
         muted
         playsInline
       >
-        <source src={`/lumia.mp4#t=${timeCode}`} type='video/mp4' />
+        <source
+          src={mobileL ? `/lumia-mobile.mp4#t=${timeCode}` : `/lumia.mp4#t=${timeCode}`}
+          type='video/mp4'
+        />
       </video>
     </div>
   );

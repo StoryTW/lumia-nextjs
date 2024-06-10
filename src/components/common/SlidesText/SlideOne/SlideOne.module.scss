@@ -7,6 +7,14 @@
     @include Semibold_100;
     text-align: left;
     text-shadow: var(--text_shadow);
+
+    @include respond(tablet) {
+      @include Semibold_50;
+    }
+
+    @include respond(mobileL) {
+      margin-bottom: 48px;
+    }
   }
 
   .description {
@@ -14,8 +22,16 @@
     color: var(--white);
     text-shadow: var(--text_shadow);
 
+    @include respond(mobileL) {
+      @include Regular_16;
+    }
+
     &.margin {
       margin-bottom: 40px;
+
+      @include respond(mobileL) {
+        margin-bottom: 34px;
+      }
     }
   }
 }

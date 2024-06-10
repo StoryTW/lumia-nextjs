@@ -5,6 +5,10 @@
   font-weight: 600;
   border-right: 1px solid var(--white);
   animation: blink 1s step-end infinite;
+
+  @include respond(mobileL) {
+    @include Regular_16;
+  }
 }
 
 @keyframes blink {

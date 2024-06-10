@@ -8,6 +8,10 @@
     gap: 10px;
     margin-bottom: 28px;
 
+    @include respond(tablet) {
+      margin-bottom: 24px;
+    }
+
     .dash {
       width: 24px;
       height: 1px;
@@ -26,10 +30,18 @@
     @include Bold_32;
     margin-bottom: 32px;
     color: var(--white);
+
+    @include respond(tablet) {
+      margin-bottom: 24px;
+    }
   }
 
   .description {
     @include Regular_20;
     color: var(--white);
+
+    @include respond(tablet) {
+      @include Regular_16;
+    }
   }
 }

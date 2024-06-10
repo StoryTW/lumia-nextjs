@@ -4,6 +4,10 @@
   right: 64px;
   top: 40%;
 
+  @include respond(tablet) {
+    right: 24px;
+  }
+
   .wrapper {
     display: flex;
     justify-content: center;
