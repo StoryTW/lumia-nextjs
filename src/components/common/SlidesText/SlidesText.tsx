@@ -68,8 +68,6 @@ export const SlidesText: FC<ISlidesText> = ({ currentBlock, setCurrentBlock }) =
     };
   }, [currentBlock]);
 
-  console.log(currentBlock, 'currentBlock');
-
   return (
     <AnimatePresence mode='wait'>
       {showText && (
