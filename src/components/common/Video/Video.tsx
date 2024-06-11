@@ -15,6 +15,7 @@ export const Video: FC<IVideo> = ({ currentBlock, setCurrentBlock }) => {
 
   const setShowText = useVideoStore((state) => state.setShowText);
   const startPlay = useVideoStore((state) => state.startPlay);
+  const setStartPlay = useVideoStore((state) => state.setStartPlay);
 
   const setIsEnded = useVideoStore((state) => state.setIsEnded);
 
@@ -32,7 +33,9 @@ export const Video: FC<IVideo> = ({ currentBlock, setCurrentBlock }) => {
     if (event.deltaY < 0 && currentBlock > 0) {
       setCurrentBlock((prevBlock) => prevBlock - 1);
     } else if (event.deltaY > 0) {
-      setCurrentBlock((prevBlock) => prevBlock + 1);
+      if (currentBlock < 12) {
+        setCurrentBlock((prevBlock) => prevBlock + 1);
+      }
     }
 
     waitBlock(currentBlock, event.deltaY < 0);
@@ -111,6 +114,7 @@ export const Video: FC<IVideo> = ({ currentBlock, setCurrentBlock }) => {
           videoRef?.current?.pause();
           setPlaying(false);
           setShowText(true);
+          setStartPlay(false);
           setTimeCode(videoRef?.current?.currentTime as number);
         }, duration);
       }
@@ -142,7 +146,8 @@ export const Video: FC<IVideo> = ({ currentBlock, setCurrentBlock }) => {
   useEffect(() => {
     if (videoRef.current && startPlay) {
       videoRef.current.currentTime = timeCode;
-      videoRef.current.play();
+      waitBlock(currentBlock);
+      setCurrentBlock((prev) => prev + 1)
     }
   }, [timeCode]);
 

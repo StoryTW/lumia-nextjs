@@ -9,13 +9,11 @@ interface IVideoStore {
   setIsEnded: (isEnded: boolean) => void;
   showText: boolean;
   setShowText: (showText: boolean) => void;
-  currentTimeoutIndex: number;
-  setCurrentTimeoutIndex: () => void;
   startPlay: boolean;
   setStartPlay: (showText: boolean) => void;
 }
 
-const initialTimeCodes = [0, 3.5, 6.9, 10.3, 13.7, 17, 20.3, 23.6, 26.9, 30.4, 37];
+const initialTimeCodes = [0, 3.5, 6.9, 10.3, 13.7, 17, 20.3, 23.6, 26.9, 30.4, 33.6];
 
 export const useVideoStore = create<IVideoStore>()(
   immer((set) => ({
@@ -35,11 +33,6 @@ export const useVideoStore = create<IVideoStore>()(
       set((state) => {
         state.showText = showText;
       }),
-    currentTimeoutIndex: 0,
-    setCurrentTimeoutIndex: () =>
-      set((state) => ({
-        currentTimeoutIndex: state.currentTimeoutIndex + 1,
-      })),
     startPlay: false,
     setStartPlay: (play) =>
       set((state) => {

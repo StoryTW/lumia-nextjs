@@ -5,7 +5,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ButtonColor } from '@/components/ui/Buttons/ButtonColor/ButtonColor';
 import { useVideoStore } from '@/store/useVideoStore';
-import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { Burger } from '@/components/ui/Burger/Burger';
 import { MobileBurger } from '@/components/common/MobileBurger/MobileBurger';
 
@@ -18,9 +17,6 @@ export const Header: FC<IHeader> = ({ setCurrentBlock }) => {
   const setTimeCode = useVideoStore((state) => state.setTimeCode);
 
   const setStartPlay = useVideoStore((state) => state.setStartPlay);
-
-
-  const tabletL = useMediaQuery('tabletL');
 
   const [openMenu, setOpenMenu] = useState(false);
 
@@ -38,37 +34,34 @@ export const Header: FC<IHeader> = ({ setCurrentBlock }) => {
         <Link className={styles.logo} href='/'>
           <Image src='/logo.svg' alt='logo' width={150} height={40} quality={100} priority />
         </Link>
-        {!tabletL ? (
-          <nav className={styles.navbar}>
-            <ul className={styles.list}>
-              <li className={styles.item}>
-                <button className={styles.link} onClick={() => handleNavigate(1)}>
-                  ABOUT
-                </button>
-              </li>
-              <li className={styles.item}>
-                <button className={styles.link} onClick={() => handleNavigate(2)}>
-                  FEATURES
-                </button>
-              </li>
-              <li className={styles.item}>
-                <button className={styles.link} onClick={() => handleNavigate(9)}>
-                  ROADMAP
-                </button>
-              </li>
-              <li className={styles.item}>
-                <Link href='#partners' className={styles.link}>
-                  PARTNERS
-                </Link>
-              </li>
-              <li className={styles.item}>
-                <ButtonColor onClick={() => handleNavigate(9)}>AIRDROP</ButtonColor>
-              </li>
-            </ul>
-          </nav>
-        ) : (
-          <Burger openMenu={openMenu} toggleOpenMenu={toggleOpenMenu} />
-        )}
+        <Burger openMenu={openMenu} toggleOpenMenu={toggleOpenMenu} />
+        <nav className={styles.navbar}>
+          <ul className={styles.list}>
+            <li className={styles.item}>
+              <button className={styles.link} onClick={() => handleNavigate(1)}>
+                ABOUT
+              </button>
+            </li>
+            <li className={styles.item}>
+              <button className={styles.link} onClick={() => handleNavigate(2)}>
+                FEATURES
+              </button>
+            </li>
+            <li className={styles.item}>
+              <button className={styles.link} onClick={() => handleNavigate(10)}>
+                ROADMAP
+              </button>
+            </li>
+            <li className={styles.item}>
+              <Link href='#partners' className={styles.link}>
+                PARTNERS
+              </Link>
+            </li>
+            <li className={styles.item}>
+              <ButtonColor onClick={() => handleNavigate(9)}>AIRDROP</ButtonColor>
+            </li>
+          </ul>
+        </nav>
       </div>
       <MobileBurger openMenu={openMenu} setOpenMenu={setOpenMenu} handleNavigate={handleNavigate} />
     </header>
