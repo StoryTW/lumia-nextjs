@@ -12,6 +12,9 @@ import { useMediaQuery } from '@/hooks/useMediaQuery';
 export function MainPage() {
   const isEnded = useVideoStore((state) => state.isEnded);
   const [currentBlock, setCurrentBlock] = useState(0);
+  const setTimeCode = useVideoStore((state) => state.setTimeCode);
+  const setStartPlay = useVideoStore((state) => state.setStartPlay);
+  const setIsEnded = useVideoStore((state) => state.setIsEnded);
 
   const mobileL = useMediaQuery('mobileL');
 
@@ -25,9 +28,13 @@ export function MainPage() {
           onLeave={(origin) => {
             if (origin.index === 0 && !isEnded) {
               return false;
+            } else {
+              setCurrentBlock(0);
+              setTimeCode(0);
+              setStartPlay(false);
+              setIsEnded(true);
+              return true;
             }
-
-            return true;
           }}
           render={({ state, fullpageApi }) => {
             return (

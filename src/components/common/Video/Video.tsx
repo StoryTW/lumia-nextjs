@@ -18,6 +18,7 @@ export const Video: FC<IVideo> = ({ currentBlock, setCurrentBlock }) => {
   const setStartPlay = useVideoStore((state) => state.setStartPlay);
 
   const setIsEnded = useVideoStore((state) => state.setIsEnded);
+  const isEnded = useVideoStore((state) => state.isEnded);
 
   const mobileL = useMediaQuery('mobileL');
 
@@ -29,6 +30,8 @@ export const Video: FC<IVideo> = ({ currentBlock, setCurrentBlock }) => {
 
   const handleWheel = (event: WheelEvent) => {
     if (playing) return;
+
+    if (isEnded) return;
 
     if (event.deltaY < 0 && currentBlock > 0) {
       setCurrentBlock((prevBlock) => prevBlock - 1);
@@ -87,10 +90,10 @@ export const Video: FC<IVideo> = ({ currentBlock, setCurrentBlock }) => {
         playVideo(3300, reverse);
         break;
       case 9:
-        playVideo(3400, reverse);
+        playVideo(3300, reverse);
         break;
       case 10:
-        playVideo(3400, reverse);
+        playVideo(4200, reverse);
         break;
       case 11:
         playVideo(6600, reverse);
@@ -174,6 +177,8 @@ export const Video: FC<IVideo> = ({ currentBlock, setCurrentBlock }) => {
       }
     };
   }, [playing, currentBlock]);
+
+  console.log(timeCode, 'timeCode');
 
   return (
     <div className={styles.videoWrapper}>

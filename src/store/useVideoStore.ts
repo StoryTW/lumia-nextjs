@@ -13,7 +13,7 @@ interface IVideoStore {
   setStartPlay: (showText: boolean) => void;
 }
 
-const initialTimeCodes = [0, 3.5, 6.9, 10.3, 13.7, 17, 20.3, 23.6, 26.9, 30.4, 33.6];
+const initialTimeCodes = [0, 3.5, 6.9, 10.3, 13.7, 17, 20.3, 23.6, 26.9, 30.4, 33.2];
 
 export const useVideoStore = create<IVideoStore>()(
   immer((set) => ({
