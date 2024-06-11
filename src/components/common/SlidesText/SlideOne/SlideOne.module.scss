@@ -12,6 +12,10 @@
     width: 100%;
     max-width: 775px;
 
+    @include respond(mobile375) {
+      max-width: 320px;
+    }
+
     .title {
       margin-bottom: 24px;
       @include Semibold_100;
@@ -24,6 +28,11 @@
 
       @include respond(mobileL) {
         margin-bottom: 48px;
+      }
+
+      @include respond(mobile375) {
+        @include Semibold_24;
+        margin-bottom: 24px;
       }
     }
 

@@ -12,6 +12,10 @@
     width: 100%;
     max-width: 354px;
 
+    @include respond(mobile375) {
+      max-width: 320px;
+    }
+
     .topic {
       display: flex;
       align-items: center;
@@ -20,6 +24,10 @@
 
       @include respond(tablet) {
         margin-bottom: 24px;
+      }
+
+      @include respond(mobileL) {
+        margin-bottom: 16px;
       }
 
       .dash {
@@ -44,6 +52,10 @@
       @include respond(tablet) {
         margin-bottom: 24px;
       }
+
+      @include respond(mobile375) {
+        @include Semibold_24;
+      }
     }
 
     .description {
@@ -52,6 +64,10 @@
 
       @include respond(tablet) {
         @include Regular_16;
+      }
+
+      @include respond(mobile375) {
+        @include Regular_14;
       }
     }
   }

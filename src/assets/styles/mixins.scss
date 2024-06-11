@@ -78,6 +78,12 @@
     }
   }
 
+  @if $breakpoint==mobile375 {
+    @media only screen and (max-width: 375px) {
+      @content;
+    }
+  }
+
   @if $breakpoint==mobileS {
     @media only screen and (max-width: 320px) {
       @content;
@@ -103,6 +109,12 @@
 }
 
 //FONTS
+@mixin Regular_14 {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
 
 @mixin Regular_16 {
   font-size: 16px;
@@ -145,6 +157,14 @@
   font-style: normal;
   font-weight: 500;
   line-height: 16px;
+}
+
+
+@mixin Semibold_24 {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 }
 
 @mixin Semibold_32 {

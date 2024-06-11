@@ -1,9 +1,44 @@
+.title {
+  position: absolute;
+  @include Semibold_60;
+  color: var(--white);
+  left: 64px;
+  top: 15%;
+
+  @include respond(tablet) {
+    @include Semibold_50;
+  }
+
+  @include respond(mobileL) {
+    left: 24px;
+    @include Semibold_32;  
+  }
+
+  @include respond(mobile375) {
+    top: 17%;
+    @include Semibold_24; 
+  }
+}
+
 .q1 {
   position: absolute;
   right: 100px;
   bottom: 30%;
   max-width: 234px;
   width: 100%;
+  @include Regular_20;
+
+  @include respond(mobileL) {
+    @include Regular_16;
+    left: 24px;
+    right: unset;
+    bottom: unset;
+    top: 50%;
+  }
+
+  @include respond(mobile375) {
+    @include Regular_14;
+  }
 }
 
 .q2 {
@@ -12,6 +47,19 @@
   bottom: 30%;
   max-width: 234px;
   width: 100%;
+  @include Regular_20;
+  color: var(--white);
+
+  @include respond(mobileL) {
+    @include Regular_16;
+    left: 24px;
+    bottom: unset;
+    top: 23%;
+  }
+
+  @include respond(mobile375) {
+    @include Regular_14;
+  }
 }
 
 .q2_2025 {
@@ -20,6 +68,19 @@
   right: 30%;
   max-width: 234px;
   width: 100%;
+  @include Regular_20;
+  color: var(--white);
+
+  @include respond(mobileL) {
+    @include Regular_16;
+    left: 24px;
+    right: unset;
+    top: 60%;
+  }
+
+  @include respond(mobile375) {
+    @include Regular_14;
+  }
 }
 
 .q3 {
@@ -28,6 +89,19 @@
   left: 50%;
   max-width: 234px;
   width: 100%;
+  @include Regular_20;
+  color: var(--white);
+
+  @include respond(mobileL) {
+    @include Regular_16;
+    left: 24px;
+    bottom: unset;
+    top: 30%;
+  }
+
+  @include respond(mobile375) {
+    @include Regular_14;
+  }
 }
 
 .q4 {
@@ -36,4 +110,15 @@
   top: 340px;
   max-width: 234px;
   width: 100%;
+  color: var(--white);
+
+  @include respond(mobileL) {
+    @include Regular_16;
+    left: 24px;
+    top: 40%;
+  }
+
+  @include respond(mobile375) {
+    @include Regular_14;
+  }
 }

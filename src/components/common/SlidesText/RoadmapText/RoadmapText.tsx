@@ -4,6 +4,9 @@ import styles from './RoadmapText.module.scss';
 export const RoadmapText = () => {
   return (
     <>
+      <h3 className={styles.title}>
+        Roadmap
+      </h3>
       <div className={styles.q1}>
         Q1 2025
         <br />

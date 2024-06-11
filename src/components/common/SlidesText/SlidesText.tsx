@@ -1,6 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import React, { Dispatch, FC, ReactNode, SetStateAction, useMemo } from 'react';
-import styles from './SlidesText.module.scss';
 import { opacityVariants } from '@/utils/animations';
 import { SlideOne } from './SlideOne/SlideOne';
 import { SlideTwo } from './SlideTwo/SlideTwo';
@@ -12,11 +11,10 @@ import { AirdropText } from './AirdropText/AirdropText';
 
 interface ISlidesText {
   currentBlock: number;
-  className?: string;
   setCurrentBlock: Dispatch<SetStateAction<number>>;
 }
 
-export const SlidesText: FC<ISlidesText> = ({ currentBlock, className, setCurrentBlock }) => {
+export const SlidesText: FC<ISlidesText> = ({ currentBlock, setCurrentBlock }) => {
   const showText = useVideoStore((state) => state.showText);
 
   const currentText: { [index: number]: ReactNode } = useMemo(() => {
