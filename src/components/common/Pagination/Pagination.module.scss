@@ -8,8 +8,8 @@
     right: 24px;
   }
 
-  @include respond(mobile375) {
-    right: 16px;
+  @include respond(mobileL) {
+    display: none;
   }
 
   .wrapper {

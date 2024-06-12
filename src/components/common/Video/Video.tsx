@@ -178,8 +178,6 @@ export const Video: FC<IVideo> = ({ currentBlock, setCurrentBlock }) => {
     };
   }, [playing, currentBlock]);
 
-  console.log(timeCode, 'timeCode');
-
   return (
     <div className={styles.videoWrapper}>
       <video

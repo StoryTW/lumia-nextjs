@@ -12,7 +12,7 @@ interface IMainSection {
 
 export const MainSection: FC<IMainSection> = ({ currentBlock, setCurrentBlock }) => {
   return (
-    <section id='#main' className={styles.mainSection}>
+    <section className={styles.mainSection}>
       <Video currentBlock={currentBlock} setCurrentBlock={setCurrentBlock} />
       <SlidesText currentBlock={currentBlock} setCurrentBlock={setCurrentBlock} />
       <Pagination currentBlock={currentBlock} setCurrentBlock={setCurrentBlock} />

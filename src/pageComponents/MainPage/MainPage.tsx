@@ -25,7 +25,7 @@ export function MainPage() {
           // licenseKey={'YOUR_KEY_HERE'}
           credits={{ enabled: false }}
           scrollingSpeed={1000}
-          anchors={['main', 'partners', 'footer']}
+          anchors={['mainS', 'partnersS', 'footerS']}
           onLeave={(origin) => {
             if (origin.index === 0 && !isEnded) {
               return false;
@@ -40,17 +40,17 @@ export function MainPage() {
           render={({ state, fullpageApi }) => {
             return (
               <ReactFullpage.Wrapper>
-                <div className='section main' id='main'>
+                <div className='section main' id='main' data-anchor='main'>
                   <Header setCurrentBlock={setCurrentBlock} />
                   <MainSection currentBlock={currentBlock} setCurrentBlock={setCurrentBlock} />
                 </div>
 
-                <div className='section partners' id='partners'>
+                <div className='section partners' id='partners' data-anchor='partners'>
                   <ParnersSection />
                 </div>
 
                 {mobileL && (
-                  <div className='section footer' id='footer'>
+                  <div className='section footer' id='footer' data-anchor='footer'>
                     <Footer />
                   </div>
                 )}
