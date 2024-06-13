@@ -8,6 +8,7 @@ import { slideData } from '@/utils/constants';
 import { useVideoStore } from '@/store/useVideoStore';
 import { RoadmapText } from './RoadmapText/RoadmapText';
 import { AirdropText } from './AirdropText/AirdropText';
+import { ExtraInfoSlideThree } from './ExtraInfoSlideThree/ExtraInfoSlideThree';
 
 interface ISlidesText {
   currentBlock: number;
@@ -25,6 +26,8 @@ export const SlidesText: FC<ISlidesText> = ({ currentBlock, setCurrentBlock }) =
         <SlideReuse
           title={slideData.slideThree.title}
           description={slideData.slideThree.description}
+          extra={<ExtraInfoSlideThree />}
+          hideInMob
         />
       ),
       3: (

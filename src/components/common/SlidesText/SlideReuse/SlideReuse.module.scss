@@ -8,6 +8,12 @@
     left: 24px;
   }
 
+  @include respond(tablet) {
+    &.hide {
+      display: none;
+    }
+  }
+
   .info {
     width: 100%;
     max-width: 354px;

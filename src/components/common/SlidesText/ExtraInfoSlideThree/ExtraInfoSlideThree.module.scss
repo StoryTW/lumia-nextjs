@@ -1,0 +1,48 @@
+.extraInfo {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  max-height: max-content;
+  max-width: max-content;
+
+  .title {
+    @include Semibold_32;
+    margin-bottom: 48px;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 86px 118px;
+
+    @include respond(tablet) {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .box {
+      margin: 16px;
+      max-width: 360px;
+      background: linear-gradient(
+        240.62deg,
+        rgba(46, 64, 86, 0.33) 6.19%,
+        rgba(12, 9, 33, 0.48) 94.72%
+      );
+      padding: 24px;
+      border-radius: 10px;
+      border: 1px solid #dddff0;
+      text-align: center;
+      @include Semibold_32;
+      text-shadow: var(--text_shadow_2);
+
+      @include respond(tablet) {
+        @include Semibold_16;
+      }
+    }
+  }
+}
