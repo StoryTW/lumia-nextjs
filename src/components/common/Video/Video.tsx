@@ -50,9 +50,9 @@ export const Video: FC<IVideo> = ({ currentBlock, setCurrentBlock }) => {
     const touch = event.touches[0];
     const deltaY = touch.clientY - lastTouchY;
 
-    if (deltaY < 0 && currentBlock > 0) {
+    if (deltaY > 0 && currentBlock > 0) {
       setCurrentBlock((prevBlock) => prevBlock - 1);
-    } else if (deltaY > 0) {
+    } else if (deltaY < 0) {
       setCurrentBlock((prevBlock) => prevBlock + 1);
     }
 
