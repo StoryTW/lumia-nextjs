@@ -9,10 +9,15 @@
   max-width: max-content;
 
   .title {
-    @include Semibold_32;
-    margin-bottom: 48px;
-    margin-left: 16px;
-    margin-right: 16px;
+    display: none;
+
+    @include respond(tablet) {
+      display: block;
+      @include Semibold_32;
+      margin-bottom: 48px;
+      margin-left: 16px;
+      margin-right: 16px;
+    }
   }
 
   .wrapper {
