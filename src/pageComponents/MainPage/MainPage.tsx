@@ -7,7 +7,6 @@ import { useVideoStore } from '@/store/useVideoStore';
 import { ParnersSection } from '@/components/sections/ParnersSection/ParnersSection';
 import { Header } from '@/layouts/Header/Header';
 import { useState } from 'react';
-import { useMediaQuery } from '@/hooks/useMediaQuery';
 
 export function MainPage() {
   const isEnded = useVideoStore((state) => state.isEnded);
@@ -15,8 +14,6 @@ export function MainPage() {
   const setTimeCode = useVideoStore((state) => state.setTimeCode);
   const setStartPlay = useVideoStore((state) => state.setStartPlay);
   const setIsEnded = useVideoStore((state) => state.setIsEnded);
-
-  const mobileL = useMediaQuery('mobileL');
 
   return (
     <>
@@ -48,11 +45,9 @@ export function MainPage() {
                   <ParnersSection />
                 </div>
 
-                {mobileL && (
-                  <div className='section footer'>
-                    <Footer />
-                  </div>
-                )}
+                <div className='section footer'>
+                  <Footer />
+                </div>
               </ReactFullpage.Wrapper>
             );
           }}

@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 const SIZES = {
   tabletL: '(max-width: 912px)',
   mobileL: '(max-width: 475px)',
+  tabletSM: '(max-width: 602px)'
 };
 
 export const useMediaQuery = (mediaQuery: keyof typeof SIZES): boolean => {
