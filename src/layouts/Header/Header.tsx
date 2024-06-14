@@ -4,27 +4,18 @@ import styles from './Header.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ButtonColor } from '@/components/ui/Buttons/ButtonColor/ButtonColor';
-import { useVideoStore } from '@/store/useVideoStore';
+// import { useVideoStore } from '@/store/useVideoStore';
 import { Burger } from '@/components/ui/Burger/Burger';
 import { MobileBurger } from '@/components/common/MobileBurger/MobileBurger';
 
 interface IHeader {
-  setCurrentBlock: Dispatch<SetStateAction<number>>;
+  // setCurrentBlock: Dispatch<SetStateAction<number>>;
 }
 
-export const Header: FC<IHeader> = ({ setCurrentBlock }) => {
-  const timeCodesData = useVideoStore((state) => state.timeCodesData);
-  const setTimeCode = useVideoStore((state) => state.setTimeCode);
-
-  const setStartPlay = useVideoStore((state) => state.setStartPlay);
+export const Header: FC<IHeader> = () => {
+  // const setStartPlay = useVideoStore((state) => state.setStartPlay);
 
   const [openMenu, setOpenMenu] = useState(false);
-
-  const handleNavigate = (index: number) => {
-    setTimeCode(timeCodesData[index]);
-    setCurrentBlock(index);
-    setStartPlay(true);
-  };
 
   const toggleOpenMenu = () => setOpenMenu((prevState) => !prevState);
 
@@ -38,17 +29,17 @@ export const Header: FC<IHeader> = ({ setCurrentBlock }) => {
         <nav className={styles.navbar}>
           <ul className={styles.list}>
             <li className={styles.item}>
-              <button className={styles.link} onClick={() => handleNavigate(1)}>
+              <button className={styles.link}>
                 ABOUT
               </button>
             </li>
             <li className={styles.item}>
-              <button className={styles.link} onClick={() => handleNavigate(2)}>
+              <button className={styles.link}>
                 FEATURES
               </button>
             </li>
             <li className={styles.item}>
-              <button className={styles.link} onClick={() => handleNavigate(10)}>
+              <button className={styles.link}>
                 ROADMAP
               </button>
             </li>
@@ -58,12 +49,12 @@ export const Header: FC<IHeader> = ({ setCurrentBlock }) => {
               </Link>
             </li>
             <li className={styles.item}>
-              <ButtonColor onClick={() => handleNavigate(9)}>AIRDROP</ButtonColor>
+              <ButtonColor onClick={() => console.log('click')}>AIRDROP</ButtonColor>
             </li>
           </ul>
         </nav>
       </div>
-      <MobileBurger openMenu={openMenu} setOpenMenu={setOpenMenu} handleNavigate={handleNavigate} />
+      <MobileBurger openMenu={openMenu} setOpenMenu={setOpenMenu} handleNavigate={() => console.log('click')} />
     </header>
   );
 };

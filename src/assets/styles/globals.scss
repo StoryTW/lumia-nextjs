@@ -60,10 +60,9 @@ body {
   color: var(--white);
   // position: relative;
   min-height: 100vh;
-  // line-height: 1.15; /* 1 */
+  line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
-  // scrollbar-gutter: stable;
-  overflow: hidden;
+  scrollbar-gutter: stable;
   height: 100%;
 }
 
