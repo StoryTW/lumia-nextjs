@@ -1,12 +1,8 @@
 .header {
   background: transparent;
-  // position: fixed;
-  width: 100%;
-  z-index: 3;
-
-  @include respond(tabletL) {
-    background: var(--background-main);
-  }
+  position: sticky;
+  overflow: visible;
+  z-index: 9999;
 
   .wrapper {
     display: flex;

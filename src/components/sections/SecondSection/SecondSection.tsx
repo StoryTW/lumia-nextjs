@@ -1,7 +1,8 @@
-'use client'
+'use client';
 import React, { useRef } from 'react';
 import styles from './SecondSection.module.scss';
 import { motion, useInView } from 'framer-motion';
+import { Video } from '@/components/common/Video/Video';
 
 export const SecondSection = () => {
   const ref = useRef(null);
@@ -11,12 +12,12 @@ export const SecondSection = () => {
   });
 
   return (
-    <section className={styles.secondSection}>
+    <section className={styles.secondSection} id='second'>
       <motion.div
         ref={ref}
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: inView ? 1 : 0, scale: inView ? 1 : 0 }}
-        transition={{ duration: 0.5 }}
+        initial={{ opacity: 0, x: -200, scale: 0 }}
+        animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : -200, scale: inView ? 1 : 0 }}
+        transition={{ duration: 0.7 }}
         className={styles.wrp}
       >
         <div className={styles.info}>
@@ -28,6 +29,8 @@ export const SecondSection = () => {
           </p>
         </div>
       </motion.div>
+
+      <Video src='/3.mp4' />
     </section>
   );
 };

@@ -56,14 +56,15 @@ button:focus {
 
 body {
   margin: 0;
-  background: var(--background-main);
+  background: #000000;
   color: var(--white);
-  // position: relative;
+  position: relative;
   min-height: 100vh;
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
-  scrollbar-gutter: stable;
+  // scrollbar-gutter: stable;
   height: 100%;
+  overflow: hidden;
 }
 
 dl,
