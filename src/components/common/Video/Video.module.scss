@@ -1,10 +1,9 @@
 .videoWrapper {
   position: relative;
-  width: 650px;
-  height: 400px;
+  width: 850px;
+  height: 550px;
   overflow: hidden;
-  right: 64px;
-  top: 10%;
+  z-index: 1;
 
   .video {
     position: absolute;

@@ -13,10 +13,12 @@ export const SectionSix = () => {
 
   return (
     <section className={styles.sectionSix} id='six'>
+      <Video src='/6.mp4' left />
+
       <motion.div
         ref={ref}
-        initial={{ opacity: 0, x: -200 }}
-        animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : -200 }}
+        initial={{ opacity: 0, x: 200 }}
+        animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : 200 }}
         transition={{ duration: 1.5 }}
         className={styles.wrp}
       >
@@ -29,8 +31,6 @@ export const SectionSix = () => {
           </p>
         </div>
       </motion.div>
-
-      <Video src='/6.mp4' />
     </section>
   );
 };

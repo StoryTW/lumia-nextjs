@@ -1,47 +1,57 @@
-.secondSection {
+.mainSection {
   height: 100vh;
   min-height: 100vh;
   position: relative;
   scroll-snap-align: start;
   display: flex;
   justify-content: space-between;
+  padding: 0px 64px;
 
   .wrp {
     position: relative;
     height: max-content;
-    left: 64px;
-    top: 20%;
-    max-width: 500px;
+    padding-top: 120px;
+    z-index: 2;
 
     .info {
+      max-width: 400px;
+
       .title {
+        margin-bottom: 24px;
+
         @include Semibold_50;
         text-align: left;
-        margin-bottom: 34px;
-  
+        text-shadow: var(--text_shadow);
+
         @include respond(tablet) {
-          @include Semibold_32;
+          @include Semibold_50;
         }
-  
+
         @include respond(mobileL) {
-          margin-bottom: 24px;
+          margin-bottom: 48px;
         }
-  
+
         @include respond(mobile375) {
           @include Semibold_24;
+          margin-bottom: 24px;
         }
       }
-  
+
       .description {
-        @include Regular_20;
+        @include Regular_24;
         color: var(--white);
-  
+        text-shadow: var(--text_shadow);
+
         @include respond(mobileL) {
           @include Regular_16;
         }
-  
-        @include respond(mobile375) {
-          @include Regular_14;
+
+        &.margin {
+          margin-bottom: 40px;
+
+          @include respond(mobileL) {
+            margin-bottom: 34px;
+          }
         }
       }
     }

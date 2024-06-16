@@ -5,15 +5,16 @@
   scroll-snap-align: start;
   display: flex;
   justify-content: space-between;
+  padding: 0px 64px;
 
   .wrp {
     position: relative;
     height: max-content;
-    left: 64px;
-    top: 20%;
-    max-width: 500px;
+    padding-top: 120px;
+    z-index: 2;
 
     .info {
+      max-width: 500px;
       .title {
         @include Semibold_50;
         text-align: left;

@@ -1,15 +1,13 @@
 'use client';
 import React, { FC, useRef } from 'react';
-import styles from './MainSection.module.scss';
+import styles from './SectionOne.module.scss';
 import { TxtRotate } from '@/components/common/TxtRotate/TxtRotate';
 import clsx from 'clsx';
 import { ButtonColor } from '@/components/ui/Buttons/ButtonColor/ButtonColor';
 import { motion, useInView } from 'framer-motion';
 import { Video } from '@/components/common/Video/Video';
 
-interface IMainSection {}
-
-export const MainSection: FC<IMainSection> = () => {
+export const SectionOne: FC = () => {
   const ref = useRef(null);
 
   const inView = useInView(ref, {
@@ -17,7 +15,7 @@ export const MainSection: FC<IMainSection> = () => {
   });
 
   return (
-    <section className={styles.mainSection} id='main'>
+    <section className={styles.mainSection} id='one'>
       <motion.div
         ref={ref}
         initial={{ opacity: 0, x: -200 }}
