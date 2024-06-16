@@ -1,0 +1,49 @@
+.sectionThree {
+  height: 100vh;
+  min-height: 100vh;
+  position: relative;
+  scroll-snap-align: start;
+  display: flex;
+  justify-content: space-between;
+
+  .wrp {
+    position: relative;
+    height: max-content;
+    left: 64px;
+    top: 20%;
+    max-width: 500px;
+
+    .info {
+      .title {
+        @include Semibold_50;
+        text-align: left;
+        margin-bottom: 34px;
+  
+        @include respond(tablet) {
+          @include Semibold_32;
+        }
+  
+        @include respond(mobileL) {
+          margin-bottom: 24px;
+        }
+  
+        @include respond(mobile375) {
+          @include Semibold_24;
+        }
+      }
+  
+      .description {
+        @include Regular_20;
+        color: var(--white);
+  
+        @include respond(mobileL) {
+          @include Regular_16;
+        }
+  
+        @include respond(mobile375) {
+          @include Regular_14;
+        }
+      }
+    }
+  }
+}

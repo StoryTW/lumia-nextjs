@@ -1,5 +1,8 @@
 .footer {
-  background: var(--background-main);
+  background: transparent;
+  scroll-snap-align: start;
+  height: 100vh;
+  min-height: 100vh;
 
   .wrapper {
     display: flex;

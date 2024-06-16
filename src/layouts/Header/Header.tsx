@@ -1,20 +1,17 @@
 'use client';
-import React, { Dispatch, FC, SetStateAction, useState } from 'react';
+import React, { FC, useState } from 'react';
 import styles from './Header.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ButtonColor } from '@/components/ui/Buttons/ButtonColor/ButtonColor';
-// import { useVideoStore } from '@/store/useVideoStore';
 import { Burger } from '@/components/ui/Burger/Burger';
 import { MobileBurger } from '@/components/common/MobileBurger/MobileBurger';
 
 interface IHeader {
-  // setCurrentBlock: Dispatch<SetStateAction<number>>;
+
 }
 
 export const Header: FC<IHeader> = () => {
-  // const setStartPlay = useVideoStore((state) => state.setStartPlay);
-
   const [openMenu, setOpenMenu] = useState(false);
 
   const toggleOpenMenu = () => setOpenMenu((prevState) => !prevState);

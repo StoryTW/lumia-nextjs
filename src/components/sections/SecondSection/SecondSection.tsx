@@ -15,9 +15,9 @@ export const SecondSection = () => {
     <section className={styles.secondSection} id='second'>
       <motion.div
         ref={ref}
-        initial={{ opacity: 0, x: -200, scale: 0 }}
-        animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : -200, scale: inView ? 1 : 0 }}
-        transition={{ duration: 0.7 }}
+        initial={{ opacity: 0, x: -200 }}
+        animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : -200 }}
+        transition={{ duration: 1.5 }}
         className={styles.wrp}
       >
         <div className={styles.info}>
@@ -30,7 +30,7 @@ export const SecondSection = () => {
         </div>
       </motion.div>
 
-      <Video src='/3.mp4' />
+      <Video src='/2.mp4' />
     </section>
   );
 };

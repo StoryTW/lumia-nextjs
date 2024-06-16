@@ -3,7 +3,6 @@ import { Poppins } from 'next/font/google';
 import { ReactNode } from 'react';
 import '@/assets/styles/index.scss';
 import { Header } from '@/layouts/Header/Header';
-// import { Footer } from '@/layouts/Footer/Footer';
 
 const popins = Poppins({ subsets: ['latin'], weight: ['400', '500'] });
 
@@ -38,7 +37,6 @@ export default function RootLayout({
         >
           {children}
         </div>
-        {/* <Footer /> */}
       </body>
     </html>
   );

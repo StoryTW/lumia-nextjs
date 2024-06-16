@@ -32,9 +32,9 @@ export const Video: FC<IVideo> = ({ src }) => {
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, scale: 0 }}
-      animate={{ opacity: inView ? 1 : 0, scale: inView ? 1 : 0 }}
-      transition={{ duration: 0.7 }}
+      initial={{ opacity: 0, x: 400 }}
+      animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : 400 }}
+      transition={{ duration: 1.5 }}
       className={styles.videoWrapper}
     >
       <video
