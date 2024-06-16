@@ -10,6 +10,7 @@ import { SectionEight } from '@/components/sections/SectionEight/SectionEight';
 import { SectionNine } from '@/components/sections/SectionNine/SectionNine';
 import { Footer } from '@/layouts/Footer/Footer';
 import { SectionTen } from '@/components/sections/SectionTen/SectionTen';
+import { SectionEleven } from '@/components/sections/SectionEleven/SectionEleven';
 
 export function MainPage() {
   return (
@@ -24,6 +25,7 @@ export function MainPage() {
       <SectionEight />
       <SectionNine />
       <SectionTen />
+      <SectionEleven />
       <Footer />
     </main>
   );
