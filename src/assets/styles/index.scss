@@ -1,14 +1,15 @@
 @import './consts.scss';
 @import './globals.scss';
 
-.fp-watermark {
-  display: none;
-}
+.scrollContainer {
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
 
-.main.fp-table.active {
-  justify-content: start;
-}
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 
-.partners.fp-table.active {
-  justify-content: end;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }

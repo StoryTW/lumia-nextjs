@@ -1,5 +1,5 @@
 'use client';
-import React, { FC, useRef } from 'react';
+import React, { FC, useEffect, useRef } from 'react';
 import styles from './SectionOne.module.scss';
 import { TxtRotate } from '@/components/common/TxtRotate/TxtRotate';
 import clsx from 'clsx';
@@ -29,7 +29,7 @@ export const SectionOne: FC = () => {
             The first ever <TxtRotate />
           </p>
           <p className={clsx(styles.description, styles.margin)}>restake roll up L2 for RWAs</p>
-          <ButtonColor onClick={() => console.log('click')}>AIRDROP</ButtonColor>
+          <ButtonColor href='#nine'>AIRDROP</ButtonColor>
         </div>
       </motion.div>
 

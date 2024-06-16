@@ -28,15 +28,7 @@ export default function RootLayout({
       <body className={popins.className}>
         <Header />
 
-        <div
-          style={{
-            height: '100vh',
-            scrollSnapType: 'y mandatory',
-            overflowY: 'scroll',
-          }}
-        >
-          {children}
-        </div>
+        <div className='scrollContainer'>{children}</div>
       </body>
     </html>
   );

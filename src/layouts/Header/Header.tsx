@@ -1,5 +1,5 @@
 'use client';
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import styles from './Header.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -7,14 +7,33 @@ import { ButtonColor } from '@/components/ui/Buttons/ButtonColor/ButtonColor';
 import { Burger } from '@/components/ui/Burger/Burger';
 import { MobileBurger } from '@/components/common/MobileBurger/MobileBurger';
 
-interface IHeader {
-
-}
+interface IHeader {}
 
 export const Header: FC<IHeader> = () => {
   const [openMenu, setOpenMenu] = useState(false);
 
   const toggleOpenMenu = () => setOpenMenu((prevState) => !prevState);
+
+  useEffect(() => {
+    const handleAnchorClick = (event: any) => {
+      event.preventDefault();
+      const targetId = event.currentTarget.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+        });
+      }
+    };
+
+    const anchors = document.querySelectorAll('a[href^="#"]');
+    anchors.forEach((anchor) => anchor.addEventListener('click', handleAnchorClick));
+
+    return () => {
+      anchors.forEach((anchor) => anchor.removeEventListener('click', handleAnchorClick));
+    };
+  }, []);
 
   return (
     <header className={styles.header}>
@@ -26,19 +45,15 @@ export const Header: FC<IHeader> = () => {
         <nav className={styles.navbar}>
           <ul className={styles.list}>
             <li className={styles.item}>
-              <button className={styles.link}>
-                ABOUT
-              </button>
+              <button className={styles.link}>ABOUT</button>
             </li>
             <li className={styles.item}>
-              <button className={styles.link}>
-                FEATURES
-              </button>
+              <button className={styles.link}>FEATURES</button>
             </li>
             <li className={styles.item}>
-              <button className={styles.link}>
+              <a className={styles.link} href='#eleven'>
                 ROADMAP
-              </button>
+              </a>
             </li>
             <li className={styles.item}>
               <Link href='#partners' className={styles.link}>
@@ -46,12 +61,16 @@ export const Header: FC<IHeader> = () => {
               </Link>
             </li>
             <li className={styles.item}>
-              <ButtonColor onClick={() => console.log('click')}>AIRDROP</ButtonColor>
+              <ButtonColor href='#nine'>AIRDROP</ButtonColor>
             </li>
           </ul>
         </nav>
       </div>
-      <MobileBurger openMenu={openMenu} setOpenMenu={setOpenMenu} handleNavigate={() => console.log('click')} />
+      <MobileBurger
+        openMenu={openMenu}
+        setOpenMenu={setOpenMenu}
+        handleNavigate={() => console.log('click')}
+      />
     </header>
   );
 };

@@ -12,7 +12,7 @@ export const SectionTwo = () => {
   });
 
   return (
-    <section className={styles.secondSection} id='second'>
+    <section className={styles.secondSection} id='two'>
       <Video src='/2.mp4' left />
 
       <motion.div

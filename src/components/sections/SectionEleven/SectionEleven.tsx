@@ -12,7 +12,7 @@ export const SectionEleven = () => {
   });
 
   return (
-    <section className={styles.sectionEight} id='eight'>
+    <section className={styles.sectionEight} id='eleven'>
       <motion.div
         ref={ref}
         initial={{ opacity: 0, x: -200 }}
