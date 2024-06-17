@@ -60,7 +60,6 @@ export const ParnersSection = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const tabletSM = useMediaQuery('tabletSM');
-  // const mobileL = useMediaQuery('mobileL');
 
   const refTitle = useRef(null);
   const refList = useRef(null);
