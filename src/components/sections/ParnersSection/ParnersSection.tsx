@@ -73,7 +73,7 @@ export const ParnersSection = () => {
   });
 
   return (
-    <section className={styles.partnersSection}>
+    <section className={styles.partnersSection} id='partners'>
       <motion.h2
         ref={refTitle}
         initial={{ opacity: 0, x: 200 }}
@@ -95,22 +95,157 @@ export const ParnersSection = () => {
       </motion.div>
       <div className={styles.list} ref={refList}>
         {ARRAY_PARTNERS.map((item, index) => {
-          return (
-            <motion.div
-              key={index}
-              className={styles.card}
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: inViewList ? 1 : 0, scale: inViewList ? 1 : 0 }}
-              transition={{ duration: 1.3 }}
-            >
-              <Image
-                width={tabletSM ? 124 : 182}
-                height={tabletSM ? 42 : 56}
-                src={item.link}
-                alt={`logo_${item.link}`}
-              />
-            </motion.div>
-          );
+          if (index === 0 || index === 1) {
+            return (
+              <motion.div
+                key={index}
+                className={styles.card}
+                initial={{ opacity: 0, x: -150 }}
+                animate={{ opacity: inViewList ? 1 : 0, x: inViewList ? 0 : -150 }}
+                transition={{ duration: 0.8 }}
+              >
+                <Image
+                  width={tabletSM ? 124 : 182}
+                  height={tabletSM ? 42 : 56}
+                  src={item.link}
+                  alt={`logo_${item.link}`}
+                />
+              </motion.div>
+            );
+          }
+
+          if (index === 2 || index === 3) {
+            return (
+              <motion.div
+                key={index}
+                className={styles.card}
+                initial={{ opacity: 0, x: 150 }}
+                animate={{ opacity: inViewList ? 1 : 0, x: inViewList ? 0 : 150 }}
+                transition={{ duration: 0.8 }}
+              >
+                <Image
+                  width={tabletSM ? 124 : 182}
+                  height={tabletSM ? 42 : 56}
+                  src={item.link}
+                  alt={`logo_${item.link}`}
+                />
+              </motion.div>
+            );
+          }
+
+          if (index === 4 || index === 5) {
+            return (
+              <motion.div
+                key={index}
+                className={styles.card}
+                initial={{ opacity: 0, x: -150 }}
+                animate={{ opacity: inViewList ? 1 : 0, x: inViewList ? 0 : -150 }}
+                transition={{ duration: 1.2 }}
+              >
+                <Image
+                  width={tabletSM ? 124 : 182}
+                  height={tabletSM ? 42 : 56}
+                  src={item.link}
+                  alt={`logo_${item.link}`}
+                />
+              </motion.div>
+            );
+          }
+
+          if (index === 6 || index === 7) {
+            return (
+              <motion.div
+                key={index}
+                className={styles.card}
+                initial={{ opacity: 0, x: 150 }}
+                animate={{ opacity: inViewList ? 1 : 0, x: inViewList ? 0 : 150 }}
+                transition={{ duration: 1.2 }}
+              >
+                <Image
+                  width={tabletSM ? 124 : 182}
+                  height={tabletSM ? 42 : 56}
+                  src={item.link}
+                  alt={`logo_${item.link}`}
+                />
+              </motion.div>
+            );
+          }
+
+          if (index === 8 || index === 9) {
+            return (
+              <motion.div
+                key={index}
+                className={styles.card}
+                initial={{ opacity: 0, x: -150 }}
+                animate={{ opacity: inViewList ? 1 : 0, x: inViewList ? 0 : -150 }}
+                transition={{ duration: 1.6 }}
+              >
+                <Image
+                  width={tabletSM ? 124 : 182}
+                  height={tabletSM ? 42 : 56}
+                  src={item.link}
+                  alt={`logo_${item.link}`}
+                />
+              </motion.div>
+            );
+          }
+
+          if (index === 10 || index === 11) {
+            return (
+              <motion.div
+                key={index}
+                className={styles.card}
+                initial={{ opacity: 0, x: 150 }}
+                animate={{ opacity: inViewList ? 1 : 0, x: inViewList ? 0 : 150 }}
+                transition={{ duration: 1.6 }}
+              >
+                <Image
+                  width={tabletSM ? 124 : 182}
+                  height={tabletSM ? 42 : 56}
+                  src={item.link}
+                  alt={`logo_${item.link}`}
+                />
+              </motion.div>
+            );
+          }
+
+          if (index === 12 || index === 13) {
+            return (
+              <motion.div
+                key={index}
+                className={styles.card}
+                initial={{ opacity: 0, x: -150 }}
+                animate={{ opacity: inViewList ? 1 : 0, x: inViewList ? 0 : -150 }}
+                transition={{ duration: 2 }}
+              >
+                <Image
+                  width={tabletSM ? 124 : 182}
+                  height={tabletSM ? 42 : 56}
+                  src={item.link}
+                  alt={`logo_${item.link}`}
+                />
+              </motion.div>
+            );
+          }
+
+          if (index === 14 || index === 15) {
+            return (
+              <motion.div
+                key={index}
+                className={styles.card}
+                initial={{ opacity: 0, x: 150 }}
+                animate={{ opacity: inViewList ? 1 : 0, x: inViewList ? 0 : 150 }}
+                transition={{ duration: 2 }}
+              >
+                <Image
+                  width={tabletSM ? 124 : 182}
+                  height={tabletSM ? 42 : 56}
+                  src={item.link}
+                  alt={`logo_${item.link}`}
+                />
+              </motion.div>
+            );
+          }
         })}
       </div>
       <div className={styles.videoWrapper}>
