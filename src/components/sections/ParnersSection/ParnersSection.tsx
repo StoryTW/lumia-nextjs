@@ -260,7 +260,7 @@ export const ParnersSection = () => {
           loop
           playsInline
         >
-          <source src={'/partners.mp4'} type='video/mp4' />
+          <source src={tabletSM ? '/partners_mob.mp4' : '/partners.mp4'} type='video/mp4' />
         </video>
       </div>
     </section>

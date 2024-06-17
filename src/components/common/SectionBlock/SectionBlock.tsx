@@ -2,46 +2,50 @@
 import { motion, useInView } from 'framer-motion';
 import React, { useRef } from 'react';
 import styles from './SectionBlock.module.scss';
+import { useMediaQuery } from '@/hooks/useMediaQuery';
 
-const ARRAY_INFO = [
-  {
-    title: 'EigenDA',
-    left: true,
-  },
-  {
-    title: 'AI/zkML Tech',
-    left: false,
-  },
-  {
-    title: 'RaaS Infrastructure',
-    left: true,
-  },
-  {
-    title: 'Biconomy Account Abstraction',
-    left: false,
-  },
-  {
-    title: 'Polygon CDK and AggLayer',
-    left: true,
-  },
-  {
-    title: 'Lumia Stream liquidity at its core',
-    left: false,
-  },
-];
+// const ARRAY_INFO = [
+//   {
+//     title: 'EigenDA',
+//     left: true,
+//   },
+//   {
+//     title: 'AI/zkML Tech',
+//     left: false,
+//   },
+//   {
+//     title: 'RaaS Infrastructure',
+//     left: true,
+//   },
+//   {
+//     title: 'Biconomy Account Abstraction',
+//     left: false,
+//   },
+//   {
+//     title: 'Polygon CDK and AggLayer',
+//     left: true,
+//   },
+//   {
+//     title: 'Lumia Stream liquidity at its core',
+//     left: false,
+//   },
+// ];
 
 export const SectionBlock = () => {
   const ref = useRef(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const inView = useInView(ref, {
     once: false,
   });
 
-  const refList = useRef(null);
+  const tabletSM = useMediaQuery('tabletSM');
 
-  const inViewList = useInView(refList, {
-    once: false,
-  });
+  // const refList = useRef(null);
+
+  // const inViewList = useInView(refList, {
+  //   once: false,
+  // });
 
   return (
     <section className={styles.sectionBlock} id='block'>
@@ -54,7 +58,23 @@ export const SectionBlock = () => {
       >
         Lumia is the next-gen modular L2 leveraging
       </motion.h2>
-      <div className={styles.wrp} ref={refList}>
+      <div className={styles.videoWrapper}>
+        <video
+          ref={videoRef}
+          className={styles.video}
+          preload='metadata'
+          width={'100%'}
+          height={'100%'}
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
+          <source 
+            src={tabletSM ? '/blocks-mobile.mp4' : '/blocks.mp4'} type='video/mp4' />
+        </video>
+      </div>
+      {/* <div className={styles.wrp} ref={refList}>
         {ARRAY_INFO.map((item, index) => {
           return (
             <motion.div
@@ -67,7 +87,7 @@ export const SectionBlock = () => {
             </motion.div>
           );
         })}
-      </div>
+      </div> */}
     </section>
   );
 };
