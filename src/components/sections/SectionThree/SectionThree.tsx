@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { Video } from '@/components/common/Video/Video';
 import { motion, useInView } from 'framer-motion';
 import React, { useRef } from 'react';
@@ -23,10 +23,11 @@ export const SectionThree = () => {
       >
         <div className={styles.info}>
           <Features />
-          <h2 className={styles.title}>Account Abstraction and Intents</h2>
+          <h2 className={styles.title}>Focused on RWAs</h2>
           <p className={styles.description}>
-            Integrated EIP-4337 and intents technology simplify blockchain interactions, making them
-            more intuitive for incoming
+            Lumia specializes in the seamless integration and liquidity management of real-world
+            assets (RWAs), enabling businesses to efficiently bring their tokenized assets – real
+            estate, commodities, and financial instruments – onto DeFi.
           </p>
         </div>
       </motion.div>

@@ -21,11 +21,11 @@ export const SectionNine = () => {
         className={styles.wrp}
       >
         <div className={styles.info}>
-          <h2 className={styles.title}>Airdrop</h2>
+          <h2 className={styles.title}>AI Yield Management via zkML</h2>
           <p className={styles.description}>
-            Lumia Ecosystem Airdrop: Season 1 - Drop #1 (Coming Soon)
-            <br />
-            Lumia Ecosystem Airdrop: Season 1 - Drop #1 (Coming Soon)
+            Utilizing zkSNARKs, Lumia ensures that trading decisions made by AI bots align with
+            neural network model predictions without revealing the model's details, providing
+            transparency and trust in RWA yield management.
           </p>
         </div>
       </motion.div>

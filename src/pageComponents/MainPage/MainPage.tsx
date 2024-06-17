@@ -1,3 +1,4 @@
+'use client';
 import { SectionThree } from '@/components/sections/SectionThree/SectionThree';
 import { SectionFour } from '@/components/sections/SectionFour/SectionFour';
 import { SectionFive } from '@/components/sections/SectionFive/SectionFive';
@@ -11,12 +12,17 @@ import { SectionEleven } from '@/components/sections/SectionEleven/SectionEleven
 import { SectionOne } from '@/components/sections/SectionOne/SectionOne';
 import { SectionTwo } from '@/components/sections/SectionTwo/SectionTwo';
 import styles from './MainPage.module.scss';
+import { SectionBlock } from '@/components/common/SectionBlock/SectionBlock';
+import { useMediaQuery } from '@/hooks/useMediaQuery';
 
 export function MainPage() {
+  const mobileL = useMediaQuery('mobileL');
+
   return (
     <main id='mainPage' className={styles.mainPage}>
       <SectionOne />
       <SectionTwo />
+      <SectionBlock />
       <SectionThree />
       <SectionFour />
       <SectionFive />

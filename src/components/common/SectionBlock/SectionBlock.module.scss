@@ -1,38 +1,35 @@
-.extraInfo {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  max-height: max-content;
-  max-width: max-content;
+.sectionBlock {
+  height: 100vh;
+  min-height: 100vh;
+  position: relative;
+  scroll-snap-align: start;
+  padding: 0px 64px;
+
+  @include respond(tabletL) {
+    padding: 0px 24px;
+  }
 
   .title {
-    display: none;
+    @include Semibold_32;
+    margin-bottom: 48px;
+    text-align: center;
 
     @include respond(tablet) {
-      display: block;
-      @include Semibold_32;
-      margin-bottom: 48px;
-      margin-left: 16px;
-      margin-right: 16px;
+      margin-bottom: 16px;
     }
   }
 
-  .wrapper {
+  .wrp {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 86px 118px;
+    grid-template-columns: minmax(120px, 360px) minmax(120px, 360px);
+    gap: 24px;
+    justify-content: center;
 
     @include respond(tablet) {
       grid-template-columns: 1fr;
-      gap: 24px;
     }
 
     .box {
-      margin: 16px;
-      max-width: 360px;
       background: linear-gradient(
         240.62deg,
         rgba(46, 64, 86, 0.33) 6.19%,

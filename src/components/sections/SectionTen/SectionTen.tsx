@@ -23,8 +23,13 @@ export const SectionTen = () => {
         className={styles.wrp}
       >
         <div className={styles.info}>
-          <h2 className={styles.title}>Roadmap</h2>
-          <p className={styles.description}>Aggregated native yield restaking for RWAs</p>
+          <h2 className={styles.title}>Airdrop</h2>
+          <p className={styles.description}>
+            Lumia Ecosystem Airdrop: Season 1 - Drop #1 (Coming Soon)
+            <br />
+            <br />
+            Lumia Ecosystem Airdrop: Season 1 - Drop #2 (Coming Soon)
+          </p>
         </div>
       </motion.div>
     </section>

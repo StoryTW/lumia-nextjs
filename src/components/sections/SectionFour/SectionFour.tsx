@@ -25,11 +25,11 @@ export const SectionFour = () => {
       >
         <div className={styles.info}>
           <Features />
-          <h2 className={styles.title}>Built-In KYC and Privacy</h2>
+          <h2 className={styles.title}>Boundless Liquidity</h2>
           <p className={styles.description}>
-            Employing PolygonID for secure and decentralized identity verification, Lumia ensures
-            user privacy and data security. It offers optional full-scale KYC per wallet, enabling
-            regulated institutions to participate in the RWA ecosystem confidently.
+            Lumia Stream aggregates liquidity from the entire market (CEXs and DEXs), creating a
+            decentralized solution that makes liquidity available cross-chain via Atomic Swaps with
+            Hashed Time Lock Contracts, ensuring seamless trading of assets.
           </p>
         </div>
       </motion.div>

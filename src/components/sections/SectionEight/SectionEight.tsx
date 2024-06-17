@@ -25,16 +25,14 @@ export const SectionEight = () => {
       >
         <div className={styles.info}>
           <Features />
-          <h2 className={styles.title}>AI Yield Management via zkML</h2>
+          <h2 className={styles.title}>Aggregated Native Yield Restaking</h2>
           <p className={styles.description}>
-            Through its innovative Data Availability Committee (DAC), Lumia harnesses the power of
-            zkEVM technology to future-proof the network and capture economic value for LUMIA token
-            holders and network participants, accelerating the transition from "stage 0" to "stage
-            2" roll-up.
+            Lumia introduces industry-first yield maximization via Delta Neutral Liquidity
+            Provisioning (DNLP) infrastructure, combined with yields derived from various restaking,
+            liquid staking, and yield farming markets, making it ideal for RWA users.
           </p>
         </div>
       </motion.div>
-
     </section>
   );
 };

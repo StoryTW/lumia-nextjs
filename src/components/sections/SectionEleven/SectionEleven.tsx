@@ -23,10 +23,19 @@ export const SectionEleven = () => {
         <div className={styles.info}>
           <h2 className={styles.title}>Roadmap</h2>
           <p className={styles.description}>
-            Through its innovative Data Availability Committee (DAC), Lumia harnesses the power of
-            zkEVM technology to future-proof the network and capture economic value for LUMIA token
-            holders and network participants, accelerating the transition from "stage 0" to "stage
-            2" roll-up.
+            Q2 Incentivized Testnet
+            <br />
+            <br />
+            Q3 Mainnet with EigenDA and Decentralized Verifier
+            <br />
+            <br />
+            Q4 Aggregated native yield restaking for RWAs
+            <br />
+            <br />
+            Q1 2025 Integrate With Polygon AggLayer, Passport, Miden
+            <br />
+            <br />
+            Q2 2025 AI Yield Management via zkML for optimized RWA opportunities
           </p>
         </div>
       </motion.div>

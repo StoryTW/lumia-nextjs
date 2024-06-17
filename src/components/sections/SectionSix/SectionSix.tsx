@@ -25,11 +25,11 @@ export const SectionSix = () => {
       >
         <div className={styles.info}>
           <Features />
-          <h2 className={styles.title}>Aggregated Native Yield Restaking</h2>
+          <h2 className={styles.title}>Built-In KYC and Privacy</h2>
           <p className={styles.description}>
-            Lumia introduces industry-first yield maximization via Delta Neutral Liquidity
-            Provisioning (DNLP) infrastructure, combined with yields derived from various restaking,
-            liquid staking, and yield farming markets, making it ideal for RWA users.
+            Employing PolygonID for secure and decentralized identity verification, Lumia ensures
+            user privacy and data security. It offers optional full-scale KYC per wallet, enabling
+            regulated institutions to participate in the RWA ecosystem confidently.
           </p>
         </div>
       </motion.div>

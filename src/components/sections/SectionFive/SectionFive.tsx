@@ -23,14 +23,10 @@ export const SectionFive = () => {
       >
         <div className={styles.info}>
           <Features />
-          <h2 className={styles.title}>
-            Pioneering scalability, decentralization, and fast finality
-          </h2>
+          <h2 className={styles.title}>Account Abstraction and Intents</h2>
           <p className={styles.description}>
-            Through its innovative Data Availability Committee (DAC), Lumia harnesses the power of
-            zkEVM technology to future-proof the network and capture economic value for LUMIA token
-            holders and network participants, accelerating the transition from "stage 0" to "stage
-            2" roll-up.
+            Integrated EIP-4337 and intents technology simplify blockchain interactions, making them
+            more intuitive for incoming
           </p>
         </div>
       </motion.div>

@@ -1,45 +1,40 @@
 import { Dispatch, SetStateAction } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import styles from './MobileBurger.module.scss';
-import Link from 'next/link';
 
 interface IMobileNav {
   openMenu: boolean;
   setOpenMenu: Dispatch<SetStateAction<boolean>>;
-  handleNavigate: (index: number) => void;
 }
 
-export const MobileBurger: React.FC<IMobileNav> = ({ openMenu, setOpenMenu, handleNavigate }) => {
-  const handleCloseMenu = (index?: number) => {
+export const MobileBurger: React.FC<IMobileNav> = ({ openMenu, setOpenMenu }) => {
+
+  const handleClose = (index?: number) => {
     setOpenMenu(false);
-    index && handleNavigate(index);
   };
 
   const navItems = [
     {
       id: 0,
-      onClick: () => handleCloseMenu(1),
       name: 'ABOUT',
     },
     {
       id: 1,
-      onClick: () => handleCloseMenu(2),
       name: 'FEATURES',
     },
     {
       id: 2,
-      onClick: () => handleCloseMenu(9),
+      path: '#eleven',
       name: 'ROADMAP',
     },
     {
       id: 2,
       path: '#partners',
-      onClick: () => handleCloseMenu(9),
       name: 'PARTNERS',
     },
     {
       id: 3,
-      onClick: () => handleCloseMenu(9),
+      path: '#nine',
       name: 'AIRDROP',
     },
   ];
@@ -62,22 +57,9 @@ export const MobileBurger: React.FC<IMobileNav> = ({ openMenu, setOpenMenu, hand
             >
               <ul className={styles.navigation_list}>
                 {navItems.map((item, index) => {
-                  if (index === 4) {
-                    <li key={item.name} className={styles.list_item}>
-                      <Link
-                        onClick={() => handleCloseMenu()}
-                        href={item.path as string}
-                      >
-                        {item.name}
-                      </Link>
-                    </li>;
-                  }
-
                   return (
                     <li key={item.name} className={styles.list_item}>
-                      <button className={styles.link} onClick={item.onClick}>
-                        {item.name}
-                      </button>
+                      <a href={item.path as string}>{item.name}</a>
                     </li>
                   );
                 })}
