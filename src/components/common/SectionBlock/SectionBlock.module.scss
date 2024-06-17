@@ -20,6 +20,17 @@
   }
 
   .videoWrapper {
+    &.mob {
+      display: none;
+    }
+
+    @include respond(tabletSM) {
+      display: none;
+      
+      &.mob {
+        display: block;
+      }
+    }
     .video {
       position: absolute;
       top: 50%;

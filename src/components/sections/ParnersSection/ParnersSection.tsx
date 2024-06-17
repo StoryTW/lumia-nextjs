@@ -248,21 +248,39 @@ export const ParnersSection = () => {
           }
         })}
       </div>
-      <div className={styles.videoWrapper}>
-        <video
-          ref={videoRef}
-          className={styles.video}
-          preload='metadata'
-          width={'100%'}
-          height={'100%'}
-          autoPlay
-          muted
-          loop
-          playsInline
-        >
-          <source src={tabletSM ? '/partners_mob.mp4' : '/partners.mp4'} type='video/mp4' />
-        </video>
-      </div>
+      {tabletSM ? (
+        <div className={styles.videoWrapper}>
+          <video
+            ref={videoRef}
+            className={styles.video}
+            preload='metadata'
+            width={'100%'}
+            height={'100%'}
+            autoPlay
+            muted
+            loop
+            playsInline
+          >
+            <source src={'/partners_mob.mp4'} type='video/mp4' />
+          </video>
+        </div>
+      ) : (
+        <div className={styles.videoWrapper}>
+          <video
+            ref={videoRef}
+            className={styles.video}
+            preload='metadata'
+            width={'100%'}
+            height={'100%'}
+            autoPlay
+            muted
+            loop
+            playsInline
+          >
+            <source src={'/partners.mp4'} type='video/mp4' />
+          </video>
+        </div>
+      )}
     </section>
   );
 };
