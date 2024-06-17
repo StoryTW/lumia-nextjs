@@ -76,8 +76,8 @@ export const ParnersSection = () => {
     <section className={styles.partnersSection} id='partners'>
       <motion.h2
         ref={refTitle}
-        initial={{ opacity: 0, x: 200 }}
-        animate={{ opacity: inViewTitle ? 1 : 0, x: inViewTitle ? 0 : 200 }}
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: inViewTitle ? 1 : 0, scale: inViewTitle ? 1 : 0.8 }}
         transition={{ duration: 1.5 }}
         className={styles.title}
       >
@@ -85,8 +85,8 @@ export const ParnersSection = () => {
       </motion.h2>
       <motion.div
         ref={refTitle}
-        initial={{ opacity: 0, x: -200 }}
-        animate={{ opacity: inViewTitle ? 1 : 0, x: inViewTitle ? 0 : -200 }}
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: inViewTitle ? 1 : 0, scale: inViewTitle ? 1 : 0.8 }}
         transition={{ duration: 1.5 }}
         className={styles.description}
       >
@@ -100,8 +100,8 @@ export const ParnersSection = () => {
               <motion.div
                 key={index}
                 className={styles.card}
-                initial={{ opacity: 0, x: -150 }}
-                animate={{ opacity: inViewList ? 1 : 0, x: inViewList ? 0 : -150 }}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: inViewList ? 1 : 0, scale: inViewList ? 1 : 0.8 }}
                 transition={{ duration: 0.8 }}
               >
                 <Image
@@ -119,8 +119,8 @@ export const ParnersSection = () => {
               <motion.div
                 key={index}
                 className={styles.card}
-                initial={{ opacity: 0, x: 150 }}
-                animate={{ opacity: inViewList ? 1 : 0, x: inViewList ? 0 : 150 }}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: inViewList ? 1 : 0, scale: inViewList ? 1 : 0.8 }}
                 transition={{ duration: 0.8 }}
               >
                 <Image
@@ -138,8 +138,8 @@ export const ParnersSection = () => {
               <motion.div
                 key={index}
                 className={styles.card}
-                initial={{ opacity: 0, x: -150 }}
-                animate={{ opacity: inViewList ? 1 : 0, x: inViewList ? 0 : -150 }}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: inViewList ? 1 : 0, scale: inViewList ? 1 : 0.8 }}
                 transition={{ duration: 1.2 }}
               >
                 <Image
@@ -157,8 +157,8 @@ export const ParnersSection = () => {
               <motion.div
                 key={index}
                 className={styles.card}
-                initial={{ opacity: 0, x: 150 }}
-                animate={{ opacity: inViewList ? 1 : 0, x: inViewList ? 0 : 150 }}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: inViewList ? 1 : 0, scale: inViewList ? 1 : 0.8 }}
                 transition={{ duration: 1.2 }}
               >
                 <Image
@@ -176,8 +176,8 @@ export const ParnersSection = () => {
               <motion.div
                 key={index}
                 className={styles.card}
-                initial={{ opacity: 0, x: -150 }}
-                animate={{ opacity: inViewList ? 1 : 0, x: inViewList ? 0 : -150 }}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: inViewList ? 1 : 0, scale: inViewList ? 1 : 0.8 }}
                 transition={{ duration: 1.6 }}
               >
                 <Image
@@ -195,8 +195,8 @@ export const ParnersSection = () => {
               <motion.div
                 key={index}
                 className={styles.card}
-                initial={{ opacity: 0, x: 150 }}
-                animate={{ opacity: inViewList ? 1 : 0, x: inViewList ? 0 : 150 }}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: inViewList ? 1 : 0, scale: inViewList ? 1 : 0.8 }}
                 transition={{ duration: 1.6 }}
               >
                 <Image
@@ -214,8 +214,8 @@ export const ParnersSection = () => {
               <motion.div
                 key={index}
                 className={styles.card}
-                initial={{ opacity: 0, x: -150 }}
-                animate={{ opacity: inViewList ? 1 : 0, x: inViewList ? 0 : -150 }}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: inViewList ? 1 : 0, scale: inViewList ? 1 : 0.8 }}
                 transition={{ duration: 2 }}
               >
                 <Image
@@ -233,8 +233,8 @@ export const ParnersSection = () => {
               <motion.div
                 key={index}
                 className={styles.card}
-                initial={{ opacity: 0, x: 150 }}
-                animate={{ opacity: inViewList ? 1 : 0, x: inViewList ? 0 : 150 }}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: inViewList ? 1 : 0, scale: inViewList ? 1 : 0.8 }}
                 transition={{ duration: 2 }}
               >
                 <Image
