@@ -7,9 +7,7 @@ import { ButtonColor } from '@/components/ui/Buttons/ButtonColor/ButtonColor';
 import { Burger } from '@/components/ui/Burger/Burger';
 import { MobileBurger } from '@/components/common/MobileBurger/MobileBurger';
 
-interface IHeader {}
-
-export const Header: FC<IHeader> = () => {
+export const Header: FC = () => {
   const [openMenu, setOpenMenu] = useState(false);
 
   const toggleOpenMenu = () => setOpenMenu((prevState) => !prevState);
@@ -65,16 +63,12 @@ export const Header: FC<IHeader> = () => {
               </a>
             </li>
             <li className={styles.item}>
-              <ButtonColor href='#nine'>AIRDROP</ButtonColor>
+              <ButtonColor href='#ten'>AIRDROP</ButtonColor>
             </li>
           </ul>
         </nav>
       </div>
-      <MobileBurger
-        openMenu={openMenu}
-        setOpenMenu={setOpenMenu}
-        handleNavigate={() => console.log('click')}
-      />
+      <MobileBurger openMenu={openMenu} setOpenMenu={setOpenMenu} />
     </header>
   );
 };

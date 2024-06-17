@@ -8,18 +8,19 @@ interface IMobileNav {
 }
 
 export const MobileBurger: React.FC<IMobileNav> = ({ openMenu, setOpenMenu }) => {
-
-  const handleClose = (index?: number) => {
+  const handleClose = () => {
     setOpenMenu(false);
   };
 
   const navItems = [
     {
       id: 0,
+      path: '#two',
       name: 'ABOUT',
     },
     {
       id: 1,
+      path: '#three',
       name: 'FEATURES',
     },
     {
@@ -34,7 +35,7 @@ export const MobileBurger: React.FC<IMobileNav> = ({ openMenu, setOpenMenu }) =>
     },
     {
       id: 3,
-      path: '#nine',
+      path: '#ten',
       name: 'AIRDROP',
     },
   ];
@@ -56,10 +57,12 @@ export const MobileBurger: React.FC<IMobileNav> = ({ openMenu, setOpenMenu }) =>
               transition={{ duration: 0.3, bounce: false }}
             >
               <ul className={styles.navigation_list}>
-                {navItems.map((item, index) => {
+                {navItems.map((item) => {
                   return (
                     <li key={item.name} className={styles.list_item}>
-                      <a href={item.path as string}>{item.name}</a>
+                      <a href={item.path as string} onClick={handleClose}>
+                        {item.name}
+                      </a>
                     </li>
                   );
                 })}
