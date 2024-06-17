@@ -45,10 +45,14 @@ export const Header: FC<IHeader> = () => {
         <nav className={styles.navbar}>
           <ul className={styles.list}>
             <li className={styles.item}>
-              <button className={styles.link}>ABOUT</button>
+              <a className={styles.link} href='#two'>
+                ABOUT
+              </a>
             </li>
             <li className={styles.item}>
-              <button className={styles.link}>FEATURES</button>
+              <a className={styles.link} href='#three'>
+                FEATURES
+              </a>
             </li>
             <li className={styles.item}>
               <a className={styles.link} href='#eleven'>
@@ -56,9 +60,9 @@ export const Header: FC<IHeader> = () => {
               </a>
             </li>
             <li className={styles.item}>
-              <Link href='#partners' className={styles.link}>
+              <a className={styles.link} href='#partners'>
                 PARTNERS
-              </Link>
+              </a>
             </li>
             <li className={styles.item}>
               <ButtonColor href='#nine'>AIRDROP</ButtonColor>

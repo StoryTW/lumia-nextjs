@@ -3,6 +3,7 @@ import { Video } from '@/components/common/Video/Video';
 import { motion, useInView } from 'framer-motion';
 import React, { useRef } from 'react';
 import styles from './SectionSeven.module.scss';
+import { Features } from '@/components/common/Features/Features';
 
 export const SectionSeven = () => {
   const ref = useRef(null);
@@ -21,6 +22,7 @@ export const SectionSeven = () => {
         className={styles.wrp}
       >
         <div className={styles.info}>
+          <Features />
           <h2 className={styles.title}>AI Yield Management via zkML</h2>
           <p className={styles.description}>
             Utilizing zkSNARKs, Lumia ensures that trading decisions made by AI bots align with

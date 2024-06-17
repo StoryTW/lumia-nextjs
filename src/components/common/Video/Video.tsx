@@ -3,7 +3,7 @@ import React, { useRef, FC, useEffect } from 'react';
 import styles from './Video.module.scss';
 import { motion, useInView } from 'framer-motion';
 import clsx from 'clsx';
-// import { useMediaQuery } from '@/hooks/useMediaQuery';
+import { useMediaQuery } from '@/hooks/useMediaQuery';
 
 interface IVideo {
   src: string;
@@ -11,7 +11,7 @@ interface IVideo {
 }
 
 export const Video: FC<IVideo> = ({ src, left = false }) => {
-  // const mobileL = useMediaQuery('mobileL');
+  const mobileL = useMediaQuery('mobileL');
 
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -34,8 +34,8 @@ export const Video: FC<IVideo> = ({ src, left = false }) => {
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, x: left ? -400 : 400 }}
-      animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : left ? -400 : 400 }}
+      initial={{ opacity: 0, x: left ? -200 : 200 }}
+      animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : left ? -200 : 200 }}
       transition={{ duration: 1.5 }}
       className={clsx(styles.videoWrapper, {
         [styles.left]: left,

@@ -1,0 +1,23 @@
+.wrp {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 10px;
+
+  @include respond(mobileL) {
+    margin-bottom: 12px;
+  }
+
+  .dash {
+    height: 1px;
+    width: 24px;
+    background: var(--white);
+    opacity: 0.5;
+  }
+
+  .text {
+    @include Regular_14;
+    color: var(--white);
+    opacity: 0.5;
+  }
+}

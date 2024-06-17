@@ -3,6 +3,7 @@ import { Video } from '@/components/common/Video/Video';
 import { motion, useInView } from 'framer-motion';
 import React, { useRef } from 'react';
 import styles from './SectionFour.module.scss';
+import { Features } from '@/components/common/Features/Features';
 
 export const SectionFour = () => {
   const ref = useRef(null);
@@ -23,6 +24,7 @@ export const SectionFour = () => {
         className={styles.wrp}
       >
         <div className={styles.info}>
+          <Features />
           <h2 className={styles.title}>Built-In KYC and Privacy</h2>
           <p className={styles.description}>
             Employing PolygonID for secure and decentralized identity verification, Lumia ensures

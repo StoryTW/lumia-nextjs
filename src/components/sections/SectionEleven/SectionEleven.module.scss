@@ -7,11 +7,24 @@
   justify-content: space-between;
   padding: 0px 64px;
 
+  @include respond(tabletL) {
+    padding: 0px 24px;
+  }
+
+  @include respond(tablet) {
+    flex-direction: column-reverse;
+    justify-content: start;
+  }
+
   .wrp {
     position: relative;
     height: max-content;
     padding-top: 120px;
     z-index: 2;
+
+    @include respond(tablet) {
+      padding-top: 12px;
+    }
     
     .info {
       max-width: 500px;

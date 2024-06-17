@@ -3,6 +3,7 @@ import { Video } from '@/components/common/Video/Video';
 import { motion, useInView } from 'framer-motion';
 import React, { useRef } from 'react';
 import styles from './SectionSix.module.scss';
+import { Features } from '@/components/common/Features/Features';
 
 export const SectionSix = () => {
   const ref = useRef(null);
@@ -23,6 +24,7 @@ export const SectionSix = () => {
         className={styles.wrp}
       >
         <div className={styles.info}>
+          <Features />
           <h2 className={styles.title}>Aggregated Native Yield Restaking</h2>
           <p className={styles.description}>
             Lumia introduces industry-first yield maximization via Delta Neutral Liquidity

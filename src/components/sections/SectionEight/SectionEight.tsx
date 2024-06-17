@@ -3,6 +3,7 @@ import { Video } from '@/components/common/Video/Video';
 import { motion, useInView } from 'framer-motion';
 import React, { useRef } from 'react';
 import styles from './SectionEight.module.scss';
+import { Features } from '@/components/common/Features/Features';
 
 export const SectionEight = () => {
   const ref = useRef(null);
@@ -23,6 +24,7 @@ export const SectionEight = () => {
         className={styles.wrp}
       >
         <div className={styles.info}>
+          <Features />
           <h2 className={styles.title}>AI Yield Management via zkML</h2>
           <p className={styles.description}>
             Through its innovative Data Availability Committee (DAC), Lumia harnesses the power of

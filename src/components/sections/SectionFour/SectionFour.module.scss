@@ -7,40 +7,54 @@
   justify-content: space-between;
   padding: 0px 64px;
 
+  @include respond(tabletL) {
+    padding: 0px 24px;
+  }
+
+  @include respond(tablet) {
+    flex-direction: column;
+    justify-content: start;
+  }
+
   .wrp {
     position: relative;
     height: max-content;
     padding-top: 120px;
     z-index: 2;
 
+    @include respond(tablet) {
+      padding-top: 12px;
+    }
+
     .info {
       max-width: 500px;
+
       .title {
         @include Semibold_50;
         text-align: left;
         margin-bottom: 34px;
-  
+
         @include respond(tablet) {
           @include Semibold_32;
         }
-  
+
         @include respond(mobileL) {
           margin-bottom: 24px;
         }
-  
+
         @include respond(mobile375) {
           @include Semibold_24;
         }
       }
-  
+
       .description {
         @include Regular_20;
         color: var(--white);
-  
+
         @include respond(mobileL) {
           @include Regular_16;
         }
-  
+
         @include respond(mobile375) {
           @include Regular_14;
         }

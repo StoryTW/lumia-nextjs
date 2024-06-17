@@ -3,6 +3,7 @@ import { Video } from '@/components/common/Video/Video';
 import { motion, useInView } from 'framer-motion';
 import React, { useRef } from 'react';
 import styles from './SectionThree.module.scss';
+import { Features } from '@/components/common/Features/Features';
 
 export const SectionThree = () => {
   const ref = useRef(null);
@@ -21,6 +22,7 @@ export const SectionThree = () => {
         className={styles.wrp}
       >
         <div className={styles.info}>
+          <Features />
           <h2 className={styles.title}>Account Abstraction and Intents</h2>
           <p className={styles.description}>
             Integrated EIP-4337 and intents technology simplify blockchain interactions, making them
