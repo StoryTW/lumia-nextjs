@@ -1,8 +1,10 @@
 .header {
   background: transparent;
+  background: #000;
   position: sticky;
   overflow: visible;
   z-index: 9999;
+  top: 0;
 
   .wrapper {
     display: flex;

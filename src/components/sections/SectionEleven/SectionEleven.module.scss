@@ -58,6 +58,14 @@
         @include respond(mobile375) {
           @include Regular_14;
         }
+
+        .dash {
+          height: 1px;
+          width: 200px;
+          opacity: 0.5;
+          background-color: var(--white);
+          margin-top: 16px;
+        }
       }
     }
   }

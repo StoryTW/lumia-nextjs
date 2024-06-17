@@ -54,8 +54,8 @@ export const SectionBlock = () => {
             <motion.div
               ref={ref}
               key={index}
-              initial={{ opacity: 0, x: item.left ? -300 : 300 }}
-              animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : item.left ? -300 : 300 }}
+              initial={{ opacity: 0, x: item.left ? -150 : 150 }}
+              animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : item.left ? -150 : 150 }}
               transition={{ duration: 1.5 }}
             >
               <div className={styles.box}>{item.title}</div>

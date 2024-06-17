@@ -1,33 +1,94 @@
 .partnersSection {
   min-height: 100vh;
+  width: 100%;
   height: 100%;
+  position: relative;
+  overflow: hidden;
+  padding: 0px 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include respond(tabletL) {
+    padding: 0px 24px;
+  }
+
+  .title {
+    @include Semibold_60;
+    margin-bottom: 34px;
+    text-align: center;
+
+    @include respond(tablet) {
+      @include Semibold_32;
+    }
+
+    @include respond(mobileL) {
+      margin-top: 24px;
+      margin-bottom: 24px;
+    }
+
+    @include respond(mobile375) {
+      @include Semibold_24;
+    }
+  }
+
+  .description {
+    @include Regular_20;
+    text-align: center;
+    max-width: 634px;
+    margin-bottom: 40px;
+
+    @include respond(mobileL) {
+      @include Regular_16;
+      margin-bottom: 24px;
+    }
+
+    @include respond(mobile375) {
+      @include Regular_14;
+    }
+  }
+
+  .list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(200px, 230px));
+    gap: 60px 30px;
+    justify-content: center;
+    margin-bottom: 24px;
+
+    @include respond(laptopC) {
+      grid-template-columns: repeat(3, minmax(140px, 230px));
+      gap: 24px;
+    }
+
+    @include respond(tablet) {
+      grid-template-columns: repeat(2, minmax(140px, 230px));
+      gap: 16px;
+    }
+
+    .card {
+      background: linear-gradient(
+        240.62deg,
+        rgba(46, 64, 86, 0.33) 6.19%,
+        rgba(12, 9, 33, 0.48) 94.72%
+      );
+      border: 1px solid #dddff0;
+      border-radius: 6px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 
   .videoWrapper {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-
     .video {
       position: absolute;
       top: 50%;
       left: 50%;
-      min-width: 100%;
-      min-height: 100%;
-      width: auto;
-      height: auto;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       transform: translate(-50%, -50%);
-
-      @include respond(mobileL) {
-        object-fit: contain;
-        left: -25%;
-      }
-    }
-  }
-
-  .img {
-    @include respond(tabletSM) {
-      object-fit: contain;
+      z-index: -1;
     }
   }
 }

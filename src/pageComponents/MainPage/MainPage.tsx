@@ -12,6 +12,7 @@ import { SectionOne } from '@/components/sections/SectionOne/SectionOne';
 import { SectionTwo } from '@/components/sections/SectionTwo/SectionTwo';
 import styles from './MainPage.module.scss';
 import { SectionBlock } from '@/components/common/SectionBlock/SectionBlock';
+import { ParnersSection } from '@/components/sections/ParnersSection/ParnersSection';
 
 export function MainPage() {
   return (
@@ -28,6 +29,7 @@ export function MainPage() {
       <SectionNine />
       <SectionTen />
       <SectionEleven />
+      <ParnersSection />
       <Footer />
     </main>
   );

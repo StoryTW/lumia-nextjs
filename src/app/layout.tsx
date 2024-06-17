@@ -28,7 +28,10 @@ export default function RootLayout({
       <body className={popins.className}>
         <Header />
 
-        <div className='scrollContainer'>{children}</div>
+        {/* <div className='scrollContainer'>
+          {children}
+        </div> */}
+        {children}
       </body>
     </html>
   );
