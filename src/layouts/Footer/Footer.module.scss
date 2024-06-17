@@ -1,8 +1,6 @@
 .footer {
   background: transparent;
   scroll-snap-align: start;
-  // height: 100vh;
-  // min-height: 100vh;
 
   .wrapper {
     display: flex;
@@ -52,7 +50,7 @@
           }
 
           &.head {
-            opacity: 0.5;
+            text-shadow: var(--text_shadow_2);
           }
 
           a {
