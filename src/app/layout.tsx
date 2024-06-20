@@ -1,10 +1,14 @@
 import type { Metadata, Viewport } from 'next';
-import { Poppins } from 'next/font/google';
+import { Chakra_Petch } from 'next/font/google';
 import { ReactNode } from 'react';
-import '@/assets/styles/index.scss';
 import { Header } from '@/layouts/Header/Header';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/autoplay';
+import 'swiper/css/navigation';
+import '@/assets/styles/index.scss';
 
-const popins = Poppins({ subsets: ['latin'], weight: ['400', '500'] });
+const chakraPetch = Chakra_Petch({ subsets: ['latin'], weight: ['400', '500'] });
 
 export const metadata: Metadata = {
   title: 'Lumia',
@@ -25,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={popins.className}>
+      <body className={chakraPetch.className}>
         <Header />
 
         {/* <div className='scrollContainer'>

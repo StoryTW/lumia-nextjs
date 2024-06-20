@@ -13,13 +13,14 @@ import { SectionTwo } from '@/components/sections/SectionTwo/SectionTwo';
 import styles from './MainPage.module.scss';
 import { SectionBlock } from '@/components/common/SectionBlock/SectionBlock';
 import { ParnersSection } from '@/components/sections/ParnersSection/ParnersSection';
+import { SectionSwiper } from '@/components/sections/SectionSwiper/SectionSwiper';
 
 export function MainPage() {
   return (
     <main id='mainPage' className={styles.mainPage}>
       <SectionOne />
       <SectionTwo />
-      <SectionBlock />
+      {/* <SectionBlock />
       <SectionThree />
       <SectionFour />
       <SectionFive />
@@ -29,7 +30,8 @@ export function MainPage() {
       <SectionNine />
       <SectionTen />
       <SectionEleven />
-      <ParnersSection />
+      <ParnersSection /> */}
+      <SectionSwiper />
       <Footer />
     </main>
   );

@@ -1,0 +1,61 @@
+.swiperWrapper {
+  display: grid;
+  grid-template-columns: minmax(338px, 900px);
+  overflow: hidden;
+  border-radius: 24px;
+  padding-bottom: 90px;
+}
+
+.pagination {
+  bottom: 0px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .bullet {
+    cursor: pointer;
+    display: block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: var(--white);
+    opacity: 0.4;
+    @include transition;
+
+    &.activeBullet {
+      width: 8px;
+      height: 8px;
+      opacity: 1;
+    }
+  }
+
+  .bullet:not(:last-child) {
+    margin-right: 16px;
+  }
+}
+
+.btn {
+  cursor: pointer;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  color: var(--white);
+  bottom: 0px;
+  @include transition;
+
+  // &:hover {
+  //   color: var(--mentol);
+  // }
+
+  &.prev {
+    transform: rotate(180deg);
+    bottom: 0px;
+    left: 46%;
+  }
+
+  &.next {
+    right: 46%;
+  }
+}
