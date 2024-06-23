@@ -1,0 +1,40 @@
+.pngSection {
+  margin-bottom: 182px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  .title {
+    @include Regular_72;
+    background: linear-gradient(90deg, #b6daff 0%, #ffffff 45.5%, #505e7d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 102px;
+    text-align: center;
+  }
+
+  .wrapper {
+    padding: 64px;
+    display: grid;
+    grid-template-columns: minmax(200px, 943px) minmax(200px, 557px);
+    gap: 146px;
+    grid-template-areas:
+      'first second'
+      'third .';
+
+    @include respond(tabletL) {
+      padding: 24px;
+    }
+
+    .first {
+      border-radius: 22px;
+      border: 1.76px solid rgba(105, 118, 134, 0.4);
+      background: #070e15;
+      box-shadow:
+        0px 0px 61.072px 0px rgba(134, 171, 211, 0.4) inset,
+        0px 0px 14.608px 0px rgba(134, 172, 211, 0.16);
+    }
+  }
+}

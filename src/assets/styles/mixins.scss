@@ -109,6 +109,21 @@
 }
 
 //FONTS
+
+@mixin Regular_10 {
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@mixin Regular_12 {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
 @mixin Regular_14 {
   font-size: 14px;
   font-style: normal;

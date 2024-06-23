@@ -1,0 +1,87 @@
+.secondBlock {
+  grid-area: second;
+  border-radius: 22px;
+  border: 1px solid rgba(105, 118, 134, 0.4);
+  background: #070e15;
+  box-shadow:
+    0px 0px 61.072px 0px rgba(134, 171, 211, 0.4) inset,
+    0px 0px 14.608px 0px rgba(134, 172, 211, 0.16);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .block {
+    border-radius: 395.12px;
+    border: 1px dashed #8fa2b7;
+    width: 395px;
+    height: 395px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .text {
+      @include Regular_14;
+      color: var(--white);
+      text-align: center;
+      max-width: 170px;
+      text-transform: uppercase;
+    }
+
+    .qub1 {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      right: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .qub2 {
+      position: absolute;
+      top: 40px;
+      right: 10%;
+    }
+
+    .qub3 {
+      position: absolute;
+      top: 50%;
+      bottom: 50%;
+      right: -35px;
+      transform: translate(-50%, -50%);
+    }
+
+    .qub4 {
+      position: absolute;
+      bottom: 40px;
+      right: 10%;
+    }
+
+    .qub5 {
+      position: absolute;
+      bottom: -35px;
+      left: 50%;
+      right: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .qub6 {
+      position: absolute;
+      bottom: 40px;
+      left: 10%;
+    }
+
+    .qub7 {
+      position: absolute;
+      top: 50%;
+      bottom: 50%;
+      left: 0px;
+      transform: translate(-50%, -50%);
+    }
+
+    .qub8 {
+      position: absolute;
+      top: 40px;
+      left: 10%;
+    }
+  }
+}

@@ -1,16 +1,15 @@
 .btnLink {
   padding: 15.5px 35px;
-  border-radius: 6px;
-  border: 1px solid transparent;
   background: var(--background-btn-color);
-  box-shadow: var(--btn-shadow-one), var(--btn-shadow-second);
   @include Semibold_16;
   color: var(--d9);
   @include transition_500;
   cursor: pointer;
+  border-radius: 12px;
+  border: 2px solid #273F70;  
 
   &:hover {
-    border: 1px solid var(--btn-border);
+    border: 2px solid var(--btn-border);
     color: var(--white);
   }
 }

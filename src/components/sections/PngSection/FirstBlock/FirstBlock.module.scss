@@ -1,0 +1,223 @@
+.firstBlock {
+  grid-area: first;
+  border-radius: 22px;
+  border: 1px solid rgba(105, 118, 134, 0.4);
+  background: #070e15;
+  box-shadow:
+    0px 0px 61.072px 0px rgba(134, 171, 211, 0.4) inset,
+    0px 0px 14.608px 0px rgba(134, 172, 211, 0.16);
+  padding: 38px 14px 14px;
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 32px;
+
+    .textHeader {
+      @include Regular_14;
+      opacity: 0.5;
+      color: var(--white);
+      text-transform: uppercase;
+    }
+  }
+
+  .blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    .execution {
+      display: flex;
+      border-radius: 10px;
+      border: 1px solid rgba(105, 118, 134, 0.4);
+      width: max-content;
+      width: 100%;
+
+      .name {
+        padding: 77px 12px;
+        border-right: 1px dashed rgba(105, 118, 134, 0.4);
+
+        .text {
+          writing-mode: vertical-rl;
+          transform: rotate(180deg);
+          text-transform: uppercase;
+          @include Regular_14;
+        }
+      }
+
+      .content {
+        padding: 8px 22px;
+        width: 100%;
+
+        .polygon {
+          padding: 20px 10px 10px;
+          border-radius: 4px;
+          border: 1px solid rgba(255, 255, 255, 0.37);
+          background: radial-gradient(
+            53.85% 100% at 50% 100%,
+            rgba(137, 156, 175, 0.2) 0%,
+            rgba(53, 61, 70, 0.18) 100%
+          );
+          margin-bottom: 28px;
+
+          .polygonHeader {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 16px;
+
+            .cdkText {
+              @include Regular_14;
+              text-transform: uppercase;
+              color: var(--white);
+            }
+          }
+
+          .polygonContent {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(40px, 195px));
+            gap: 6px;
+
+            .polygonBlock {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              border: 1px dashed rgba(255, 255, 255, 0.16);
+              background: rgba(255, 255, 255, 0.08);
+              padding: 12px 0px;
+
+              img {
+                margin-bottom: 6px;
+              }
+
+              .text {
+                @include Regular_14;
+                color: var(--white);
+                max-width: 104px;
+                text-align: center;
+              }
+            }
+          }
+        }
+
+        .lumiaStream {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 12px;
+          background: var(--white);
+          border-radius: 4px;
+          padding: 8px;
+          width: 100%;
+
+          .text {
+            @include Regular_14;
+            text-transform: uppercase;
+            color: #000;
+          }
+        }
+      }
+    }
+
+    .da {
+      display: flex;
+      border-radius: 10px;
+      border: 1px solid rgba(105, 118, 134, 0.4);
+      width: max-content;
+      width: 100%;
+
+      .name {
+        padding: 55px 12px;
+        border-right: 1px dashed rgba(105, 118, 134, 0.4);
+
+        .text {
+          writing-mode: vertical-rl;
+          transform: rotate(180deg);
+          text-transform: uppercase;
+          @include Regular_14;
+        }
+      }
+
+      .content {
+        padding: 16px 32px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        .contentBlock {
+          border-radius: 4px;
+          border: 1px dashed rgba(255, 255, 255, 0.16);
+          background: rgba(255, 255, 255, 0.08);
+          width: 100%;
+          padding: 20px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          height: 95px;
+
+          .info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+
+            .textDa {
+              @include Regular_14;
+              color: var(--white);
+            }
+          }
+
+          .description {
+            @include Regular_14;
+            color: var(--white);
+          }
+        }
+      }
+    }
+
+    .settlement {
+      display: flex;
+      border-radius: 10px;
+      border: 1px solid rgba(105, 118, 134, 0.4);
+      width: 100%;
+
+      .name {
+        padding: 38px 12px;
+        border-right: 1px dashed rgba(105, 118, 134, 0.4);
+
+        .text {
+          writing-mode: vertical-rl;
+          transform: rotate(180deg);
+          text-transform: uppercase;
+          @include Regular_14;
+        }
+      }
+
+      .content {
+        padding: 16px 32px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        .contentBlock {
+          border-radius: 4px;
+          border: 1px dashed rgba(255, 255, 255, 0.16);
+          background: rgba(255, 255, 255, 0.08);
+          width: 100%;
+          padding: 20px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+
+        }
+      }
+    }
+  }
+}
