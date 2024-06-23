@@ -23,16 +23,14 @@ export const SectionThree = () => {
       >
         <div className={styles.info}>
           <Features />
-          <h2 className={styles.title}>Focused on RWAs</h2>
+          <h2 className={styles.title}>The Ultimate <br/>Infrastructure for <br/>RWAs</h2>
           <p className={styles.description}>
-            Lumia specializes in the seamless integration and liquidity management of real-world
-            assets (RWAs), enabling businesses to efficiently bring their tokenized assets – real
-            estate, commodities, and financial instruments – onto DeFi.
+          Lumia specializes in the seamless integration, liquidity provisioning, and infrastructure enabling businesses to efficiently bring their tokenized assets such as real estate, commodities, and financial instruments onto DeFi.
           </p>
         </div>
       </motion.div>
 
-      <Video src='/3.mp4' />
+      <Video src='/4.mp4' />
     </section>
   );
 };

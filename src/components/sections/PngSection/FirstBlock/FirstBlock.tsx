@@ -84,9 +84,9 @@ export const FirstBlock = () => {
               </div>
 
               <div className={styles.polygonContent}>
-                {polygonBlocks.map((block) => {
+                {polygonBlocks.map((block, index) => {
                   return (
-                    <div className={styles.polygonBlock}>
+                    <div className={styles.polygonBlock} key={index}>
                       {block.image}
                       <div className={styles.text}>{block.text}</div>
                     </div>

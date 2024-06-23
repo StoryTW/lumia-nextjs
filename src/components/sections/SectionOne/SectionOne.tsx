@@ -5,10 +5,10 @@ import { TxtRotate } from '@/components/common/TxtRotate/TxtRotate';
 import clsx from 'clsx';
 import { ButtonColor } from '@/components/ui/Buttons/ButtonColor/ButtonColor';
 import { motion, useInView } from 'framer-motion';
-import { Video } from '@/components/common/Video/Video';
 
 export const SectionOne: FC = () => {
   const ref = useRef(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const inView = useInView(ref, {
     once: false,
@@ -29,11 +29,27 @@ export const SectionOne: FC = () => {
             The first ever <TxtRotate />
           </p>
           <p className={clsx(styles.description, styles.margin)}>restake roll up L2 for RWAs</p>
-          <ButtonColor href='#nine'>AIRDROP</ButtonColor>
+          <ButtonColor href='#nine' variant='sectionOne'>Node Sale</ButtonColor>
         </div>
       </motion.div>
 
-      <Video src='/1.mp4' />
+      <div className={styles.videoWrapper}>
+        <video
+          ref={videoRef}
+          className={styles.video}
+          preload='metadata'
+          width={'100%'}
+          height={'100%'}
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
+          <source src={'/1.mp4'} type='video/mp4' />
+        </video>
+      </div>
+
+      {/* <Video src='/1.mp4' /> */}
     </section>
   );
 };

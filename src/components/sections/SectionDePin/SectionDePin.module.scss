@@ -1,24 +1,23 @@
-.sectionFour {
+.sectionNine {
   height: 100vh;
   min-height: 100vh;
   position: relative;
   scroll-snap-align: start;
   display: flex;
   justify-content: space-between;
-  padding: 0px 64px;
+  padding: 0px 0 0 94px;
 
   & video {
     width: 1014px !important;
     right: -100px;
   }
 
-  
   @include respond(tabletL) {
     padding: 0px 24px;
   }
 
   @include respond(tablet) {
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: start;
     height: 100%;
     min-height: 100%;
@@ -36,16 +35,23 @@
     }
 
     .info {
-      max-width: 700px;
-
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .maybeImg {
+        width: 139px;
+        height: 139px;
+        background: #fff;
+      }
       .title {
         background: linear-gradient(90deg, #B6DAFF 0%, #FFFFFF 45.5%, #505E7D 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        font-size: 52px;
+        font-size: 72px;
         font-weight: 400;
-        text-align: left;
-        margin-bottom: 34px;
+        text-align: center;
+        margin-top: 43px;
+        margin-bottom: 25px;
 
         @include respond(tablet) {
           @include Semibold_32;
@@ -61,6 +67,7 @@
       }
 
       .description {
+        text-align: center;
         @include Regular_20;
         color: var(--white);
 

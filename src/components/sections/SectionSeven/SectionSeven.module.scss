@@ -11,6 +11,11 @@
     padding: 0px 24px;
   }
 
+  & video {
+    width: 1014px !important;
+    right: -100px;
+  }
+
   @include respond(tablet) {
     flex-direction: column-reverse;
     justify-content: start;
@@ -30,10 +35,14 @@
     }
 
     .info {
-      max-width: 500px;
+      max-width: 700px;
 
       .title {
-        @include Semibold_50;
+        background: linear-gradient(90deg, #B6DAFF 0%, #FFFFFF 45.5%, #505E7D 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 52px;
+        font-weight: 400;
         text-align: left;
         margin-bottom: 34px;
 

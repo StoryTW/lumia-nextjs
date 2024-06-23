@@ -2,10 +2,10 @@
 import { Video } from '@/components/common/Video/Video';
 import { motion, useInView } from 'framer-motion';
 import React, { useRef } from 'react';
-import styles from './SectionFive.module.scss';
+import styles from './SectionDePin.module.scss';
 import { Features } from '@/components/common/Features/Features';
 
-export const SectionFive = () => {
+export const SectionDePin= () => {
   const ref = useRef(null);
 
   const inView = useInView(ref, {
@@ -13,7 +13,7 @@ export const SectionFive = () => {
   });
 
   return (
-    <section className={styles.sectionFive} id='five'>
+    <section className={styles.sectionNine} id='nine'>
       <motion.div
         ref={ref}
         initial={{ opacity: 0, x: -200 }}
@@ -22,16 +22,15 @@ export const SectionFive = () => {
         className={styles.wrp}
       >
         <div className={styles.info}>
-          <Features queueNum='3'/>
-          <h2 className={styles.title}>Pioneering Scalability,<br /> Decentralization, and Fast<br/>Finality</h2>
+          <div className={styles.maybeImg}>
+
+          </div>
+          <h2 className={styles.title}>DePin — Be Part of the Liquidity Revolution <br/> with HyperNodes</h2>
           <p className={styles.description}>
-            Integrated EIP-4337 and intents technology simplify blockchain interactions, making them
-            more intuitive for incoming
+          With just one license, you can access multiple reward pools and multiple yields. Join the revolution and unlock the <br/> full potential of Lumia with Lumia’s industry-first decentralized physical infrastructure nodes. Get a HyperNode.
           </p>
         </div>
       </motion.div>
-
-      <Video src='/6.mp4' />
     </section>
   );
 };

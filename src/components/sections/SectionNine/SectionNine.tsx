@@ -3,6 +3,7 @@ import { Video } from '@/components/common/Video/Video';
 import { motion, useInView } from 'framer-motion';
 import React, { useRef } from 'react';
 import styles from './SectionNine.module.scss';
+import { Features } from '@/components/common/Features/Features';
 
 export const SectionNine = () => {
   const ref = useRef(null);
@@ -21,16 +22,16 @@ export const SectionNine = () => {
         className={styles.wrp}
       >
         <div className={styles.info}>
-          <h2 className={styles.title}>AI Yield Management via zkML</h2>
+          
+        <Features queueNum="7"/>
+          <h2 className={styles.title}>Industry-First Intelligent AI Yield Management via zkML and zkSNARKs</h2>
           <p className={styles.description}>
-            Utilizing zkSNARKs, Lumia ensures that trading decisions made by AI bots align with
-            neural network model predictions without revealing the model's details, providing
-            transparency and trust in RWA yield management.
+          Lumia ensures that trading decisions made by AI align with neural network model predictions without revealing the model's details, providing transparency and trust in yield management for the next generation of Web3 users.
           </p>
         </div>
       </motion.div>
 
-      <Video src='/9.mp4' />
+      <Video  src='/9.mp4' />
     </section>
   );
 };

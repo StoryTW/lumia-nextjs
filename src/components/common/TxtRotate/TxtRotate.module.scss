@@ -1,13 +1,18 @@
 .text {
-  @include Regular_24;
-  text-shadow: var(--text_shadow_2);
-  color: var(--white);
-  font-weight: 600;
+  @include Regular_32;
   border-right: 1px solid var(--white);
   animation: blink 1s step-end infinite;
+  background: linear-gradient(90deg, #b6daff 0%, #fff 45.5%, #505e7d 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  @include respond(tabletL) {
+    font-size: 22px;
+  }
 
   @include respond(mobileL) {
-    @include Regular_16;
+    font-size: 20px;
   }
 }
 

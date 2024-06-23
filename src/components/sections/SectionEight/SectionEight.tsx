@@ -14,7 +14,6 @@ export const SectionEight = () => {
 
   return (
     <section className={styles.sectionEight} id='eight'>
-      <Video src='/8.mp4' left />
 
       <motion.div
         ref={ref}
@@ -24,15 +23,16 @@ export const SectionEight = () => {
         className={styles.wrp}
       >
         <div className={styles.info}>
-          <Features />
-          <h2 className={styles.title}>Aggregated Native Yield Restaking</h2>
+          <Features queueNum='6'/>
+          <h2 className={styles.title}>Maximum Yields Exclusive to Lumia Using Aggregated Native Yield Restaking</h2>
           <p className={styles.description}>
-            Lumia introduces industry-first yield maximization via Delta Neutral Liquidity
-            Provisioning (DNLP) infrastructure, combined with yields derived from various restaking,
-            liquid staking, and yield farming markets, making it ideal for RWA users.
+          Lumia introduces industry-first yield maximization via Delta Neutral Liquidity Provisioning (DNLP) infrastructure stacked with yields derived from various restaking, liquid-staking, and yield farming markets - maximizing capital for financial institutions and retail investors alike.
           </p>
         </div>
       </motion.div>
+
+      
+      <Video src='/9.mp4' />
     </section>
   );
 };

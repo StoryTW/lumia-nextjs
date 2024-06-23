@@ -54,10 +54,21 @@ const ARRAY_PARTNERS = [
   {
     link: '/partners/partner-16.png',
   },
+  {
+    link: '/partners/partner-17.png',
+  },
+  {
+    link: '/partners/partner-18.png',
+  },
+  {
+    link: '/partners/partner-19.png',
+  },
+  {
+    link: '/partners/partner-20.png',
+  },
 ];
 
 export const ParnersSection = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
 
   const tabletSM = useMediaQuery('tabletSM');
 
@@ -95,7 +106,7 @@ export const ParnersSection = () => {
       </motion.div>
       <div className={styles.list} ref={refList}>
         {ARRAY_PARTNERS.map((item, index) => {
-          if (index === 0 || index === 1) {
+          {
             return (
               <motion.div
                 key={index}
@@ -103,139 +114,6 @@ export const ParnersSection = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: inViewList ? 1 : 0, scale: inViewList ? 1 : 0.8 }}
                 transition={{ duration: 0.8 }}
-              >
-                <Image
-                  width={tabletSM ? 124 : 182}
-                  height={tabletSM ? 42 : 56}
-                  src={item.link}
-                  alt={`logo_${item.link}`}
-                />
-              </motion.div>
-            );
-          }
-
-          if (index === 2 || index === 3) {
-            return (
-              <motion.div
-                key={index}
-                className={styles.card}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: inViewList ? 1 : 0, scale: inViewList ? 1 : 0.8 }}
-                transition={{ duration: 0.8 }}
-              >
-                <Image
-                  width={tabletSM ? 124 : 182}
-                  height={tabletSM ? 42 : 56}
-                  src={item.link}
-                  alt={`logo_${item.link}`}
-                />
-              </motion.div>
-            );
-          }
-
-          if (index === 4 || index === 5) {
-            return (
-              <motion.div
-                key={index}
-                className={styles.card}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: inViewList ? 1 : 0, scale: inViewList ? 1 : 0.8 }}
-                transition={{ duration: 1.2 }}
-              >
-                <Image
-                  width={tabletSM ? 124 : 182}
-                  height={tabletSM ? 42 : 56}
-                  src={item.link}
-                  alt={`logo_${item.link}`}
-                />
-              </motion.div>
-            );
-          }
-
-          if (index === 6 || index === 7) {
-            return (
-              <motion.div
-                key={index}
-                className={styles.card}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: inViewList ? 1 : 0, scale: inViewList ? 1 : 0.8 }}
-                transition={{ duration: 1.2 }}
-              >
-                <Image
-                  width={tabletSM ? 124 : 182}
-                  height={tabletSM ? 42 : 56}
-                  src={item.link}
-                  alt={`logo_${item.link}`}
-                />
-              </motion.div>
-            );
-          }
-
-          if (index === 8 || index === 9) {
-            return (
-              <motion.div
-                key={index}
-                className={styles.card}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: inViewList ? 1 : 0, scale: inViewList ? 1 : 0.8 }}
-                transition={{ duration: 1.6 }}
-              >
-                <Image
-                  width={tabletSM ? 124 : 182}
-                  height={tabletSM ? 42 : 56}
-                  src={item.link}
-                  alt={`logo_${item.link}`}
-                />
-              </motion.div>
-            );
-          }
-
-          if (index === 10 || index === 11) {
-            return (
-              <motion.div
-                key={index}
-                className={styles.card}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: inViewList ? 1 : 0, scale: inViewList ? 1 : 0.8 }}
-                transition={{ duration: 1.6 }}
-              >
-                <Image
-                  width={tabletSM ? 124 : 182}
-                  height={tabletSM ? 42 : 56}
-                  src={item.link}
-                  alt={`logo_${item.link}`}
-                />
-              </motion.div>
-            );
-          }
-
-          if (index === 12 || index === 13) {
-            return (
-              <motion.div
-                key={index}
-                className={styles.card}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: inViewList ? 1 : 0, scale: inViewList ? 1 : 0.8 }}
-                transition={{ duration: 2 }}
-              >
-                <Image
-                  width={tabletSM ? 124 : 182}
-                  height={tabletSM ? 42 : 56}
-                  src={item.link}
-                  alt={`logo_${item.link}`}
-                />
-              </motion.div>
-            );
-          }
-
-          if (index === 14 || index === 15) {
-            return (
-              <motion.div
-                key={index}
-                className={styles.card}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: inViewList ? 1 : 0, scale: inViewList ? 1 : 0.8 }}
-                transition={{ duration: 2 }}
               >
                 <Image
                   width={tabletSM ? 124 : 182}
@@ -248,39 +126,6 @@ export const ParnersSection = () => {
           }
         })}
       </div>
-      {tabletSM ? (
-        <div className={styles.videoWrapper}>
-          <video
-            ref={videoRef}
-            className={styles.video}
-            preload='metadata'
-            width={'100%'}
-            height={'100%'}
-            autoPlay
-            muted
-            loop
-            playsInline
-          >
-            <source src={'/partners_mob.mp4'} type='video/mp4' />
-          </video>
-        </div>
-      ) : (
-        <div className={styles.videoWrapper}>
-          <video
-            ref={videoRef}
-            className={styles.video}
-            preload='metadata'
-            width={'100%'}
-            height={'100%'}
-            autoPlay
-            muted
-            loop
-            playsInline
-          >
-            <source src={'/partners.mp4'} type='video/mp4' />
-          </video>
-        </div>
-      )}
     </section>
   );
 };

@@ -13,8 +13,6 @@ export const SectionEleven = () => {
 
   return (
     <section className={styles.sectionEight} id='eleven'>
-      <Video src='/11.mp4' />
-
       <motion.div
         ref={ref}
         initial={{ opacity: 0, x: -200 }}
@@ -45,6 +43,8 @@ export const SectionEleven = () => {
           </div>
         </div>
       </motion.div>
+
+      <Video src='/11.mp4' />
     </section>
   );
 };
