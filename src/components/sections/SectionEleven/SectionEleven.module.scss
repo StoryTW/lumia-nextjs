@@ -4,7 +4,8 @@
   position: relative;
   scroll-snap-align: start;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
   padding: 0px 64px;
 
   @include respond(tabletL) {
@@ -30,34 +31,61 @@
       max-width: 500px;
       
       .title {
-        @include Semibold_50;
         text-align: left;
-        margin-bottom: 34px;
+        margin-bottom: 42px;
+        font-size: 72px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%; /* 100.8px */
+        letter-spacing: 1.44px;
+        background: linear-gradient(90deg, #B6DAFF 0%, #FFF 45.5%, #505E7D 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
   
-        @include respond(tablet) {
-          @include Semibold_32;
-        }
-  
-        @include respond(mobileL) {
-          margin-bottom: 24px;
-        }
-  
-        @include respond(mobile375) {
-          @include Semibold_24;
+        @include respond(tabletL) {
+          font-size: 32px;
         }
       }
   
       .description {
-        @include Regular_20;
-        color: var(--white);
-  
-        @include respond(mobileL) {
-          @include Regular_16;
+        position: relative;
+
+        &::before {
+          content: "";
+          display: block;
+          background: var(--white);
+          width: 1px;
+          height: 84%;
+          position: absolute;
+          left: 13px;
+          top: 11px;
+          z-index: 333;
         }
   
-        @include respond(mobile375) {
-          @include Regular_14;
+        .item {
+          list-style: none;
+          font-size: 20px;
+          margin-bottom: 20px;
+          padding-left: 40px;
+          position: relative;
+          z-index: 2;
+          color: var(--white);
+
+          @include respond(mobileL) {
+            font-size: 18px;
+          }
+
+          &::before {
+            content: url('/dot.svg');
+            display: block;
+            position: absolute;
+            border-radius: 40px;
+            left: 0;
+          }
         }
+
+        
 
         .dash {
           height: 1px;

@@ -1,7 +1,7 @@
 .videoWrapper {
   position: relative;
-  width: 850px;
-  height: 550px;
+  width: 1000px;
+  height: 600px;
   overflow: hidden;
   z-index: 1;
 
@@ -19,10 +19,12 @@
   }
 
   .video {
-    position: absolute;
-    min-width: 100%;
-    min-height: 100%;
+    // position: absolute;
+    // min-width: 100%;
+    // min-height: 100%;
+    // width: 100%;
+    // height: 100%;
     width: 100%;
-    height: 100%;
+    height: auto;
   }
 }

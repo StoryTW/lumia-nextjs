@@ -19,13 +19,19 @@
     padding: 64px;
     display: grid;
     grid-template-columns: minmax(200px, 943px) minmax(200px, 557px);
-    gap: 146px;
+    gap: 90px 140px;
     grid-template-areas:
       'first second'
       'third .';
 
     @include respond(tabletL) {
       padding: 24px;
+
+      grid-template-columns: minmax(200px, 943px);
+      grid-template-areas:
+      'second'
+      'first'
+      'third';
     }
 
     .first {
