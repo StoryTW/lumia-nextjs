@@ -4,6 +4,7 @@ import { motion, useInView } from 'framer-motion';
 import React, { useRef } from 'react';
 import styles from './SectionSix.module.scss';
 import { Features } from '@/components/common/Features/Features';
+import { Divider } from '@/components/common/Divider/Divider';
 
 export const SectionSix = () => {
   const ref = useRef(null);
@@ -17,8 +18,8 @@ export const SectionSix = () => {
 
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, x: 200 }}
-      animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : 200 }}
+      initial={{ opacity: 0, x: -200 }}
+      animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : -200 }}
       transition={{ duration: 1.5 }}
       className={styles.wrp}
     >
@@ -30,7 +31,10 @@ export const SectionSix = () => {
         </p>
       </div>
     </motion.div>
-      <Video src='/7.mp4' left />
+
+    <Divider/>
+
+    <Video src='/7.mp4' />
     </section>
   );
 };

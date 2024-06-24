@@ -29,7 +29,9 @@ export const SectionOne: FC = () => {
             The first ever <TxtRotate />
           </p>
           <p className={clsx(styles.description, styles.margin)}>restake roll up L2 for RWAs</p>
-          <ButtonColor href='#nine' variant='sectionOne'>Node Sale</ButtonColor>
+          <ButtonColor href='#nine' variant='sectionOne'>
+            Node Sale
+          </ButtonColor>
         </div>
       </motion.div>
 
@@ -45,11 +47,9 @@ export const SectionOne: FC = () => {
           loop
           playsInline
         >
-          <source src={'/1.mp4'} type='video/mp4' />
+          <source src={'/main.mp4'} type='video/mp4' />
         </video>
       </div>
-
-      {/* <Video src='/1.mp4' /> */}
     </section>
   );
 };

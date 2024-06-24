@@ -50,17 +50,6 @@
   }
 
   .videoWrapper {
-    &.mob {
-      display: none;
-    }
-
-    @include respond(tabletSM) {
-      display: none;
-      
-      &.mob {
-        display: block;
-      }
-    }
     .video {
       position: absolute;
       top: 50%;
@@ -74,33 +63,4 @@
       z-index: -1;
     }
   }
-
-  // .wrp {
-  //   display: grid;
-  //   grid-template-columns: minmax(120px, 360px) minmax(120px, 360px);
-  //   gap: 24px;
-  //   justify-content: center;
-
-  //   @include respond(tablet) {
-  //     grid-template-columns: 1fr;
-  //   }
-
-  //   .box {
-  //     background: linear-gradient(
-  //       240.62deg,
-  //       rgba(46, 64, 86, 0.33) 6.19%,
-  //       rgba(12, 9, 33, 0.48) 94.72%
-  //     );
-  //     padding: 24px;
-  //     border-radius: 10px;
-  //     border: 1px solid #dddff0;
-  //     text-align: center;
-  //     @include Semibold_32;
-  //     text-shadow: var(--text_shadow_2);
-
-  //     @include respond(tablet) {
-  //       @include Semibold_16;
-  //     }
-  //   }
-  // }
 }

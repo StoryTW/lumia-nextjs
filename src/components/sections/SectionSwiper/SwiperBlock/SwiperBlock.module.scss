@@ -1,9 +1,13 @@
 .swiperWrapper {
   display: grid;
-  grid-template-columns: minmax(338px, 900px);
+  grid-template-columns: minmax(300px, 900px);
   overflow: hidden;
   border-radius: 24px;
   padding-bottom: 90px;
+
+  @include respond(tabletL) {
+    padding-bottom: 52px;
+  }
 }
 
 .pagination {
@@ -45,17 +49,21 @@
   bottom: 0px;
   @include transition;
 
-  // &:hover {
-  //   color: var(--mentol);
-  // }
-
   &.prev {
     transform: rotate(180deg);
     bottom: 0px;
     left: 46%;
+
+    @include respond(tabletL) {
+      left: 48px;
+    }
   }
 
   &.next {
     right: 46%;
+
+    @include respond(tabletL) {
+      right: 48px;
+    }
   }
 }

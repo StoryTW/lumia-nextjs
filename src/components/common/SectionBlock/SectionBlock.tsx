@@ -4,7 +4,7 @@ import React, { useRef } from 'react';
 // import { Video } from '@/components/common/Video/Video';
 import styles from './SectionBlock.module.scss';
 // import { useMediaQuery } from '@/hooks/useMediaQuery';
-import clsx from 'clsx';
+// import clsx from 'clsx';
 
 export const SectionBlock = () => {
   const ref = useRef(null);
@@ -28,21 +28,6 @@ export const SectionBlock = () => {
       >
         <motion.h2 className={styles.text}>Lumia’s Core Strengths</motion.h2>
       </motion.div>
-      <div className={clsx(styles.videoWrapper, styles.mob)}>
-        <video
-          ref={videoRef}
-          className={styles.video}
-          preload='metadata'
-          width={'100%'}
-          height={'100%'}
-          autoPlay
-          muted
-          loop
-          playsInline
-        >
-          <source src={'/blocks-mobile.mp4'} type='video/mp4' />
-        </video>
-      </div>
       <div className={styles.videoWrapper}>
         <video
           ref={videoRef}

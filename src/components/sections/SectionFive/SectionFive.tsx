@@ -4,6 +4,7 @@ import { motion, useInView } from 'framer-motion';
 import React, { useRef } from 'react';
 import styles from './SectionFive.module.scss';
 import { Features } from '@/components/common/Features/Features';
+import { Divider } from '@/components/common/Divider/Divider';
 
 export const SectionFive = () => {
   const ref = useRef(null);
@@ -30,6 +31,8 @@ export const SectionFive = () => {
           </p>
         </div>
       </motion.div>
+      
+      <Divider />
 
       <Video src='/6.mp4' />
     </section>

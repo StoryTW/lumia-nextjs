@@ -15,25 +15,29 @@ import { SectionNine } from '@/components/sections/SectionNine/SectionNine';
 import { SectionTen } from '@/components/sections/SectionTen/SectionTen';
 import { SectionBlock } from '@/components/common/SectionBlock/SectionBlock';
 import { ParnersSection } from '@/components/sections/ParnersSection/ParnersSection';
+import { SectionSeven } from '@/components/sections/SectionSeven/SectionSeven';
+import { SectionDePin } from '@/components/sections/SectionDePin/SectionDePin';
 
 export function MainPage() {
   return (
     <main id='mainPage' className={styles.mainPage}>
-      {/* <SectionOne /> */}
-      {/* <SectionTwo /> */}
+      <SectionOne />
+      <SectionTwo />
       <SectionBlock />
-      {/* <SectionThree /> */}
-      {/* <SectionFour /> */}
-      {/* <SectionFive /> */}
-      {/* <SectionSix /> */}
-      {/* <SectionEight /> */}
-      {/* <SectionNine /> */}
-      {/* <SectionTen /> */}
-      {/* <SectionEleven /> */}
-      {/* <SectionContributors /> */}
-      {/* <PngSection /> */}
-      {/* <ParnersSection /> */}
-      {/* <SectionSwiper /> */}
+      <SectionThree />
+      <SectionFour />
+      <SectionFive />
+      <SectionSix />
+      <SectionSeven />
+      <SectionEight />
+      <SectionNine />
+      <SectionDePin />
+      <PngSection />
+      <SectionTen />
+      <SectionEleven />
+      <SectionContributors />
+      <ParnersSection />
+      <SectionSwiper />
       <Footer />
     </main>
   );

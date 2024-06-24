@@ -35,7 +35,7 @@
       .title {
         margin-bottom: 24px;
         text-align: left;
-        background: linear-gradient(90deg, #B6DAFF 0%, #FFF 45.5%, #505E7D 100%);
+        background: linear-gradient(90deg, #b6daff 0%, #fff 45.5%, #505e7d 100%);
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -51,11 +51,6 @@
         @include respond(mobileL) {
           font-size: 40px;
         }
-
-        // @include respond(mobile375) {
-        //   @include Semibold_24;
-        //   margin-bottom: 24px;
-        // }
       }
 
       .description {
@@ -78,22 +73,30 @@
     }
   }
 
-  .video {
-    position: absolute;
-    right: -30%;
-    width: 100%;
-    min-width: 100%;
-    min-height: 100%;
-    height: 100%;
-    object-fit: contain;
-    z-index: -1;
+  .videoWrapper {
+    .video {
+      position: absolute;
+      right: -30%;
+      top: -150px;
+      width: 100%;
+      min-width: 100%;
+      min-height: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+
+      @include respond(tabletL) {
+        position: static;
+        object-fit: contain;
+      }
+    }
   }
 
   @include respond(tabletL) {
     padding: 0px 24px;
   }
 
-  @include respond(tablet) {
+  @include respond(tabletL) {
     flex-direction: column;
     justify-content: start;
     height: 100%;

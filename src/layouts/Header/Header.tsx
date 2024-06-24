@@ -12,32 +12,6 @@ export const Header: FC = () => {
 
   const toggleOpenMenu = () => setOpenMenu((prevState) => !prevState);
 
-  // useEffect(() => {
-  //   const handleAnchorClick = (event: any) => {
-  //     event.preventDefault();
-  //     const targetId = event.currentTarget.getAttribute('href').substring(1);
-  //     const targetElement = document.getElementById(targetId);
-
-  //     if (targetElement) {
-  //       // const yOffset = -60;
-  //       // const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
-
-  //       targetElement.scrollIntoView({
-  //       // targetElement.scrollTo({
-  //         // top: y,
-  //         behavior: 'smooth',
-  //       });
-  //     }
-  //   };
-
-  //   const anchors = document.querySelectorAll('a[href^="#"]');
-  //   anchors.forEach((anchor) => anchor.addEventListener('click', handleAnchorClick));
-
-  //   return () => {
-  //     anchors.forEach((anchor) => anchor.removeEventListener('click', handleAnchorClick));
-  //   };
-  // }, []);
-
   return (
     <header className={styles.header}>
       <div className={styles.wrapper}>

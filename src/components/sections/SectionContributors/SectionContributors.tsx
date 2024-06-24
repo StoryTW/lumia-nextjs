@@ -7,7 +7,7 @@ import { data } from './helpers';
 
 export const SectionContributors = () => {
   const ref = useRef(null);
-  
+
   const inView = useInView(ref, {
     once: false,
   });
@@ -23,14 +23,15 @@ export const SectionContributors = () => {
         animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : -150 }}
         transition={{ duration: 1.5 }}
       >
-        <motion.h2 className={styles.text}>
-          Core
-          <br />
-          Contributors
-        </motion.h2>
+        <motion.h2 className={styles.text}>Core Contributors</motion.h2>
         {data.map((item, index) => {
           return (
-            <div key={index}>
+            <div
+              key={index}
+              style={{
+                gridArea: item.gridName,
+              }}
+            >
               <div className={styles.photo}>
                 <img src={item.photo} alt='Photo' />
               </div>

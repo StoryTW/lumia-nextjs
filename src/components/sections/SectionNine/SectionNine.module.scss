@@ -4,13 +4,8 @@
   position: relative;
   scroll-snap-align: start;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   padding: 0px 0 0 94px;
-
-  & video {
-    width: 1014px !important;
-    right: -100px;
-  }
 
   @include respond(tabletL) {
     padding: 0px 24px;
@@ -28,6 +23,7 @@
     position: relative;
     height: max-content;
     padding-top: 120px;
+    padding-right: 42px;
     z-index: 2;
 
     @include respond(tablet) {

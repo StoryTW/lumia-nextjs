@@ -1,22 +1,26 @@
 .btnLink {
   position: relative;
-  padding: 15px 59px 15px 42.2px;
+  padding: 13px 36px;
   border-radius: 12px;
   border: 2px solid #273F70;
   background: transparent;
-  @include Semibold_16;
   color: var(--d9);
   @include transition_500;
   cursor: pointer;
   display: inline-block;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: 0.34px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: max-content;
 
-  &.sectionOne {
-    padding: 22px 29px;
-    font-size: 20px;
-  }
 
   &:hover {
-    border: 1px solid var(--btn-border);
+    border: 2px solid var(--btn-border);
     color: var(--white);
   }
 }
