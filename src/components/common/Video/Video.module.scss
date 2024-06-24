@@ -4,6 +4,8 @@
   height: 600px;
   overflow: hidden;
   z-index: 1;
+  display: flex;
+  align-items: center;
 
   @include respond(tablet) {
     width: 100%;

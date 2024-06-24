@@ -1,15 +1,15 @@
 @import './consts.scss';
 @import './globals.scss';
 
-.scrollContainer {
-  height: 100vh;
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
+// .scrollContainer {
+//   height: 100vh;
+//   scroll-snap-type: y mandatory;
+//   overflow-y: scroll;
 
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+//   scrollbar-width: none;
+//   -ms-overflow-style: none;
 
-  &::-webkit-scrollbar {
-    display: none;
-  }
-}
+//   &::-webkit-scrollbar {
+//     display: none;
+//   }
+// }

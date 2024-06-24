@@ -65,6 +65,18 @@ body {
   scrollbar-gutter: stable;
   height: 100%;
   overflow-x: hidden;
+  overflow-y: scroll;
+  
+  -ms-overflow-style:none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  
+  &::-webkit-scrollbar-button {
+    display: none;
+  }
+  
 }
 
 dl,

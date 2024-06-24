@@ -19,6 +19,18 @@
     margin-bottom: 48px;
   }
 
+  @include respond(tabletL) {
+    padding: 0px 24px;
+  }
+
+  @include respond(tabletL) {
+    flex-direction: column;
+    justify-content: start;
+    height: 100%;
+    min-height: 100%;
+    margin-bottom: 148px;
+  }
+
   .wrp {
     position: relative;
     height: max-content;
@@ -86,21 +98,15 @@
       z-index: -1;
 
       @include respond(tabletL) {
-        position: static;
+        //   top: 300px;
+        //   bottom: 0px;
+        // position: static;
         object-fit: contain;
+        height: 400px;
+        width: 400px;
+        transform: scale(2);
+        top: 100px;
       }
     }
-  }
-
-  @include respond(tabletL) {
-    padding: 0px 24px;
-  }
-
-  @include respond(tabletL) {
-    flex-direction: column;
-    justify-content: start;
-    height: 100%;
-    min-height: 100%;
-    margin-bottom: 48px;
   }
 }
