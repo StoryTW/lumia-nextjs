@@ -11,11 +11,7 @@
   }
 
   @include respond(mobileL) {
-    height: 280px;
-  }
-
-  @include respond(mobile375) {
-    height: 240px;
+    height: 220px;
   }
 
   .video {

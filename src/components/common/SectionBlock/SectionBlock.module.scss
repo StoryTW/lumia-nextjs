@@ -12,6 +12,18 @@
   @include respond(tabletL) {
     padding: 0px 24px;
   }
+
+  @include respond(tablet) {
+    height: 400px;
+    min-height: 400px;
+  }
+
+  @include respond(mobileL) {
+    height: 300px;
+    min-height: 300px;
+  }
+
+
   .centerText {
     padding: 34px 73px;
     border: 1px solid #19244A;

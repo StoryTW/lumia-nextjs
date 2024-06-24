@@ -52,16 +52,12 @@
         margin-top: 43px;
         margin-bottom: 25px;
 
-        @include respond(tablet) {
-          @include Semibold_32;
+        @include respond(tabletL) {
+          font-size: 32px;
         }
 
         @include respond(mobileL) {
           margin-bottom: 24px;
-        }
-
-        @include respond(mobile375) {
-          @include Semibold_24;
         }
       }
 

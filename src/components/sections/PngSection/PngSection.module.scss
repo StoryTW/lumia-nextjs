@@ -8,6 +8,7 @@
 
   @include respond(tabletL) {
     padding: 0px 24px;
+    margin-bottom: 82px;
   }
 
   .title {
@@ -23,7 +24,6 @@
       font-size: 32px;
       max-width: 472px;
       margin-bottom: 60px;
-      padding: 0px 24px;
     }
   }
 

@@ -14,6 +14,10 @@
     margin-bottom: 194px;
   }
 
+  @include respond(mobileL) {
+    margin-bottom: 82px;
+  }
+
   .text {
     font-weight: 400;
     font-size: 72px;
