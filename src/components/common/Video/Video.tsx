@@ -8,9 +8,10 @@ import { useMediaQuery } from '@/hooks/useMediaQuery';
 interface IVideo {
   src: string;
   left?: boolean;
+  className?: string;
 }
 
-export const Video: FC<IVideo> = ({ src, left = false }) => {
+export const Video: FC<IVideo> = ({ src, left = false, className }) => {
   const mobileL = useMediaQuery('mobileL');
 
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -43,7 +44,7 @@ export const Video: FC<IVideo> = ({ src, left = false }) => {
     >
       <video
         ref={videoRef}
-        className={styles.video}
+        className={clsx(styles.video, className && className)}
         preload='metadata'
         width={'100%'}
         height={'100%'}

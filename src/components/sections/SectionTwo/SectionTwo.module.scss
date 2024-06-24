@@ -57,4 +57,11 @@
       }
     }
   }
+
+  .vid {
+    @include respond(mobileL) {
+      transform: scale(1.5);
+      margin-top: 40px;
+    }
+  }
 }
