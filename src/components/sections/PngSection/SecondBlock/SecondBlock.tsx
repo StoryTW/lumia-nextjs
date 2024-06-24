@@ -80,6 +80,16 @@ export const SecondBlock = () => {
           className={styles.qub8}
         />
       </div>
+
+      <Image
+        src={'/arrows.svg'}
+        alt='arrows'
+        height={22}
+        width={120}
+        priority
+        quality={100}
+        className={styles.arrows}
+      />
     </div>
   );
 };

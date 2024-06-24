@@ -4,6 +4,11 @@
   flex-direction: column;
   align-items: center;
   position: relative;
+  padding: 0px 64px;
+
+  @include respond(tabletL) {
+    padding: 0px 24px;
+  }
 
   .title {
     @include Regular_72;
@@ -13,10 +18,16 @@
     background-clip: text;
     margin-bottom: 102px;
     text-align: center;
+
+    @include respond(tabletL) {
+      font-size: 32px;
+      max-width: 472px;
+      margin-bottom: 60px;
+      padding: 0px 24px;
+    }
   }
 
   .wrapper {
-    padding: 64px;
     display: grid;
     grid-template-columns: minmax(200px, 943px) minmax(200px, 557px);
     gap: 90px 140px;
@@ -25,22 +36,11 @@
       'third .';
 
     @include respond(tabletL) {
-      padding: 24px;
-
       grid-template-columns: minmax(200px, 943px);
       grid-template-areas:
-      'second'
-      'first'
-      'third';
-    }
-
-    .first {
-      border-radius: 22px;
-      border: 1.76px solid rgba(105, 118, 134, 0.4);
-      background: #070e15;
-      box-shadow:
-        0px 0px 61.072px 0px rgba(134, 171, 211, 0.4) inset,
-        0px 0px 14.608px 0px rgba(134, 172, 211, 0.16);
+        'second'
+        'first'
+        'third';
     }
   }
 }

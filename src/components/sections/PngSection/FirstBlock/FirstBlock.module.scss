@@ -7,6 +7,7 @@
     0px 0px 61.072px 0px rgba(134, 171, 211, 0.4) inset,
     0px 0px 14.608px 0px rgba(134, 172, 211, 0.16);
   padding: 38px 14px 14px;
+  position: relative;
 
   .header {
     display: flex;
@@ -35,21 +36,42 @@
       width: max-content;
       width: 100%;
 
+      @include respond(tablet) {
+        flex-direction: column;
+      }
+
       .name {
-        padding: 77px 12px;
+        padding: 12px;
         border-right: 1px dashed rgba(105, 118, 134, 0.4);
+        display: flex;
+        justify-content: center;
+
+        @include respond(tablet) {
+          border-right: none;
+          border-bottom: 1px dashed rgba(105, 118, 134, 0.4);
+        }
 
         .text {
           writing-mode: vertical-rl;
           transform: rotate(180deg);
           text-transform: uppercase;
           @include Regular_14;
+          text-align: center;
+
+          @include respond(tablet) {
+            transform: rotate(0deg);
+            writing-mode: horizontal-tb;
+          }
         }
       }
 
       .content {
         padding: 8px 22px;
         width: 100%;
+
+        @include respond(tablet) {
+          padding: 8px;
+        }
 
         .polygon {
           padding: 20px 10px 10px;
@@ -80,6 +102,10 @@
             display: grid;
             grid-template-columns: repeat(4, minmax(40px, 195px));
             gap: 6px;
+
+            @include respond(tablet) {
+              grid-template-columns: repeat(2, 1fr);
+            }
 
             .polygonBlock {
               display: flex;
@@ -126,18 +152,34 @@
       display: flex;
       border-radius: 10px;
       border: 1px solid rgba(105, 118, 134, 0.4);
-      width: max-content;
       width: 100%;
 
+      @include respond(tablet) {
+        flex-direction: column;
+      }
+
       .name {
-        padding: 55px 12px;
+        padding: 12px;
         border-right: 1px dashed rgba(105, 118, 134, 0.4);
+        display: flex;
+        justify-content: center;
+
+        @include respond(tablet) {
+          border-right: none;
+          border-bottom: 1px dashed rgba(105, 118, 134, 0.4);
+        }
 
         .text {
           writing-mode: vertical-rl;
           transform: rotate(180deg);
           text-transform: uppercase;
           @include Regular_14;
+          text-align: center;
+
+          @include respond(tablet) {
+            transform: rotate(0deg);
+            writing-mode: horizontal-tb;
+          }
         }
       }
 
@@ -147,6 +189,11 @@
         display: flex;
         align-items: center;
         gap: 12px;
+
+        @include respond(tablet) {
+          padding: 8px;
+          flex-direction: column;
+        }
 
         .contentBlock {
           border-radius: 4px;
@@ -185,15 +232,33 @@
       border: 1px solid rgba(105, 118, 134, 0.4);
       width: 100%;
 
+      @include respond(tablet) {
+        flex-direction: column;
+      }
+      
       .name {
-        padding: 38px 12px;
+        padding: 12px;
         border-right: 1px dashed rgba(105, 118, 134, 0.4);
+        display: flex;
+        justify-content: center;
+
+        @include respond(tablet) {
+          padding: 12px;
+          border-right: none;
+          border-bottom: 1px dashed rgba(105, 118, 134, 0.4);
+        }
 
         .text {
           writing-mode: vertical-rl;
           transform: rotate(180deg);
           text-transform: uppercase;
           @include Regular_14;
+          text-align: center;
+
+          @include respond(tablet) {
+            transform: rotate(0deg);
+            writing-mode: horizontal-tb;
+          }
         }
       }
 
@@ -203,6 +268,11 @@
         display: flex;
         align-items: center;
         gap: 12px;
+
+        @include respond(tablet) {
+          padding: 8px;
+          flex-direction: column;
+        }
 
         .contentBlock {
           border-radius: 4px;
@@ -218,6 +288,30 @@
 
         }
       }
+    }
+  }
+
+  .arrows {
+    position: absolute;
+    bottom: 100px;
+    right: -98px;
+
+    @include respond(tabletL) {
+      bottom: unset;
+      top: -50px;
+      right: 20px;
+      transform: rotate(-90deg);
+    }
+  }
+
+  .arrowsBottom {
+    position: absolute;
+    bottom: -50px;
+    left: 45%;
+    transform: rotate(90deg);
+
+    @include respond(tabletL) {
+      left: 40%;
     }
   }
 }

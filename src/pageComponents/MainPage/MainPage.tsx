@@ -21,7 +21,7 @@ import { SectionDePin } from '@/components/sections/SectionDePin/SectionDePin';
 export function MainPage() {
   return (
     <main id='mainPage' className={styles.mainPage}>
-      <SectionOne />
+      {/* <SectionOne />
       <SectionTwo />
       <SectionBlock />
       <SectionThree />
@@ -31,13 +31,13 @@ export function MainPage() {
       <SectionSeven />
       <SectionEight />
       <SectionNine />
-      <SectionDePin />
+      <SectionDePin /> */}
       <PngSection />
-      <SectionTen />
-      <SectionEleven />
-      <SectionContributors />
+      {/* <SectionTen />
+      <SectionEleven /> */}
+      {/* <SectionContributors />
       <ParnersSection />
-      <SectionSwiper />
+      <SectionSwiper /> */}
       <Footer />
     </main>
   );

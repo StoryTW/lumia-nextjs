@@ -156,6 +156,24 @@ export const FirstBlock = () => {
           </div>
         </div>
       </div>
+      <Image
+        src={'/arrows.svg'}
+        alt='arrows'
+        height={22}
+        width={120}
+        priority
+        quality={100}
+        className={styles.arrows}
+      />
+      <Image
+        src={'/arrows.svg'}
+        alt='arrows'
+        height={22}
+        width={100}
+        priority
+        quality={100}
+        className={styles.arrowsBottom}
+      />
     </div>
   );
 };
