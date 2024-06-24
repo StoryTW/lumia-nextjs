@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  exportTrailingSlash: true,
   reactStrictMode: false,
   webpack(config) {
     config.module.rules.push({

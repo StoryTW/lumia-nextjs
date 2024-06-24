@@ -3,6 +3,9 @@
   align-items: center;
   margin-bottom: 24px;
   gap: 10px;
+  // border-right: 1px solid#8090AA;
+  height: 100%;
+  
 
   @include respond(mobileL) {
     margin-bottom: 12px;
@@ -19,5 +22,8 @@
     @include Regular_14;
     color: var(--white);
     opacity: 0.5;
+    & sub {
+      bottom: 0;
+    }
   }
 }

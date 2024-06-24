@@ -109,6 +109,21 @@
 }
 
 //FONTS
+
+@mixin Regular_10 {
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@mixin Regular_12 {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
 @mixin Regular_14 {
   font-size: 14px;
   font-style: normal;
@@ -137,6 +152,21 @@
   line-height: 36px;
 }
 
+@mixin Regular_32 {
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@mixin Regular_72 {
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: 1.44px;
+}
+
 @mixin Semibold_12 {
   font-size: 12px;
   font-weight: 500;
@@ -158,7 +188,6 @@
   font-weight: 500;
   line-height: 16px;
 }
-
 
 @mixin Semibold_24 {
   font-size: 24px;
@@ -201,3 +230,7 @@
   font-weight: 600;
   line-height: 48px;
 }
+
+
+
+

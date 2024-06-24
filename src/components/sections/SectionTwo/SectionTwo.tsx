@@ -23,11 +23,12 @@ export const SectionTwo = () => {
         className={styles.wrp}
       >
         <div className={styles.info}>
-          <h2 className={styles.title}>The new home of RWAs</h2>
+          <h2 className={styles.title}>The New Home <br/>of RWA`s</h2>
           <p className={styles.description}>
-            Lumia simplifies the building process and creates asymmetric advantages for projects
-            thanks to boundless liquidity, unique cross-chain yield opportunities and unmatched
-            interoperability.
+          Lumia is the world’s first next gen modular L2 designed to provide deep  liquidity, unmatched capital efficiency, and essential infrastructure  for the future of DeFi and specifically Real-World Assets (RWAs) using Decentralized Physical Infrastructure Networks (DePIN). 
+          <br/>
+          <br/>
+          Lumia bridges  the gap between physical assets and digital finance making tokenized  assets easily accessible on the blockchain - pioneering the next  evolution of finance.
           </p>
         </div>
       </motion.div>

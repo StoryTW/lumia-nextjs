@@ -4,8 +4,8 @@
   position: relative;
   scroll-snap-align: start;
   display: flex;
-  justify-content: space-between;
-  padding: 0px 64px;
+  justify-content: center;
+  padding: 0px 90px;
 
   @include respond(tabletL) {
     padding: 0px 24px;
@@ -30,37 +30,30 @@
     }
     
     .info {
-      max-width: 500px;
+      max-width: 700px;
 
       .title {
-        @include Semibold_50;
+        background: linear-gradient(90deg, #B6DAFF 0%, #FFFFFF 45.5%, #505E7D 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 52px;
+        font-weight: 400;
         text-align: left;
         margin-bottom: 34px;
   
-        @include respond(tablet) {
+        @include respond(tabletL) {
           @include Semibold_32;
-        }
-  
-        @include respond(mobileL) {
-          margin-bottom: 24px;
-        }
-  
-        @include respond(mobile375) {
-          @include Semibold_24;
         }
       }
   
       .description {
         @include Regular_20;
+        font-size: 23px;
         color: var(--white);
-  
-        @include respond(mobileL) {
-          @include Regular_16;
-        }
-  
-        @include respond(mobile375) {
-          @include Regular_14;
-        }
+
+        @include respond(tabletL) {
+          font-size: 18px;
+          }
       }
     }
   }

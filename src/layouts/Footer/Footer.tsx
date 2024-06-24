@@ -20,36 +20,63 @@ export const Footer = () => {
           />
           <div className={styles.copyright}>2024 Lumia, All Rights Reserved.</div>
         </div>
-        <div className={styles.socialsBlock}>
+
+        <div className={styles.column}>
           <ul className={styles.list}>
-            <li className={clsx(styles.item, styles.head)}>
-              Solutions
-            </li>
+            <li className={clsx(styles.item, styles.head)}>Product</li>
             <li className={styles.item}>
-              <Link href=' https://lumia.org/' target='_blank'>
-                Lumia
-              </Link>
-            </li>
-            <li className={styles.item}>
-              <Link href='https://lumia.stream/' target='_blank'>
-                Lumia Stream
+              <Link href='https://lumia.org/' target='_blank'>
+                Product
               </Link>
             </li>
           </ul>
+        </div>
 
+        <div className={styles.column}>
           <ul className={styles.list}>
-            <li className={clsx(styles.item, styles.head)}>
-              Developers
-            </li>
+            <li className={clsx(styles.item, styles.head)}>Developers</li>
             <li className={styles.item}>
               <Link href='https://docs.lumia.org/' target='_blank'>
                 Docs
               </Link>
             </li>
+          </ul>
+        </div>
+
+        <div className={styles.column}>
+          <ul className={styles.list}>
+            <li className={clsx(styles.item, styles.head)}>Company</li>
             <li className={styles.item}>
-              <Link href='https://github.com/orionprotocol' target='_blank'>GitHub</Link>
+              <Link href='https://lumia.org/' target='_blank'>
+                Contact Us
+              </Link>
             </li>
           </ul>
+        </div>
+
+        <div className={styles.column}>
+          <div className={styles.socialWrp}>
+            <Link href='https://lumia.org/' target='_blank'>
+              <Image
+                src='/twitter.svg'
+                alt='twitter'
+                height={24}
+                width={24}
+                priority
+                quality={100}
+              />
+            </Link>
+            <Link href='https://lumia.org/' target='_blank'>
+              <Image
+                src='/social.svg'
+                alt='social'
+                height={24}
+                width={24}
+                priority
+                quality={100}
+              />
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

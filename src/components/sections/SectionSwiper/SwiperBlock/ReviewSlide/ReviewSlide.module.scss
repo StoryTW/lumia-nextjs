@@ -1,0 +1,51 @@
+.reviewSlide {
+  border-radius: 24px;
+  border: 2px solid #1f2b39;
+  background: #040609;
+  box-shadow: 0px 0px 69.4px 0px rgba(24, 33, 43, 0.69) inset;
+  padding: 48px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 378px;
+
+
+  .comment {
+    text-align: center;
+    margin-bottom: 42px;
+    @include Regular_24;
+    color: var(--white);
+
+    @include respond(tabletL) {
+      font-size: 18px;
+    }
+  }
+
+  .name {
+    @include Regular_24;
+    color: var(--white);
+    text-align: center;
+
+    @include respond(tabletL) {
+      font-size: 20px;
+    }
+  }
+
+  .position {
+    @include Regular_16;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 12px;
+    text-align: center;
+
+    @include respond(tabletL) {
+      font-size: 12px;
+    }
+  }
+
+  .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

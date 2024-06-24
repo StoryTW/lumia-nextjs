@@ -1,0 +1,110 @@
+.sectionBlock {
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  scroll-snap-align: start;
+  padding: 0px 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include respond(tabletL) {
+    padding: 0px 24px;
+    margin-bottom: 194px;
+  }
+
+  @include respond(mobileL) {
+    margin-bottom: 82px;
+  }
+
+  .text {
+    font-weight: 400;
+    font-size: 72px;
+    line-height: 98px;
+    background: linear-gradient(90deg, #b6daff 0%, #ffffff 45.5%, #505e7d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    grid-area: text;
+
+    @include respond(tabletL) {
+      font-size: 32px;
+      text-align: center;
+    }
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(171px, 202px));
+  gap: 44px 32px;
+  grid-template-areas:
+    'text text a b c'
+    'd e f g h';
+
+  @include respond(tabletL) {
+    grid-template-columns: repeat(4, minmax(171px, 202px));
+    gap: 32px 16px;
+    grid-template-areas:
+    'text text text text'
+    'a b c d'
+    'e f g h';
+  }
+
+  @include respond(tablet) {
+    grid-template-columns: repeat(2, minmax(171px, 202px));
+    gap: 32px 16px;
+    grid-template-areas:
+    'text text'
+    'a b'
+    'c d'
+    'e f' 
+    'g h';
+  }
+
+  .photo {
+    background: rgba(4, 6, 9, 1);
+    padding-top: 17px;
+    box-shadow: 0px 0px 14.24px 0px rgba(80, 134, 193, 0.2);
+    box-shadow: 0px 0px 55.52px 0px rgba(80, 111, 145, 0.26) inset;
+    border-radius: 19.2px;
+    border: 0.8px solid rgba(115, 182, 255, 0.16);
+    height: 229px;
+    overflow: hidden;
+    width: 100%;
+  }
+}
+
+.name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  & p {
+    font-size: 16px;
+    width: 120px;
+  }
+  box-shadow: 0px 0px 13.28px 0px rgba(80, 134, 193, 0.2);
+  box-shadow: 0px 0px 55.52px 0px rgba(57, 88, 122, 0.26) inset;
+  border: 0.8px solid rgba(115, 182, 255, 0.16);
+  border-radius: 19.2px;
+  margin-top: 10px;
+  padding: 8px 17px;
+}
+
+.logos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  &img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.onlyOneLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 12px;
+}

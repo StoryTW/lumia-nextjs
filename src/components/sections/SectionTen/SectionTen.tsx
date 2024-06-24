@@ -10,28 +10,38 @@ export const SectionTen = () => {
   const inView = useInView(ref, {
     once: false,
   });
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   return (
     <section className={styles.sectionTen} id='ten'>
-      <Video src='/10.mp4' left />
-
       <motion.div
         ref={ref}
-        initial={{ opacity: 0, x: 200 }}
-        animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : 200 }}
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: inView ? 1 : 0, scale: inView ? 1 : 0.8 }}
         transition={{ duration: 1.5 }}
         className={styles.wrp}
       >
         <div className={styles.info}>
           <h2 className={styles.title}>Airdrop</h2>
-          <p className={styles.description}>
-            Lumia Ecosystem Airdrop: Season 1 - Drop #1 (Coming Soon)
-            <br />
-            <br />
-            Lumia Ecosystem Airdrop: Season 1 - Drop #2 (Coming Soon)
-          </p>
+          <span className={styles.span}>Lumia Ecosystem Airdrop:</span>
+          <p className={styles.description}>Season 1 - Drop #1 (Coming Soon)</p>
         </div>
       </motion.div>
+      <div className={styles.videoWrapper}>
+        <video
+          ref={videoRef}
+          className={styles.video}
+          preload='metadata'
+          width={'100%'}
+          height={'100%'}
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
+          <source src={'/10.mp4'} type='video/mp4' />
+        </video>
+      </div>
     </section>
   );
 };

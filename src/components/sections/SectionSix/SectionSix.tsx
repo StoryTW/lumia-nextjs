@@ -4,6 +4,7 @@ import { motion, useInView } from 'framer-motion';
 import React, { useRef } from 'react';
 import styles from './SectionSix.module.scss';
 import { Features } from '@/components/common/Features/Features';
+import { Divider } from '@/components/common/Divider/Divider';
 
 export const SectionSix = () => {
   const ref = useRef(null);
@@ -14,25 +15,26 @@ export const SectionSix = () => {
 
   return (
     <section className={styles.sectionSix} id='six'>
-      <Video src='/6.mp4' left />
 
-      <motion.div
-        ref={ref}
-        initial={{ opacity: 0, x: 200 }}
-        animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : 200 }}
-        transition={{ duration: 1.5 }}
-        className={styles.wrp}
-      >
-        <div className={styles.info}>
-          <Features />
-          <h2 className={styles.title}>Built-In KYC and Privacy</h2>
-          <p className={styles.description}>
-            Employing PolygonID for secure and decentralized identity verification, Lumia ensures
-            user privacy and data security. It offers optional full-scale KYC per wallet, enabling
-            regulated institutions to participate in the RWA ecosystem confidently.
-          </p>
-        </div>
-      </motion.div>
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, x: -200 }}
+      animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : -200 }}
+      transition={{ duration: 1.5 }}
+      className={styles.wrp}
+    >
+      <div className={styles.info}>
+        <Features queueNum='4'/>
+        <h2 className={styles.title}>Seamless Onboarding of<br />Web2 using Account<br/>Abstraction and Intents</h2>
+        <p className={styles.description}>
+        Integrated EIP-4337 and intents technology simplify blockchain interactions, making them more intuitive for mass adoption.
+        </p>
+      </div>
+    </motion.div>
+
+    <Divider/>
+
+    <Video src='/7.mp4' />
     </section>
   );
 };

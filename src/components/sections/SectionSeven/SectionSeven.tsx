@@ -4,6 +4,7 @@ import { motion, useInView } from 'framer-motion';
 import React, { useRef } from 'react';
 import styles from './SectionSeven.module.scss';
 import { Features } from '@/components/common/Features/Features';
+import { Divider } from '@/components/common/Divider/Divider';
 
 export const SectionSeven = () => {
   const ref = useRef(null);
@@ -22,20 +23,19 @@ export const SectionSeven = () => {
         className={styles.wrp}
       >
         <div className={styles.info}>
-          <Features />
+          <Features queueNum='5'/>
           <h2 className={styles.title}>
-            Pioneering scalability, decentralization, and fast finality
+          Institutional-Ready <br/>Built-in KYC and Privacy
           </h2>
           <p className={styles.description}>
-            Through its innovative Data Availability Committee (DAC), Lumia harnesses the power of
-            zkEVM technology to future-proof the network and capture economic value for LUMIA token
-            holders and network participants, accelerating the transition from "stage 0" to "stage
-            2" roll-up.
+          Employing PolygonID for secure and decentralized identity verification, Lumia ensures user privacy and data security. Lumia offers optional full-scale KYC per wallet, enabling regulated institutions to participate in the RWA ecosystem confidently.
           </p>
         </div>
       </motion.div>
 
-      <Video src='/7.mp4' />
+      <Divider />
+
+      <Video src='/8.mp4' />
     </section>
   );
 };

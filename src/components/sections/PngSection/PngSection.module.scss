@@ -1,0 +1,46 @@
+.pngSection {
+  margin-bottom: 182px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 0px 64px;
+
+  @include respond(tabletL) {
+    padding: 0px 24px;
+    margin-bottom: 82px;
+  }
+
+  .title {
+    @include Regular_72;
+    background: linear-gradient(90deg, #b6daff 0%, #ffffff 45.5%, #505e7d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 102px;
+    text-align: center;
+
+    @include respond(tabletL) {
+      font-size: 32px;
+      max-width: 472px;
+      margin-bottom: 60px;
+    }
+  }
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: minmax(200px, 943px) minmax(200px, 557px);
+    gap: 90px 140px;
+    grid-template-areas:
+      'first second'
+      'third .';
+
+    @include respond(tabletL) {
+      grid-template-columns: minmax(200px, 943px);
+      grid-template-areas:
+        'second'
+        'first'
+        'third';
+    }
+  }
+}

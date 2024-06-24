@@ -1,0 +1,28 @@
+.sectionAbout {
+  margin-bottom: 132px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 0px 64px;
+
+  @include respond(tabletL) {
+    padding: 0px 24px;
+    margin-bottom: 24px;
+  }
+
+  .title {
+    @include Regular_72;
+    background: linear-gradient(90deg, #b6daff 0%, #ffffff 45.5%, #505e7d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 90px;
+    text-align: center;
+
+    @include respond(tabletL) {
+      font-size: 32px;
+      margin-bottom: 42px;
+    }
+  }
+}

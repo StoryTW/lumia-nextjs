@@ -1,16 +1,26 @@
 .btnLink {
-  padding: 15.5px 35px;
-  border-radius: 6px;
-  border: 1px solid transparent;
-  background: var(--background-btn-color);
-  box-shadow: var(--btn-shadow-one), var(--btn-shadow-second);
-  @include Semibold_16;
+  position: relative;
+  padding: 13px 36px;
+  border-radius: 12px;
+  border: 2px solid #273F70;
+  background: transparent;
   color: var(--d9);
   @include transition_500;
   cursor: pointer;
+  display: inline-block;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: 0.34px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: max-content;
+
 
   &:hover {
-    border: 1px solid var(--btn-border);
+    border: 2px solid var(--btn-border);
     color: var(--white);
   }
 }

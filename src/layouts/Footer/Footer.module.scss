@@ -9,48 +9,40 @@
 
     @include respond(tabletL) {
       flex-direction: column;
-    }
-
-    @include respond(mobileL) {
       padding: 108px 24px 74px;
     }
 
     .logoBlock {
       @include respond(tabletL) {
-        margin-bottom: 60px;
+        margin-bottom: 36px;
       }
 
       .img {
-        margin-bottom: 35px;
+        margin-bottom: 28px;
       }
 
       .copyright {
         color: var(--white);
-        opacity: 0.5;
-        @include Regular_20;
+        @include Regular_12;
       }
     }
 
-    .socialsBlock {
-      display: flex;
-      align-items: center;
-      gap: 138px;
-
-      @include respond(mobileL) {
-        gap: 40px;
+    .column {
+      @include respond(tabletL) {
+        margin-bottom: 36px;
       }
-
       .list {
         .item {
-          @include Regular_20;
+          @include Regular_10;
           color: var(--white);
 
           &:not(:last-child) {
-            margin-bottom: 24px;
+            margin-bottom: 16px;
           }
 
           &.head {
             opacity: 0.5;
+            text-transform: uppercase;
           }
 
           a {
@@ -61,6 +53,12 @@
             color: var(--blue);
           }
         }
+      }
+
+      .socialWrp {
+        display: flex;
+        align-items: center;
+        gap: 16px;
       }
     }
   }
