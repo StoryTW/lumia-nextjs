@@ -2,7 +2,6 @@
 import { motion, useInView } from 'framer-motion';
 import React, { useRef } from 'react';
 import styles from './SectionContributors.module.scss';
-// import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { data } from './helpers';
 
 export const SectionContributors = () => {
@@ -12,18 +11,16 @@ export const SectionContributors = () => {
     once: false,
   });
 
-  // const tabletSM = useMediaQuery('tabletSM');
-
   return (
     <section className={styles.sectionBlock} id='block'>
       <motion.div
         className={styles.grid}
         ref={ref}
-        initial={{ opacity: 0, x: -150 }}
-        animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : -150 }}
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: inView ? 1 : 0, scale: inView ? 1 : 0.8 }}
         transition={{ duration: 1.5 }}
       >
-        <motion.h2 className={styles.text}>Core Contributors</motion.h2>
+        <h2 className={styles.text}>Core Contributors</h2>
         {data.map((item, index) => {
           return (
             <div

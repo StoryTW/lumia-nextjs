@@ -16,8 +16,8 @@ export const SectionTen = () => {
     <section className={styles.sectionTen} id='ten'>
       <motion.div
         ref={ref}
-        initial={{ opacity: 0, x: 200 }}
-        animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : 200 }}
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: inView ? 1 : 0, scale: inView ? 1 : 0.8 }}
         transition={{ duration: 1.5 }}
         className={styles.wrp}
       >

@@ -7,6 +7,7 @@ import styles from './SwiperBlock.module.scss';
 import Image from 'next/image';
 import { ReviewSlide } from './ReviewSlide/ReviewSlide';
 import ArrowIcon from '@/assets/images/swiper-arrow.svg'
+import { motion, useInView } from 'framer-motion';
 
 const ARRAY_REVIEW = [
   {
@@ -42,6 +43,13 @@ const ARRAY_REVIEW = [
 export const SwiperBlock = () => {
   const swiperRef = useRef<SwiperClass>();
 
+  const ref = useRef(null);
+
+  const inView = useInView(ref, {
+    once: false,
+  });
+
+
   const handlePrev = () => {
     swiperRef.current?.slidePrev();
   };
@@ -51,7 +59,12 @@ export const SwiperBlock = () => {
   };
 
   return (
-    <>
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: inView ? 1 : 0, scale: inView ? 1 : 0.8 }}
+      transition={{ duration: 1.5 }}
+    >
       <Swiper
         loop={true}
         autoplay={{
@@ -89,6 +102,6 @@ export const SwiperBlock = () => {
       <button className={clsx(styles.btn, styles.next)} onClick={handleNext}>
         <ArrowIcon />
       </button>
-    </>
+    </motion.div>
   );
 };

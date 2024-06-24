@@ -1,5 +1,4 @@
 'use client';
-import { Video } from '@/components/common/Video/Video';
 import { motion, useInView } from 'framer-motion';
 import React, { useRef } from 'react';
 import styles from './SectionDePin.module.scss';
@@ -16,8 +15,8 @@ export const SectionDePin = () => {
     <section className={styles.sectionNine} id='nine'>
       <motion.div
         ref={ref}
-        initial={{ opacity: 0, x: -200 }}
-        animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : -200 }}
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: inView ? 1 : 0, scale: inView ? 1 : 0.8 }}
         transition={{ duration: 1.5 }}
         className={styles.wrp}
       >
