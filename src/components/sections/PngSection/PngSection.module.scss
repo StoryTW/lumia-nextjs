@@ -1,14 +1,13 @@
 .pngSection {
-  margin-bottom: 182px;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
   padding: 0px 64px;
+  margin-bottom: 82px;
 
   @include respond(tabletL) {
     padding: 0px 24px;
-    margin-bottom: 82px;
   }
 
   .title {

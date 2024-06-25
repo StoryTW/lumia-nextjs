@@ -8,6 +8,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 64px;
 
   @include respond(tabletL) {
     padding: 0px 24px;

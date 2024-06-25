@@ -54,6 +54,14 @@
     bottom: 0px;
     left: 46%;
 
+    @include respond(laptopL) {
+      left: 43%;
+    }
+
+    @include respond(laptop) {
+      left: 40%;
+    }
+
     @include respond(tabletL) {
       left: 48px;
     }
@@ -61,6 +69,14 @@
 
   &.next {
     right: 46%;
+
+    @include respond(laptopL) {
+      right: 43%;
+    }
+
+    @include respond(laptop) {
+      right: 40%;
+    }
 
     @include respond(tabletL) {
       right: 48px;
