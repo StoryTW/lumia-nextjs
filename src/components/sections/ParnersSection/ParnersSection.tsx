@@ -7,64 +7,64 @@ import { motion, useInView } from 'framer-motion';
 
 const ARRAY_PARTNERS = [
   {
-    link: '/partners/partner-1.png',
+    link: '/partners/partner-1.svg',
   },
   {
-    link: '/partners/partner-2.png',
+    link: '/partners/partner-2.svg',
   },
   {
-    link: '/partners/partner-3.png',
+    link: '/partners/partner-3.svg',
   },
   {
-    link: '/partners/partner-4.png',
+    link: '/partners/partner-4.svg',
   },
   {
-    link: '/partners/partner-5.png',
+    link: '/partners/partner-5.svg',
   },
   {
-    link: '/partners/partner-6.png',
+    link: '/partners/partner-6.svg',
   },
   {
-    link: '/partners/partner-7.png',
+    link: '/partners/partner-7.svg',
   },
   {
-    link: '/partners/partner-8.png',
+    link: '/partners/partner-8.svg',
   },
   {
-    link: '/partners/partner-9.png',
+    link: '/partners/partner-9.svg',
   },
   {
-    link: '/partners/partner-10.png',
+    link: '/partners/partner-10.svg',
   },
   {
-    link: '/partners/partner-11.png',
+    link: '/partners/partner-11.svg',
   },
   {
-    link: '/partners/partner-12.png',
+    link: '/partners/partner-12.svg',
   },
   {
-    link: '/partners/partner-13.png',
+    link: '/partners/partner-13.svg',
   },
   {
-    link: '/partners/partner-14.png',
+    link: '/partners/partner-14.svg',
   },
   {
-    link: '/partners/partner-15.png',
+    link: '/partners/partner-15.svg',
   },
   {
-    link: '/partners/partner-16.png',
+    link: '/partners/partner-16.svg',
   },
   {
-    link: '/partners/partner-17.png',
+    link: '/partners/partner-17.svg',
   },
   {
-    link: '/partners/partner-18.png',
+    link: '/partners/partner-18.svg',
   },
   {
-    link: '/partners/partner-19.png',
+    link: '/partners/partner-19.svg',
   },
   {
-    link: '/partners/partner-20.png',
+    link: '/partners/partner-20.svg',
   },
 ];
 

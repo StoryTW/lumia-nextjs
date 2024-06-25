@@ -23,7 +23,7 @@
 
       .copyright {
         color: var(--white);
-        @include Regular_12;
+        @include Regular_14;
       }
     }
 
@@ -33,7 +33,7 @@
       }
       .list {
         .item {
-          @include Regular_10;
+          @include Regular_16;
           color: var(--white);
 
           &:not(:last-child) {
@@ -59,6 +59,14 @@
         display: flex;
         align-items: center;
         gap: 16px;
+
+        a {
+          @include transition;
+        }
+
+        a:hover {
+          transform: scale(0.8);
+        }
       }
     }
   }

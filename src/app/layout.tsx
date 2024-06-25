@@ -7,6 +7,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 import 'swiper/css/navigation';
 import '@/assets/styles/index.scss';
+import { Footer } from '@/layouts/Footer/Footer';
 
 const chakraPetch = Chakra_Petch({ subsets: ['latin'], weight: ['400', '500'] });
 
@@ -31,11 +32,8 @@ export default function RootLayout({
     <html lang='en'>
       <body className={chakraPetch.className}>
         <Header />
-
-        {/* <div className='scrollContainer'>
-          {children}
-        </div> */}
         {children}
+        <Footer />
       </body>
     </html>
   );

@@ -3,6 +3,7 @@ import { motion, useInView } from 'framer-motion';
 import React, { useRef } from 'react';
 import styles from './SectionContributors.module.scss';
 import { data } from './helpers';
+import LikeDin from '@/assets/images/likedin.svg';
 
 export const SectionContributors = () => {
   const ref = useRef(null);
@@ -34,7 +35,9 @@ export const SectionContributors = () => {
               </div>
               <div className={styles.name}>
                 <p>{item.name}</p>
-                <img src={item.in} alt='in' />
+                <a className={styles.likedin} href={item.href} target='_blank'>
+                  <LikeDin />
+                </a>
               </div>
               {item.hasSecondLogo && (
                 <div className={styles.logos}>

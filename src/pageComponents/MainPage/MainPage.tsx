@@ -1,4 +1,3 @@
-import { Footer } from '@/layouts/Footer/Footer';
 import { SectionOne } from '@/components/sections/SectionOne/SectionOne';
 import { SectionTwo } from '@/components/sections/SectionTwo/SectionTwo';
 import styles from './MainPage.module.scss';
@@ -38,7 +37,6 @@ export function MainPage() {
       <SectionContributors />
       <ParnersSection />
       <SectionSwiper />
-      <Footer />
     </main>
   );
 }

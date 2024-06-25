@@ -93,9 +93,18 @@ export const FirstBlock = () => {
                   );
                 })}
               </div>
+              <Image
+                src={'/oneArrow.svg'}
+                alt='arrow'
+                height={22}
+                width={14}
+                priority
+                quality={100}
+                className={styles.arrowOne}
+              />
             </div>
 
-            <div className={styles.lumiaStream}>
+            <a href='https://lumia.stream' target='_blank' className={styles.lumiaStream}>
               <Image
                 src={'/lumiaOnlyLogo.svg'}
                 alt='logo'
@@ -105,8 +114,17 @@ export const FirstBlock = () => {
                 quality={100}
               />
               <div className={styles.text}>lumia stream</div>
-            </div>
+            </a>
           </div>
+          <Image
+            src={'/oneArrow.svg'}
+            alt='arrow'
+            height={22}
+            width={14}
+            priority
+            quality={100}
+            className={styles.arrowOne}
+          />
         </div>
 
         <div className={styles.da}>
@@ -136,6 +154,15 @@ export const FirstBlock = () => {
               <div className={styles.description}>(zk Unified Liquidity)</div>
             </div>
           </div>
+          <Image
+            src={'/oneArrow.svg'}
+            alt='arrow'
+            height={22}
+            width={14}
+            priority
+            quality={100}
+            className={styles.arrowOne}
+          />
         </div>
 
         <div className={styles.settlement}>

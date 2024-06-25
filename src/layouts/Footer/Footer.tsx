@@ -55,28 +55,31 @@ export const Footer = () => {
         </div>
 
         <div className={styles.column}>
-          <div className={styles.socialWrp}>
-            <Link href='https://lumia.org/' target='_blank'>
-              <Image
-                src='/twitter.svg'
-                alt='twitter'
-                height={24}
-                width={24}
-                priority
-                quality={100}
-              />
-            </Link>
-            <Link href='https://lumia.org/' target='_blank'>
-              <Image
-                src='/social.svg'
-                alt='social'
-                height={24}
-                width={24}
-                priority
-                quality={100}
-              />
-            </Link>
-          </div>
+          <ul className={styles.list}>
+            <li className={clsx(styles.item, styles.head)}>Social media</li>
+            <li className={styles.socialWrp}>
+              <Link href='https://x.com/BuildOnLumia' target='_blank'>
+                <Image
+                  src='/twitter.svg'
+                  alt='twitter'
+                  height={24}
+                  width={24}
+                  priority
+                  quality={100}
+                />
+              </Link>
+              <Link href='https://t.me/lumia_community' target='_blank'>
+                <Image
+                  src='/telegram.svg'
+                  alt='social'
+                  height={24}
+                  width={24}
+                  priority
+                  quality={100}
+                />
+              </Link>
+            </li>
+          </ul>
         </div>
       </div>
     </footer>

@@ -35,6 +35,7 @@
       border: 1px solid rgba(105, 118, 134, 0.4);
       width: max-content;
       width: 100%;
+      position: relative;
 
       @include respond(tablet) {
         flex-direction: column;
@@ -83,6 +84,7 @@
             rgba(53, 61, 70, 0.18) 100%
           );
           margin-bottom: 28px;
+          position: relative;
 
           .polygonHeader {
             display: flex;
@@ -127,6 +129,13 @@
               }
             }
           }
+
+          .arrowOne {
+            position: absolute;
+            bottom: -22px;
+            left: 47.5%;
+            right: 50%;
+          }
         }
 
         .lumiaStream {
@@ -138,6 +147,12 @@
           border-radius: 4px;
           padding: 8px;
           width: 100%;
+          @include transition;
+
+          &:hover {
+            @include transition;
+            opacity: 0.85;
+          }
 
           .text {
             @include Regular_14;
@@ -146,6 +161,13 @@
           }
         }
       }
+
+      .arrowOne {
+        position: absolute;
+        bottom: -22px;
+        left: 50%;
+        right: 50%;
+      }
     }
 
     .da {
@@ -153,6 +175,7 @@
       border-radius: 10px;
       border: 1px solid rgba(105, 118, 134, 0.4);
       width: 100%;
+      position: relative;
 
       @include respond(tablet) {
         flex-direction: column;
@@ -224,6 +247,13 @@
           }
         }
       }
+
+      .arrowOne {
+        position: absolute;
+        bottom: -22px;
+        left: 50%;
+        right: 50%;
+      }
     }
 
     .settlement {
@@ -235,7 +265,7 @@
       @include respond(tablet) {
         flex-direction: column;
       }
-      
+
       .name {
         padding: 12px;
         border-right: 1px dashed rgba(105, 118, 134, 0.4);
@@ -285,7 +315,6 @@
           align-items: center;
           justify-content: center;
           height: 100%;
-
         }
       }
     }
